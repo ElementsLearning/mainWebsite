@@ -21,7 +21,7 @@ export const LocationSection = () => {
 
           <div className="flex flex-col gap-4">
             <div className="sm:hidden flex rounded-lg overflow-hidden h-64 w-full">
-              <iframe className="size-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.501805795956!2d72.98523267424993!3d33.644157339170654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df967473fa7055%3A0xc14fdbda9a155fa7!2sIAEC%20Building%2C%20Scholars%20Ave%2C%20H-12%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719986374086!5m2!1sen!2s" width allowfullscreen=""  referrerpolicy="no-referrer-when-downgrade"></iframe>    
+              <iframe className="size-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.501805795956!2d72.98523267424993!3d33.644157339170654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df967473fa7055%3A0xc14fdbda9a155fa7!2sIAEC%20Building%2C%20Scholars%20Ave%2C%20H-12%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719986374086!5m2!1sen!2s" allowFullScreen referrerPolicy="no-referrer-when-downgrade"></iframe>    
             </div>
             <div className="flex justify-center gap-8">
             <a href="https://www.facebook.com/ElementsLearningEducation" target="_blank">
@@ -40,7 +40,7 @@ export const LocationSection = () => {
           </div>
         </div>
         <div className="sm:flex flex-1 hidden rounded-2xl overflow-hidden w-full">
-          <iframe className="size-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.501805795956!2d72.98523267424993!3d33.644157339170654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df967473fa7055%3A0xc14fdbda9a155fa7!2sIAEC%20Building%2C%20Scholars%20Ave%2C%20H-12%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719986374086!5m2!1sen!2s" width allowfullscreen="" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <iframe className="size-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3321.501805795956!2d72.98523267424993!3d33.644157339170654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38df967473fa7055%3A0xc14fdbda9a155fa7!2sIAEC%20Building%2C%20Scholars%20Ave%2C%20H-12%2C%20Islamabad%2C%20Islamabad%20Capital%20Territory%2C%20Pakistan!5e0!3m2!1sen!2s!4v1719986374086!5m2!1sen!2s" allowFullScreen referrerPolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </div>  
