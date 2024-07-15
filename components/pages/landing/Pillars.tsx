@@ -1,6 +1,5 @@
 import { SlidingDiv } from "../../custom/SlidingDiv"
 import { motion } from 'framer-motion';
-import Image from "next/image";
 import { useInView } from 'react-intersection-observer';
 
 
@@ -65,31 +64,31 @@ export const Pillars = () => {
       <StaggeredPillarHeader />
       <div className="flex flex-col items-start gap-2 md:gap-4">
         <SlidingDiv className='relative flex-1' direction="right" px={50}>
-          <Image alt="" src="/landingpage/pillars.png" className="w-full sm:w-[400px] lg:w-[550px]" />
+          <img src="/landingpage/pillars.png" className="w-full sm:w-[400px] lg:w-[550px]" />
         </SlidingDiv>
         <SlidingDiv direction="bottom" px={70} delay={0.3}  className="grid grid-cols-2 min-[400px]:flex w-full text-xs xs:text-sm lg:text-base justify-between lg:justify-center place-items-center xs:place-items-start gap-y-10 lg:gap-20 flex-1">
           <div className="flex  flex-col xs:flex-row min-[400px]:flex-col gap-1 font-bold items-center size-16">
-            <Image src="/landingpage/teachingmaterial.png" className="lg:scale-125" alt="" />
+            <img src="/landingpage/teachingmaterial.png" className="lg:scale-125" alt="" />
             <div className="flex flex-col items-center">
               <p>Teaching</p>
               <p>Material</p>
             </div>
           </div>
           <div className="flex flex-col xs:flex-row min-[400px]:flex-col gap-1 font-bold items-center size-16">
-            <Image src="/landingpage/teacherstraining.png" className="lg:scale-125" alt="" />
+            <img src="/landingpage/teacherstraining.png" className="lg:scale-125" alt="" />
             <div className="flex flex-col items-center">
               <p>Teachers</p>
               <p>Training</p>
             </div>
           </div>
           <div className="flex flex-col xs:flex-row min-[400px]:flex-col gap-1 font-bold items-center size-16">
-            <Image src="/landingpage/assessments.png" className="lg:scale-125" alt="" />
+            <img src="/landingpage/assessments.png" className="lg:scale-125" alt="" />
             <div className="flex flex-col items-center">
               <p>Assessments</p>
             </div>
           </div>
           <div className="flex flex-col xs:flex-row min-[400px]:flex-col gap-1 font-bold items-center size-16">
-            <Image src="/landingpage/schoolleaderships.png" className="lg:scale-125" alt="" />
+            <img src="/landingpage/schoolleaderships.png" className="lg:scale-125" alt="" />
             <div className="flex flex-col items-center">
               <p>School</p>
               <p>Leaderships</p>

@@ -3,7 +3,6 @@ import { useEffect, useState } from "react"
 import { HexagonPlayButton } from "./HexagonPlayButton"
 import { ArrowRightIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 import { CarouselSingle } from "./CarouselSingle"
-import Image from "next/image"
 
 type MultiCarouselProps = {
   items: Event[]
@@ -67,7 +66,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
         <CarouselSingle containerClass={"size-full"} 
         items={items[index].gallery.map((src) => 
           <div key={src} className="size-full flex flex-col justify-center">
-            <Image onClick={(e) => e.stopPropagation()} src={src} alt="" className="w-full bg-neutral-400" />
+            <img onClick={(e) => e.stopPropagation()} src={src} alt="" className="w-full bg-neutral-400" />
           </div>
         )}
         nextButton={
@@ -108,7 +107,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
           onClick={() => (i === index) ? setOpened(true) : setIndex(i)}
           >
             <div className={`relative overflow-hidden size-full shadow-lg ${i === index ? "group" : ""}`}>
-              <Image src={item.src} alt="" className="size-full shadow-lg" />
+              <img src={item.src} alt="" className="size-full shadow-lg" />
               <div className="absolute inset-0 overflow-hidden bg-black/75 translate-y-full group-hover:translate-y-0 transition-all duration-300 flex flex-col justify-end xs:p-1 sm:p-2 md:p-3 lg:p-4 xl:p-6 xs:gap-1 md:gap-2">
                 <div className="text-[#FCBA42] font-bold text-xs sm:text-sm md:text-lg lg:text-xl xl:text-2xl flex lg:gap-1 items-center">
                   <p><span className="hidden md:inline-block">Click to</span> View More</p>
@@ -116,7 +115,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
                 </div>
                 <div className="flex justify-between gap-2 h-1/5 w-full">
                   {item.gallery.map(src => 
-                    <Image key={src} alt="" src={src} className="flex-1" />
+                    <img key={src} src={src} className="flex-1" />
                   )}
                 </div>
               </div>
