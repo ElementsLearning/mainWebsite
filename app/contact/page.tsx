@@ -19,7 +19,7 @@ export default function Contact() {
       <section id="location" className="flex flex-col md:gap-4">
         <SlidingDiv direction={"top"} className="flex flex-col p-8 sm gap-2 justify-center">
           <h3 className="text-[#FBBB40] font-bold text-2xl md:text-4xl text-center">Get in touch</h3>
-          <p className="text-center text-xs sm:text-sm md:text-xl md:px-5 lg:px-20">Got questions or feedback? We're here to help! Reach out to us through the contact form below and our team will get back to you as soon as possible.</p>
+          <p className="text-center text-xs sm:text-sm md:text-xl md:px-5 lg:px-20">{"Got questions or feedback? We're here to help! Reach out to us through the contact form below and our team will get back to you as soon as possible."}</p>
         </SlidingDiv>
 
         {/* <FadeIn className="w-full h-[200px] md:h-[220px] lg:h-[400px] bg-neutral-300" > */}
