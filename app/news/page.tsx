@@ -1,3 +1,5 @@
+"use client"
+
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { news } from "@/constants/news";

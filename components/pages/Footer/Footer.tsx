@@ -1,3 +1,4 @@
+"use client"
 import { FAQSection } from "./FAQSection"
 import { LinksSection } from "./LinksSection"
 import { LocationSection } from "./LocationSection"
