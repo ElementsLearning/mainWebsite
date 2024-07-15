@@ -50,7 +50,7 @@ export default function About() {
         </div>
         <ScrollArea className="sm:flex-1 md:flex-auto h-96 lg:h-[600px] lg:flex-1">
           <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 lg:grid-cols-2 min-[1100px]:grid-cols-3 flex-col">
-            {team.map(member => <TeamCard {...member} />)}
+            {team.map(member => <TeamCard key={member.name} {...member} />)}
           </div>
         </ScrollArea>
       </section>
