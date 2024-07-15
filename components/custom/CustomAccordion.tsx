@@ -21,7 +21,7 @@ export const CustomAccordion: React.FC<CustomAccordionProps> = ({containerClass,
   return (
     <Accordion onValueChange={(value: string | string[]) => setOpened(value)} className={containerClass} type={type} collapsible>
       {items.map(item => 
-        <AccordionItem value={item.id}>
+        <AccordionItem key={item.id} value={item.id}>
           <AccordionTrigger className={`p-1 rounded-full hover:no-underline rounded-br-none font-bold text-xs xs:text-base sm:text-xl md:text-2xl lg:text-xl flex items-center gap-2 group transition-colors ${item.id !== opened && changeHeaders ? "bg-transparent delay-0 duration-0" : item.disabled ? "bg-gray-300 text-gray-600" : "bg-[#FBBA41] duration-200"}`}>
             <div className="size-6 xs:size-8 sm:size-12 xl:size-16 relative">
               {!(item.id === opened || (opened instanceof Array && opened.filter(id => item.id === id).length !== 0)) ? 

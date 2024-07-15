@@ -78,7 +78,7 @@ export const PuzzlePieces = () => {
     onMouseLeave={() => setShowTabs(true)}
     >
     {puzzles.map((puzzle, i) => 
-      <PuzzlePiece reverseOrder={i % 2 === 1} showTab={showTabs && i !== puzzles.length - 1} {...puzzle} order={puzzles.length - i} />
+      <PuzzlePiece key={i} reverseOrder={i % 2 === 1} showTab={showTabs && i !== puzzles.length - 1} {...puzzle} order={puzzles.length - i} />
     )}
     </motion.div>
 

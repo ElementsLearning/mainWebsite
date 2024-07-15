@@ -7,7 +7,7 @@ export const LocationSection = () => {
       <div className="p-2 border-b-2 xl:hidden border-[#FBBA41] font-bold text-white text-lg">Location</div>
       <div className="flex-1 xl:px-4 flex gap-2 flex-col sm:flex-row xl:gap-8 text-white">
         <div className="flex-1 flex-col text-sm md:text-base flex gap-6">
-          <p className="">We're open Monday to Friday, from 9:00 AM to 5:00 PM. Whether you're visiting us for a meeting or just dropping by to say hello, we're excited to welcome you. If you need any help finding us, please contact us at.</p>
+          <p className="">{"We're open Monday to Friday, from 9:00 AM to 5:00 PM. Whether you're visiting us for a meeting or just dropping by to say hello, we're excited to welcome you. If you need any help finding us, please contact us at."}</p>
           <div className="flex flex-col gap-4">
             <div className="flex gap-2 items-center xl:px-4">
               <svg className="size-4 xl:size-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z" fill="currentColor"/></svg>

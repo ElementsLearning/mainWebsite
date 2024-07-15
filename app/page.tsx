@@ -44,7 +44,7 @@ export default function Home() {
           <img src="/video/DSC_1434.JPG" alt="" className="object-cover" />
         </SlidingDiv>
         <SlidingDiv direction="right" px={50} className="flex-1">
-          <p className="text-xs xs:text-sm sm:text-base">At Elements Learning, we are on a mission to eliminate students' anxiety about math and studies by revolutionizing how they learn. Our innovative Maths Lab, hands-on activities, and engaging manipulatives transform abstract concepts into tangible experiences. By making learning interactive and fun, we empower students to approach their education with confidence and enthusiasm, turning challenges into exciting opportunities for growth.</p>
+          <p className="text-xs xs:text-sm sm:text-base">{"At Elements Learning, we are on a mission to eliminate students' anxiety about math and studies by revolutionizing how they learn. Our innovative Maths Lab, hands-on activities, and engaging manipulatives transform abstract concepts into tangible experiences. By making learning interactive and fun, we empower students to approach their education with confidence and enthusiasm, turning challenges into exciting opportunities for growth."}</p>
         </SlidingDiv>
       </section> 
 

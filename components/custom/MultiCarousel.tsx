@@ -65,7 +65,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
       <div className="size-4/5">
         <CarouselSingle containerClass={"size-full"} 
         items={items[index].gallery.map((src) => 
-          <div className="size-full flex flex-col justify-center">
+          <div key={src} className="size-full flex flex-col justify-center">
             <img onClick={(e) => e.stopPropagation()} src={src} alt="" className="w-full bg-neutral-400" />
           </div>
         )}
@@ -102,7 +102,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
       </div>
       <div className="relative z-10 h-1/2 sm:-translate-y-[8%]" style={{width: smallerSize}}>
         {items.map((item, i) => (
-          <div className={`absolute transition-all duration-700 bottom-0 ${i === index ? "h-full w-full" : "h-2/3 w-2/3"}`} 
+          <div key={item.name} className={`absolute transition-all duration-700 bottom-0 ${i === index ? "h-full w-full" : "h-2/3 w-2/3"}`} 
           style={{backgroundColor: item.innerColor, transform: `${index > i ? `translateX(calc(${100*1/2}% + ${(index-i) * (smallerSize*(2/3) + gapSize)}px))` : `translateX(${(index-i) * (smallerSize*(2/3) + gapSize) }px)`}`}}
           onClick={() => (i === index) ? setOpened(true) : setIndex(i)}
           >
@@ -115,7 +115,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
                 </div>
                 <div className="flex justify-between gap-2 h-1/5 w-full">
                   {item.gallery.map(src => 
-                    <img src={src} className="flex-1" />
+                    <img key={src} src={src} className="flex-1" />
                   )}
                 </div>
               </div>

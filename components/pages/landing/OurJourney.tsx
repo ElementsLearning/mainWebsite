@@ -77,7 +77,7 @@ export const OurJourney = () => {
         {inView && 
         <>
         {journeySteps.map(({color, header, content, contentBelow}, i) => (
-          <div className="flex flex-col h-full flex-1 items-center z-10"> 
+          <div key={header} className="flex flex-col h-full flex-1 items-center z-10"> 
             <div className="w-full" style={{height: `${getPercentageY(((i*2)+1)/10)}%`}} />
             <JourneyMarker index={i} color={color} header={header} content={content} reverse={!contentBelow} />
           </div>
