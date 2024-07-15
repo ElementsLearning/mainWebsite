@@ -1,5 +1,12 @@
 import { TeamMember } from "@/constants/team"
 
+const tailwindClasses = [
+  "rounded-bl-none sm:rounded-bl-none md:rounded-bl-none",
+  "rounded-br-none sm:rounded-br-none md:rounded-br-none",
+  "rounded-tl-none sm:rounded-tl-none md:rounded-tl-none",
+  "rounded-tr-none sm:rounded-tr-none md:rounded-tr-none",
+]
+
 export const TeamCard: React.FC<TeamMember> = ({name, designation, corner}) => {
 
   const cornerClass = `rounded-${corner}-none sm:rounded-${corner}-none md:rounded-${corner}-none `
