@@ -1,15 +1,15 @@
 "use client"
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
-import { Hero } from "@/components/pages/landing/Hero";
-import { OurJourney } from "@/components/pages/landing/OurJourney";
-import { OurJourneyMobile } from "@/components/pages/landing/OurJourneyMobile";
-import { PuzzlePieces } from "@/components/pages/landing/PuzzlePieces";
-import { Pillars } from "@/components/pages/landing/Pillars";
-import { WhatWeOffer } from "@/components/pages/landing/WhatWeOffer";
-import { Stats } from "@/components/pages/landing/Stats";
+import { Hero } from "@/components/pages/Landing/Hero";
+import { OurJourney } from "@/components/pages/Landing/OurJourney";
+import { OurJourneyMobile } from "@/components/pages/Landing/OurJourneyMobile";
+import { PuzzlePieces } from "@/components/pages/Landing/PuzzlePieces";
+import { Pillars } from "@/components/pages/Landing/Pillars";
+import { WhatWeOffer } from "@/components/pages/Landing/WhatWeOffer";
+import { Stats } from "@/components/pages/Landing/Stats";
 import { MultiCarousel } from "@/components/custom/MultiCarousel";
 import { LandingPageEvents } from "@/constants/LandingPageEvents";
-import { Testimonials } from "@/components/pages/landing/Testimonials";
+import { Testimonials } from "@/components/pages/Landing/Testimonials";
 import { Footer } from "@/components/pages/Footer/Footer";
 
 export default function Home() {
