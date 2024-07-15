@@ -19,6 +19,7 @@ const config = {
     },
     extend: {
       colors: {
+        'light-black': "#353535",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -52,6 +53,9 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+      },
+      screens: {
+        'xs': "400px"
       },
       borderRadius: {
         lg: "var(--radius)",
