@@ -11,6 +11,7 @@ import { MultiCarousel } from "@/components/custom/MultiCarousel";
 import { LandingPageEvents } from "@/constants/LandingPageEvents";
 import { Testimonials } from "@/components/pages/landing/Testimonials";
 import { Footer } from "@/components/pages/Footer/Footer";
+import Image from "next/image";
 
 export default function Home() {
   return (
@@ -41,7 +42,7 @@ export default function Home() {
 
        <section className="flex gap-2 md:gap-8 lg:px-32 xl:px-40 md:p-10 p-4 xs:p-6 items-center flex-col md:flex-row">
         <SlidingDiv direction="left" px={50} className="w-full md:w-auto md:h-48 aspect-video bg-neutral-200 rounded-lg overflow-hidden">
-          <img src="/video/DSC_1434.JPG" alt="" className="object-cover" />
+          <Image src="/video/DSC_1434.JPG" alt="" className="object-cover" />
         </SlidingDiv>
         <SlidingDiv direction="right" px={50} className="flex-1">
           <p className="text-xs xs:text-sm sm:text-base">{"At Elements Learning, we are on a mission to eliminate students' anxiety about math and studies by revolutionizing how they learn. Our innovative Maths Lab, hands-on activities, and engaging manipulatives transform abstract concepts into tangible experiences. By making learning interactive and fun, we empower students to approach their education with confidence and enthusiasm, turning challenges into exciting opportunities for growth."}</p>

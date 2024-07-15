@@ -1,5 +1,6 @@
 import { IconButton } from "@/components/custom/IconButton"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
+import Image from "next/image"
 
 export const SubscribeSection = () => {
 
@@ -9,7 +10,7 @@ export const SubscribeSection = () => {
       <div className="p-2 border-b-2 xl:hidden border-[#FBBA41] font-bold text-white">Subscribe</div>
       <div className="flex-1 xl:px-12 flex flex-col text-sm md:text-base gap-4 text-white">
         <div className="flex gap-2">
-          <img src="/logo-white-text.png" className="h-10" />
+          <Image alt="" src="/logo-white-text.png" className="h-10" />
         </div>
         <div className="flex flex-col gap-2">
           <p className="">Subscribe to our Newsletters and stuff.</p>
