@@ -1,10 +1,10 @@
-import { CarouselWithIndicators } from "@/components/custom/carouselWithIndicators";
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { news } from "@/constants/news";
 import { updates } from "@/constants/update";
 import { UpdateCard } from "./UpdateCard";
 import { NewsCard } from "./NewsCard";
+import { CarouselWithIndicators } from "@/components/custom/CarouselWithIndicators";
 
 
 export default function News() {
