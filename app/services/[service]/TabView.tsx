@@ -32,7 +32,7 @@ export const TabView: React.FC<Section & {opened?: Tab}> = ({name, color, src, s
         </div>
         {tabs.length !== 0 &&
         <div className="flex gap-2 md:gap-4 justify-center flex-wrap">
-            {tabs.map(tab => <TabHeader tab={tab} newLink={`/services/${serviceName}/${tab.tabName}`} isOpen={opened?.tabName === tab.tabName} />)}
+            {tabs.map(tab => <TabHeader key={tab.tabName} tab={tab} newLink={`/services/${serviceName}/${tab.tabName}`} isOpen={opened?.tabName === tab.tabName} />)}
         </div>}
       </div>
       {opened ? 

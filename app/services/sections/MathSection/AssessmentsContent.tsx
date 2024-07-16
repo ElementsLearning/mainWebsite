@@ -16,7 +16,7 @@ export const AssessmentsContent = () => {
           content: 
           
           <div className="py-8 md:py-6 lg:p-8 flex md:flex-row gap-8 md:gap-4 flex-col">
-            {teacherAssessments.map((assessment, i) => <AssessmentCard {...assessment} index={i} />)}
+            {teacherAssessments.map((assessment, i) => <AssessmentCard key={i} {...assessment} index={i} />)}
           </div>
 
         },
@@ -25,7 +25,7 @@ export const AssessmentsContent = () => {
           id: "Student Assessments",
           content: 
           <div className="flex flex-col flex-wrap sm:flex-row gap-4 py-2 xs:py-4 md:py-6 lg:py-8">
-            {studentAssessments.map((assessment,i) => <AssessmentCard {...assessment} index={i} />)}
+            {studentAssessments.map((assessment,i) => <AssessmentCard key={i} {...assessment} index={i} />)}
           </div>
         },
       ]}

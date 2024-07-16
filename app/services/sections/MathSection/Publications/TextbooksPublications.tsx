@@ -43,21 +43,21 @@ export const TextbooksPublications = () => {
     "OVERVIEW": <img src="/media/IMG-20240401-WA0010.jpg" className="h-full" />,
     "TEACHERS": <>
       <CarouselSingle containerClass={"size-full"} items={[
-        <Link href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={1} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book1.jpg" className="size-full" />
         </Link>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book2.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book3.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book4.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book5.jpg" className="size-full" />,
-        // </a>, 
+        <Link key={2} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book2.jpg" className="size-full" />
+        </Link>, 
+        <Link key={3} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book3.jpg" className="size-full" />
+        </Link>, 
+        <Link key={4} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book4.jpg" className="size-full" />
+        </Link>, 
+        <Link key={5} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book5.jpg" className="size-full" />
+        </Link>, 
       ]}
       nextButton={
         <div className="size-10 lg:size-16 pr-2 xs:pr-0">
@@ -67,21 +67,21 @@ export const TextbooksPublications = () => {
     </>,
     "STUDENTS": <>
       <CarouselSingle containerClass={"size-full"} items={[
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book1.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book2.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book3.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book4.jpg" className="size-full" />,
-        // </a>, 
-        // <a href={samplePDF2} target="_blank" rel="noreferrer"> 
-          <img src="/bookcovers/book5.jpg" className="size-full" />,
-        // </a>, 
+        <Link key={1} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book1.jpg" className="size-full" />
+        </Link>, 
+        <Link key={2} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book2.jpg" className="size-full" />
+        </Link>, 
+        <Link key={3} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book3.jpg" className="size-full" />
+        </Link>, 
+        <Link key={4} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book4.jpg" className="size-full" />
+        </Link>, 
+        <Link key={5} href={"/sample2.pdf"} target="_blank" rel="noreferrer"> 
+          <img src="/bookcovers/book5.jpg" className="size-full" />
+        </Link>, 
       ]}
       nextButton={
         <div className="size-10 lg:size-16 pr-2 xs:pr-0">

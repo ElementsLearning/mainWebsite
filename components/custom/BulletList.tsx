@@ -13,7 +13,7 @@ export const BulletList: React.FC<BulletListProps> = ({list, contentClass="text-
   return (
     <div className="flex flex-col gap-4">
       {list.map(({title, content}) => 
-        <div className="flex gap-2 items-start">
+        <div key={title} className="flex gap-2 items-start">
           <div className="size-8 mt-1">
             <HexagonPlayButton outerColor="#FCBA42" />
           </div>
