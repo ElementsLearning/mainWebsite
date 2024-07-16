@@ -6,7 +6,7 @@ type CustomAccordionProps = {
   containerClass: string
   items: ({
     id: string
-    disabled: boolean
+    disabled?: boolean
     title: string
     content: React.ReactNode
   })[]
@@ -29,7 +29,7 @@ export const CustomAccordion: React.FC<CustomAccordionProps> = ({containerClass,
               {changeHeaders ? 
               <>
               <div className="absolute inset-0 transition-opacity duration-200 size-full opacity-100 group-hover:opacity-0">
-                <HexagonPlayButton outerColor={item.disabled ? "#aaa" : "#FCBA42"} innerColor={"#FFFFFF"} />
+                <HexagonPlayButton outerColor={item.disabled === false ? "#aaa" : "#FCBA42"} innerColor={"#FFFFFF"} />
               </div>
               <div className="absolute inset-0 transition-opacity duration-500 size-full opacity-0 group-hover:opacity-100">
                 <HexagonPlayButton outerColor="#FFFFFF" innerColor="#000000" />
