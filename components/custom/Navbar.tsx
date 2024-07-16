@@ -53,7 +53,7 @@ export const Navbar = () => {
           </NavOption>
           <NavOption text="What We Offer" link="/services">
             <Link href="/services/ece" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>ECE</Link>
-            <Link href="/services/maths?tab=publications" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Maths</Link>
+            <Link href="/services/maths/publications" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Maths</Link>
             <Link href="/services/language" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Language</Link>
             <Link href="/services/socialscience" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Social Science</Link>
             <Link href="/services/science" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Science</Link>

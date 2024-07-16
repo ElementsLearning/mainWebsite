@@ -15,7 +15,7 @@ export const LinksSection = () => {
         </div>
         <div className="flex-1 flex flex-col gap-2 justify-between">
           <Link  href={"/services"} className="font-bold text-lg sm:pb-6 hover:underline">What We Offer</Link>
-          <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "}   href={"/services/maths?tab=publications"}>Maths</Link>
+          <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "}   href={"/services/maths/publications"}>Maths</Link>
           <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "}  href={"/services/science"}>Science</Link>
           <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "}  href={"/services/language"}>Language</Link>
           <div className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight opacity-0"} >-</div>
