@@ -1,21 +1,30 @@
-import { FadeIn } from "../FadeIn"
-import { BlogBullets } from "./BlogBullets"
-import { BlogHeader } from "./BlogHeader"
-import { BlogImage } from "./BlogImage"
+import { Blog, BlogContent } from "@/constants/Blogs/blog"
 import { BlogParagraph } from "./BlogParagraph"
+import { BlogHeader } from "./BlogHeader"
+import { BlogBullets } from "./BlogBullets"
+import { BlogImage } from "./BlogImage"
+import { FadeIn } from "../custom/FadeIn"
 
-const BlogComponent = ({type, ...props}) => {
+type BlogComponentProps = {
+  type: string
+}
+
+const BlogComponent: React.FC<BlogComponentProps> = ({type, ...props}) => {
   switch (type) {
-    case "paragraph": {
+    case "PARAGRAPH": {
+      // @ts-ignore
       return <BlogParagraph {...props} />
     }
-    case "header": {
+    case "HEADER": {
+      // @ts-ignore
       return <BlogHeader {...props} />
     }
-    case "bullets": {
+    case "BULLET": {
+      // @ts-ignore
       return <BlogBullets {...props} />
     }
-    case "image": {
+    case "IMAGE": {
+      // @ts-ignore
       return <BlogImage {...props} />
     }
     default: {
@@ -24,9 +33,7 @@ const BlogComponent = ({type, ...props}) => {
   }
 }
 
-export const BlogPage = ({title, headerSrc, content, author, date}) => {
-
-  console.log(content)
+export const BlogPage: React.FC<Blog> = ({title, headerSrc, content, author, date}) => {
 
   return (
     <div className="flex flex-col gap-2">
@@ -44,7 +51,7 @@ export const BlogPage = ({title, headerSrc, content, author, date}) => {
           </div>
           <p className="hidden sm:block text-sm italic">{date}</p>
         </div>
-        {content?.map(({type, ...props}) => <BlogComponent type={type} {...props} />)}
+        {content?.map(({type, ...props}, i) => <BlogComponent key={i} type={type} {...props} />)}
       </FadeIn>
     </div>
   )
