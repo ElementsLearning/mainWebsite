@@ -45,7 +45,7 @@ export const BlogBullets: React.FC<BulletType & IndentedType> = ({header, points
       {header && <BlogHeader indented={false} {...header}/>}
       <div className="flex flex-col pl-2 xs:pl-4 md:pl-8 xl:pl-12 gap-1">
         {points.map((point, i) => (
-          <div className={`flex gap-2 ${alignment}`}>
+          <div key={i} className={`flex gap-2 ${alignment}`}>
             <Marker i={i} />
             <BlogParagraph indented={false} {...point} />
           </div>
