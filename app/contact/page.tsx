@@ -2,6 +2,7 @@
 import { FadeIn } from "@/components/custom/FadeIn";
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
+import { VideoPlayer } from "@/components/custom/VideoPlayer";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { Mail, MapPin, Smartphone } from "lucide-react"
 
@@ -13,7 +14,8 @@ export default function Contact() {
       <section className="bg-[#F3EEE8] p-2 xs:p-8 xs:px-10 md:px-20 w-full flex flex-col-reverse min-[400px]:flex-row  min-[400px]:gap-4 lg:gap-20 justify-center items-center">
         <StaggeredHeaders headers={["Contact Us"]} containerClass="text-3xl min-[400px] text-4xl sm:text-6xl lg:text-9xl font-bold" direction="left" />
         <div className="max-w-[200px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[600px]">
-          <img src="/contactpage/contactus.png" alt="" />
+          {/* <img src="/contactpage/contactus.png" alt="" /> */}
+          <VideoPlayer src="/animations/contactUs.mp4" className="size-full" />
         </div>
       </section>
       <section id="location" className="flex flex-col md:gap-4">
