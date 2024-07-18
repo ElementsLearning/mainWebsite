@@ -43,4 +43,9 @@ export type IndentedType = {
   indented: boolean
 }
 
-export type BlogContent = (ParagraphType | HeaderType | BulletType | ImageType) & IndentedType
+export type Editable = {
+  editable?: true
+  onEdit?: (edited: BlogContent) => void
+}
+
+export type BlogContent = (ParagraphType | HeaderType | BulletType | ImageType) & IndentedType & Editable

@@ -1,5 +1,6 @@
 export type Option = {
   title: string
+  key: string
   options: {
     name: string
     tailwind: string
@@ -10,6 +11,7 @@ export type Option = {
 export const paragraphOptions: Option[] = [
   {
     title: "Font Size",
+    key: "size",
     options: [
       {
         name: "X-Small",
@@ -36,6 +38,7 @@ export const paragraphOptions: Option[] = [
 
   {
     title: "Font Weight",
+    key: "weight",
     options: [
       {
         name: "Normal",
@@ -57,6 +60,7 @@ export const paragraphOptions: Option[] = [
 
   {
     title: "Font Style",
+    key: "style",
     options: [
       {
         name: "None",
@@ -69,6 +73,28 @@ export const paragraphOptions: Option[] = [
         value: "ITALIC"
       }
     ]
+  },
+
+  {
+    title: "Text Alignment",
+    key: "alignment",
+    options: [
+      {
+        name: "Left",
+        tailwind: "text-left",
+        value: "LEFT"
+      },
+      {
+        name: "Center",
+        tailwind: "text-center",
+        value: "CENTER"
+      },
+      {
+        name: "Right",
+        tailwind: "text-right",
+        value: "RIGHT"
+      }
+    ]
   }
 ]
 
@@ -76,6 +102,7 @@ export const paragraphOptions: Option[] = [
 export const headerOptions: Option[] = [
   {
     title: "Font Size",
+    key: "size",
     options: [
       {
         name: "Small",
@@ -102,6 +129,7 @@ export const headerOptions: Option[] = [
 
   {
     title: "Font Weight",
+    key: "weight",
     options: [
       {
         name: "None",
@@ -123,6 +151,7 @@ export const headerOptions: Option[] = [
 
   {
     title: "Font Style",
+    key: "style",
     options: [
       {
         name: "None",
@@ -135,12 +164,11 @@ export const headerOptions: Option[] = [
         value: "ITALIC"
       }
     ]
-  }
-]
+  },
 
-export const imageOptions: Option[] = [
   {
-    title: "Caption Alignment",
+    title: "Text Alignment",
+    key: "alignment",
     options: [
       {
         name: "Left",
