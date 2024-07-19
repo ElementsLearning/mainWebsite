@@ -1,6 +1,6 @@
 export type Option = {
   title: string
-  key: string
+  JSONkey: string
   options: {
     name: string
     tailwind: string
@@ -11,7 +11,7 @@ export type Option = {
 export const paragraphOptions: Option[] = [
   {
     title: "Font Size",
-    key: "size",
+    JSONkey: "size",
     options: [
       {
         name: "X-Small",
@@ -38,7 +38,7 @@ export const paragraphOptions: Option[] = [
 
   {
     title: "Font Weight",
-    key: "weight",
+    JSONkey: "weight",
     options: [
       {
         name: "Normal",
@@ -60,7 +60,7 @@ export const paragraphOptions: Option[] = [
 
   {
     title: "Font Style",
-    key: "style",
+    JSONkey: "style",
     options: [
       {
         name: "None",
@@ -77,7 +77,7 @@ export const paragraphOptions: Option[] = [
 
   {
     title: "Text Alignment",
-    key: "alignment",
+    JSONkey: "alignment",
     options: [
       {
         name: "Left",
@@ -102,7 +102,7 @@ export const paragraphOptions: Option[] = [
 export const headerOptions: Option[] = [
   {
     title: "Font Size",
-    key: "size",
+    JSONkey: "size",
     options: [
       {
         name: "Small",
@@ -129,7 +129,7 @@ export const headerOptions: Option[] = [
 
   {
     title: "Font Weight",
-    key: "weight",
+    JSONkey: "weight",
     options: [
       {
         name: "None",
@@ -151,7 +151,7 @@ export const headerOptions: Option[] = [
 
   {
     title: "Font Style",
-    key: "style",
+    JSONkey: "style",
     options: [
       {
         name: "None",
@@ -168,7 +168,7 @@ export const headerOptions: Option[] = [
 
   {
     title: "Text Alignment",
-    key: "alignment",
+    JSONkey: "alignment",
     options: [
       {
         name: "Left",

@@ -26,7 +26,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, type, ...props}) =
     }
     case "HEADER": {
       // @ts-ignore
-      return <BlogHeader {...props} />
+      return <BlogHeader editable onEdit={onEdit} {...props} />
     }
     case "BULLET": {
       // @ts-ignore
@@ -44,16 +44,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, type, ...props}) =
 
 export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
 
-  const testPara: ParagraphType & IndentedType = {
-    type: "PARAGRAPH",
-    alignment: "LEFT",
-    size: "BASE",
-    style: "NONE",
-    weight: "NORMAL",
-    indented: false,
-    text: "A big part of the problem, paradoxically, is a shortage of evidence. Since the dawn of time, several billion human (or humanlike) beings have lived, each contributing a little genetic variability to the total human stock. Out of this vast number, the whole of our understanding of human prehistory is based on the remains, often exceedingly fragmentary, of perhaps five thousand individuals. “You could fit it all into the back of a pickup truck if you didn’t mind how much you jumbled everything up,” Ian Tattersall, the bearded and friendly curator of anthropology at the American Museum of Natural History in New York, replied when I asked him the size of the total world archive of hominid and early human bones.",
-  }
-  const [blog, setBlog] = useState<Blog>({...blogToEdit, content: [testPara]})
+  const [blog, setBlog] = useState<Blog>({...blogToEdit})
   const { headerSrc, author, date, title, summary, content } = blog
 
 
