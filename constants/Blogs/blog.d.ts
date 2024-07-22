@@ -30,7 +30,13 @@ export type BulletType = {
   type: "BULLET"
   style: "DISCS" | "NONE" | "DOTS" | "NUMBERS" | "LETTERS"
   header?: HeaderType
-  points: ParagraphType[]
+  points: string[]
+  pointStyle: {
+    size: "BASE" | "XS" | "SMALL" | "LARGE"
+    weight: "NORMAL" | "BOLD" | "SEMIBOLD"
+    style: "NONE" | "ITALIC"
+    alignment: "LEFT" | "CENTER" | "RIGHT"
+  }
 }
 
 export type ImageType = {
@@ -46,6 +52,8 @@ export type IndentedType = {
 export type Editable = {
   editable?: true
   onEdit?: (edited: BlogContent) => void
+  moveUp?: (index?: number) => void
+  moveDown?: (index?: number) => void
 }
 
 export type BlogContent = (ParagraphType | HeaderType | BulletType | ImageType) & IndentedType & Editable

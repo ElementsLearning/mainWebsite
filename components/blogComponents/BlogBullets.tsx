@@ -2,7 +2,7 @@ import { BulletType, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
 import { BlogParagraph } from "./BlogParagraph"
 import { BlogHeader } from "./BlogHeader"
 
-export const BlogBullets: React.FC<BulletType & IndentedType> = ({header, points, indented=false, style}) => {
+export const BlogBullets: React.FC<BulletType & IndentedType> = ({header, points, pointStyle, indented=false, style}) => {
 
   const alignment = style === "NUMBERS" || style === "LETTERS" ? "items-center" : "items-start"
 
@@ -47,7 +47,7 @@ export const BlogBullets: React.FC<BulletType & IndentedType> = ({header, points
         {points.map((point, i) => (
           <div key={i} className={`flex gap-2 ${alignment}`}>
             <Marker i={i} />
-            <BlogParagraph indented={false} {...point} />
+            <BlogParagraph type={"PARAGRAPH"} indented={false} {...pointStyle} text={point} />
           </div>
         ))}
       </div>

@@ -1,8 +1,8 @@
 "use client"
 
 import { defaultBlog } from "@/constants/Blogs/allBlogs"
-import { Blog, BlogContent, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
-import { useState } from "react"
+import { Blog, BlogContent, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
+import { useCallback, useState } from "react"
 import { BlogBullets } from "@/components/blogComponents/BlogBullets"
 import { BlogHeader } from "@/components/blogComponents/BlogHeader"
 import { BlogImage } from "@/components/blogComponents/BlogImage"
@@ -13,20 +13,19 @@ type EditBlogProps = {
   blogToEdit?: Blog
 }
 
-type BlogComponentProps = {
+type BlogComponentProps = Editable & {
   type: string
-  onEdit: (edited: BlogContent) => void
 }
 
-const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, type, ...props}) => {
+const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, type, ...props}) => {
   switch (type) {
     case "PARAGRAPH": {
       // @ts-ignore
-      return <BlogParagraph editable onEdit={onEdit} {...props} />
+      return <BlogParagraph editable moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
     }
     case "HEADER": {
       // @ts-ignore
-      return <BlogHeader editable onEdit={onEdit} {...props} />
+      return <BlogHeader editable moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
     }
     case "BULLET": {
       // @ts-ignore
@@ -47,6 +46,26 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
   const [blog, setBlog] = useState<Blog>({...blogToEdit})
   const { headerSrc, author, date, title, summary, content } = blog
 
+  const moveUp = useCallback((index: number) => {
+    if (index === 0) return;
+    
+    const newContent: BlogContent[] = [...blog.content];
+    [newContent[index - 1], newContent[index]] = [newContent[index], newContent[index - 1]]
+
+    setBlog(b => ({...b, content: newContent}))
+
+  }, [blog])
+
+  const moveDown = useCallback((index: number) => {
+    if (index === blog.content.length - 1) return;
+
+    const newContent: BlogContent[] = [...blog.content];
+    [newContent[index + 1], newContent[index]] = [newContent[index], newContent[index + 1]]
+
+    setBlog(b => ({...b, content: newContent}))
+
+  }, [blog])
+
 
   return (
     <div className="flex flex-col gap-2">
@@ -65,7 +84,8 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         {content?.map(({type, ...props}, i) => <BlogComponent key={i} type={type} {...props} 
         onEdit={(edited: BlogContent) => {
           setBlog({...blog, content: [...blog.content.slice(0, i), edited, ...blog.content.slice(i+1)]})
-        }} />)}
+        }} moveUp={() => moveUp(i)} moveDown={() => moveDown(i)}
+        />)}
       </div>
     </div>
   )

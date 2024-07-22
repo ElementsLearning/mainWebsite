@@ -4,17 +4,24 @@ import { getTailwind } from "@/lib/utils"
 import { Card } from "../ui/card"
 import { Textarea } from "../ui/textarea"
 import { BlogOption } from "./BlogOption"
-import { useState } from "react"
-import { CrossCircledIcon, Pencil2Icon } from "@radix-ui/react-icons"
+import { useEffect, useState } from "react"
+import { ArrowDownIcon, ArrowUpIcon, ChevronRightIcon, CrossCircledIcon, Pencil2Icon } from "@radix-ui/react-icons"
+import { Button } from "../ui/button"
 
-export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = ({size, weight, style, text, alignment, indented, editable=false, onEdit=()=>{}}) => {
+export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = ({size, weight, style, text, alignment, indented, 
+  editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}}) => {
   
   const styleClassName = getTailwind(paragraphOptions, "Font Style", style)
   const weightClassName = getTailwind(paragraphOptions, "Font Weight", weight)
   const sizeClassName = getTailwind(paragraphOptions, "Font Size", size)
   const alignmentClassName = getTailwind(paragraphOptions, "Text Alignment", alignment)
 
-  const [opened, setOpened] = useState(false) 
+  const [opened, setOpened] = useState(false)
+  const [textAreaContent, setTextAreaContent] = useState(text)
+
+  useEffect(() => {
+    setTextAreaContent(text)
+  }, [text])
 
   const current: ParagraphType & IndentedType = {
     type: "PARAGRAPH",
@@ -27,24 +34,39 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
   }
 
   return (
-    <div className="relative">
+    <div className="relative group">
       {editable && 
-      <div className="absolute p-1 bg-neutral-50 shadow-md z-10 rounded-md translate-x-1/2 -translate-y-1/2 top-0 right-0" onClick={() => setOpened(!opened)}>
+      <div className="absolute p-1 bg-neutral-50 shadow-md z-10 rounded-md translate-x-1/2 -translate-y-1/2 top-0 right-0" onClick={() => {setOpened(!opened); onEdit({...current, text: textAreaContent})}}>
         {opened ? <CrossCircledIcon className="size-6" /> : <Pencil2Icon className="size-6" />}
       </div>}
       {editable ?
       <>
-      <Card className={`overflow-hidden border-0 flex p-0 justify-between items-center absolute h-0 w-full transition-all duration-200 top-0 -translate-y-full ${opened ? "p-4 h-32 border-2" : "p-0 border-0 h-0"}`} >
-        <p className="text-3xl text-light-black">Paragraph</p>
-        <div className="flex gap-4 items-center">
-          {paragraphOptions.map(option => 
-          <BlogOption key={option.JSONkey} 
-          {...option} 
-          onChange={(value) => onEdit({...current, [option.JSONkey]: value})}
-          />)}
-        </div>
-      </Card>
-      <Textarea value={text} onChange={(e) => onEdit({...current, text: e.target.value})} className={`h-48 ${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`} />
+      <div className={`overflow-hidden border-0 flex p-0 justify-between items-center absolute h-0 w-full transition-all duration-200 top-0 -translate-y-full ${opened ? "py-2 h-32" : "p-0 border-0 h-0"}`} >
+        <Card className="size-full flex justify-between items-center p-4">
+          <p className="text-3xl text-light-black">Paragraph</p>
+          <div className="flex gap-4 items-center">
+            {paragraphOptions.map(option => 
+            <BlogOption key={option.JSONkey} 
+            {...option} value={(current as unknown as Record<string, string>)[option.JSONkey]}
+            onChange={(value) => onEdit({...current, [option.JSONkey]: value})}
+            />)}
+          </div>
+        </Card>
+      </div>
+      <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300 group-hover:w-20 ${opened ? "w-20" : "w-0"}`} >
+        <Card className="size-full flex flex-col justify-between py-6 gap-2 items-center overflow-hidden text-neutral-400">
+          <Button onClick={() => moveUp()} size={"icon"} variant={"ghost"}>
+            <ArrowUpIcon className="size-6 hover:text-neutral-700" />
+          </Button>
+          <Button onClick={() => onEdit({...current, indented: !current.indented})} size={"icon"} variant={"ghost"}>
+            <ChevronRightIcon className={`size-6 hover:text-neutral-700 transition-transform duration-150 ${current.indented ? "rotate-180" : ""}`} />
+          </Button>
+          <Button onClick={() => moveDown()} size={"icon"} variant={"ghost"}>
+            <ArrowDownIcon className="size-6 hover:text-neutral-700" />
+          </Button>
+        </Card>
+      </div>
+      <Textarea value={textAreaContent} onChange={(e) => setTextAreaContent(e.target.value)} className={`h-48 ${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`} />
       </>:
       <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
         {text}

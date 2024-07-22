@@ -15,7 +15,7 @@ export const defaultBlog: Blog = {
 
 export const allBlogs: Blog[] = [
   dinosaurExtinction,
-  // sciencePopularizers,
+  sciencePopularizers,
   missingHumanLink,
   // solarSystem,
 ]
