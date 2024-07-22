@@ -7,6 +7,7 @@ import { goals } from "@/constants/goals";
 import { team } from "@/constants/team";
 import { GoalCard } from "./GoalCard";
 import { TeamCard } from "./TeamCard";
+import { VideoPlayer } from "@/components/custom/VideoPlayer";
 
 export default function About() {
   return (
@@ -14,8 +15,7 @@ export default function About() {
       <section className="bg-[#F3EEE8] p-2 xs:p-8 w-full flex flex-col-reverse min-[400px]:flex-row  min-[400px]:gap-4 lg:gap-20 justify-center items-center">
         <StaggeredHeaders headers={["About Us"]} containerClass="text-3xl min-[400px] text-4xl sm:text-6xl lg:text-9xl font-bold" direction="left" />
         <div className="max-w-[200px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[600px]">
-          {/* <VideoToImage videoSrc={"/aboutpage/aboutus.mp4"} imgSrc={"/aboutpage/aboutus.png"} className="w-full" /> */}
-          <img src="/aboutpage/aboutus.png" alt="" className="w-full" />
+          <VideoPlayer src="/animations/aboutUs.mp4" className="size-full" />
         </div>
       </section>
       <section id="prospects" className="relative w-full overflow-hidden">
@@ -40,7 +40,8 @@ export default function About() {
       <section id="team" className="bg-[#F3EEE8] px-4 py-6 sm:px-10 lg:py-10 lg:px-20 xl:py-16 xl:px-32 flex flex-col lg:flex-row gap-12 lg:gap-20 justify-center items-start">
         <div className="rounded-md flex flex-col md:flex-row lg:flex-col gap-12 xs:gap-8 md:gap-8 justify-end items-end">
           <div className="max-w-96">
-            <img src="/landingpage/services.png" alt="" />
+            <VideoPlayer src="/animations/team.mp4" className="size-full" />
+            {/* <img src="/landingpage/services.png" alt="" /> */}
           </div>
           
           <SlidingDiv direction="bottom" repeat={true} className="flex flex-col xl:gap-2 max-w-96 xl:text-right">

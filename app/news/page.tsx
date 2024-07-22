@@ -7,6 +7,7 @@ import { updates } from "@/constants/update";
 import { UpdateCard } from "./UpdateCard";
 import { NewsCard } from "./NewsCard";
 import { CarouselWithIndicators } from "@/components/custom/CarouselWithIndicators";
+import { VideoPlayer } from "@/components/custom/VideoPlayer";
 
 
 export default function News() {
@@ -17,7 +18,8 @@ export default function News() {
         <StaggeredHeaders headers={["News", "&", "Updates"]} containerClass="text-3xl min-[400px]:block hidden text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-bold" direction="left" />
         <StaggeredHeaders headers={["News & Updates"]} containerClass="text-3xl min-[400px]:hidden text-4xl sm:text-6xl lg:text-9xl font-bold" direction="left" />
         <div className="max-w-[200px] sm:max-w-[400px] md:max-w-[400px] lg:max-w-[600px]">
-          <img src="/newsandupdatespage/newsandupdates.png" alt="" />
+          <VideoPlayer src={"/animations/news.mp4"} className="size-full" />
+          {/* <img src="/newsandupdatespage/newsandupdates.png" alt="" /> */}
         </div>
       </section>
       <section className="flex flex-col p-4 md:px-8 lg:p-12 xl:p-20">

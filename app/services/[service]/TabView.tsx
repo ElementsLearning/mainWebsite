@@ -3,6 +3,7 @@
 import Link from "next/link"
 import { Section, Tab } from "../sections/sections"
 import { Footer } from "@/components/pages/Footer/Footer"
+import { VideoPlayer } from "@/components/custom/VideoPlayer"
 
 type TabHeaderProps = {
   tab: Tab
@@ -21,14 +22,15 @@ const TabHeader: React.FC<TabHeaderProps> = ({tab, isOpen, newLink}) => {
   )
 }
 
-export const TabView: React.FC<Section & {opened?: Tab}> = ({name, color, src, serviceName, tabs=[], content=<></>, opened}) => {
+export const TabView: React.FC<Section & {opened?: Tab}> = ({name, color, src, videoSrc, serviceName, tabs=[], content=<></>, opened}) => {
   
   return (
     <div className="flex flex-col w-full">
       <div className="flex flex-col p-4 md:p-8 lg:px-16 gap-6 lg:gap-12" style={{backgroundColor: color}}>
         <div className="flex w-full justify-between px-4 py-2 items-center border-b-2 border-light-black">
           <h1 className="font-bold text-4xl md:text-6xl lg:text-8xl">{name}</h1>
-          <img src={src} alt="" className="h-24 sm:h-32 lg:h-48"/>
+          {videoSrc ? <VideoPlayer src={videoSrc} className="h-24 sm:h-32 lg:h-48" />
+          : <img src={src} alt="" className="h-24 sm:h-32 lg:h-48"/>}
         </div>
         {tabs.length !== 0 &&
         <div className="flex gap-2 md:gap-4 justify-center flex-wrap">

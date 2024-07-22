@@ -1,5 +1,6 @@
 "use client"
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
+import { VideoPlayer } from "@/components/custom/VideoPlayer";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { services } from "@/constants/services";
 import Link from "next/link";
@@ -12,7 +13,8 @@ export default function Services() {
         <StaggeredHeaders headers={["What We", "Offer?"]} containerClass="text-2xl hidden min-[400px]:flex flex-col min-[400px]:text-4xl sm:text-6xl lg:text-9xl font-bold" direction="left" />
         <StaggeredHeaders headers={["What We Offer?"]} containerClass="min-[400px]:hidden text-3xl font-bold" direction="left" />
         <div className="max-w-[400px] sm:max-w-[600px]">
-          <img src="/whatweofferpage/whatweoffer.png" alt="" />
+          <VideoPlayer src="/animations/services.mp4" className="size-full" />
+          {/* <img src="/whatweofferpage/whatweoffer.png" alt="" /> */}
         </div>
       </section>
       <section className="w-full flex justify-center flex-wrap gap-4 p-4 xs:p-8 sm:p-12 lg:p-16 xl:p-20">

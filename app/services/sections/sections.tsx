@@ -22,6 +22,7 @@ export type Section = {
   serviceName: string
   color: string
   src: string
+  videoSrc?: string
   tabs?: Tab[]
   content?: React.ReactNode
 }
@@ -32,6 +33,7 @@ export const sections: Section[] =
     name: "Maths",
     serviceName: "maths",
     color: "#FBBA42",
+    videoSrc: "/animations/mathYellow.mp4",
     src: "/landingpage/maths.png",
     tabs: [
       {
