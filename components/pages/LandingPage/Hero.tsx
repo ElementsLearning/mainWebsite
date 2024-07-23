@@ -7,7 +7,6 @@ import Link from "next/link"
 
 export const Hero = () => {
 
-  connectMongo()
   return (
     <>
       <div className="py-10 xs:py-16 sm:py-24 md:max-w-lg flex w-full flex-col gap-4 lg:gap-8">
