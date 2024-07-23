@@ -7,9 +7,10 @@ import { BlogOption } from "./BlogOption"
 import { useEffect, useState } from "react"
 import { ArrowDownIcon, ArrowUpIcon, ChevronRightIcon, CrossCircledIcon, Pencil2Icon } from "@radix-ui/react-icons"
 import { Button } from "../ui/button"
+import { XIcon } from "lucide-react"
 
 export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = ({size, weight, style, text, alignment, indented, 
-  editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}}) => {
+  editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}, deleteComponent=()=>{}}) => {
   
   const styleClassName = getTailwind(paragraphOptions, "Font Style", style)
   const weightClassName = getTailwind(paragraphOptions, "Font Weight", weight)
@@ -43,7 +44,12 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
       <>
       <div className={`overflow-hidden border-0 flex p-0 justify-between items-center absolute h-0 w-full transition-all duration-200 top-0 -translate-y-full ${opened ? "py-2 h-32" : "p-0 border-0 h-0"}`} >
         <Card className="size-full flex justify-between items-center p-4">
-          <p className="text-3xl text-light-black">Paragraph</p>
+          <div className="flex gap-2">
+            <Button size={"icon"} variant={"ghost"} onClick={() => deleteComponent()}>
+              <XIcon className="size-4"/>
+            </Button>
+            <p className="text-3xl text-light-black">Paragraph</p>
+          </div>
           <div className="flex gap-4 items-center">
             {paragraphOptions.map(option => 
             <BlogOption key={option.JSONkey} 

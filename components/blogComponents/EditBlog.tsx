@@ -19,15 +19,15 @@ type BlogComponentProps = Editable & {
   type: string
 }
 
-const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, type, ...props}) => {
+const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, deleteComponent, type, ...props}) => {
   switch (type) {
     case "PARAGRAPH": {
       // @ts-ignore
-      return <BlogParagraph editable moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
+      return <BlogParagraph editable deleteComponent={deleteComponent} moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
     }
     case "HEADER": {
       // @ts-ignore
-      return <BlogHeader editable moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
+      return <BlogHeader editable deleteComponent={deleteComponent} moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
     }
     case "BULLET": {
       // @ts-ignore
@@ -68,6 +68,12 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
 
   }, [blog])
 
+  const deleteComponent = useCallback((index: number) => {
+    const newContent: BlogContent[] = [...blog.content];
+    newContent.splice(index, 1);
+    setBlog(b => ({...b, content: newContent}))
+  }, [blog])
+
   const onAdd = (comp: string) => {
     switch (comp) {
       case "PARAGRAPH": {
@@ -105,7 +111,7 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         {content?.map(({type, ...props}, i) => <BlogComponent key={i} type={type} {...props} 
         onEdit={(edited: BlogContent) => {
           setBlog({...blog, content: [...blog.content.slice(0, i), edited, ...blog.content.slice(i+1)]})
-        }} moveUp={() => moveUp(i)} moveDown={() => moveDown(i)}
+        }} moveUp={() => moveUp(i)} moveDown={() => moveDown(i)} deleteComponent={() => deleteComponent(i)}
         />)}
         <NewComponentButton onAdd={onAdd} />
       </div>

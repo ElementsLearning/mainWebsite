@@ -54,6 +54,7 @@ export type Editable = {
   onEdit?: (edited: BlogContent) => void
   moveUp?: (index?: number) => void
   moveDown?: (index?: number) => void
+  deleteComponent?: (index?: number) => void
 }
 
 export type BlogContent = (ParagraphType | HeaderType | BulletType | ImageType) & IndentedType & Editable

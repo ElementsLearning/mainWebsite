@@ -7,9 +7,10 @@ import { Card } from "../ui/card"
 import { BlogOption } from "./BlogOption"
 import { Textarea } from "../ui/textarea"
 import { Button } from "../ui/button"
+import { XIcon } from "lucide-react"
 
 export const BlogHeader: React.FC<HeaderType & IndentedType & Editable> = ({size, weight, style, alignment, text, indented, 
-  editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}}) => {
+  editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}, deleteComponent=()=>{}}) => {
   
   const styleClassName = getTailwind(headerOptions, "Font Style", style)
   const weightClassName = getTailwind(headerOptions, "Font Weight", weight)
@@ -43,7 +44,12 @@ export const BlogHeader: React.FC<HeaderType & IndentedType & Editable> = ({size
       <>
       <div className={`overflow-hidden border-0 flex p-0 justify-between items-center absolute h-0 w-full transition-all duration-200 top-0 -translate-y-full ${opened ? "py-2 h-32" : "p-0 border-0 h-0"}`} >
         <Card className="size-full flex justify-between items-center p-4">
-          <p className="text-3xl text-light-black">Header</p>
+          <div className="flex gap-2">
+            <Button size={"icon"} variant={"ghost"} onClick={() => deleteComponent()}>
+              <XIcon className="size-4"/>
+            </Button>
+            <p className="text-3xl text-light-black">Paragraph</p>
+          </div>
           <div className="flex gap-4 items-center">
             {headerOptions.map(option => 
             <BlogOption key={option.JSONkey} 
