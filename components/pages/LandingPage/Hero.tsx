@@ -1,10 +1,13 @@
 import { IconButton } from "@/components/custom/IconButton"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders"
+import connectMongo from "@/lib/connectMongo"
 import { ArrowRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 
 export const Hero = () => {
+
+  connectMongo()
   return (
     <>
       <div className="py-10 xs:py-16 sm:py-24 md:max-w-lg flex w-full flex-col gap-4 lg:gap-8">

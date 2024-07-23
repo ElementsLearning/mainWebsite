@@ -60,12 +60,12 @@ export const sections: Section[] =
         tabName: "manipulatives",
         content: <MathsManipulativesContent />
       },
-      // {
-      //   name: "Assessments",
-      //   src: "/whatweofferpage/maths/assessments.png",
-      //   tabName: "assessments",
-      //   content: <AssessmentsContent />
-      // },
+      {
+        name: "Assessments",
+        src: "/whatweofferpage/maths/assessments.png",
+        tabName: "assessments",
+        content: <AssessmentsContent />
+      },
     ],
   },
   {
