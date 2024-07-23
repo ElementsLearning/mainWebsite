@@ -1,4 +1,4 @@
-import { Blog } from "./blog";
+import { Blog, HeaderType, ParagraphType } from "./blog";
 import { dinosaurExtinction } from "./dinosaurExtinction";
 import { missingHumanLink } from "./missingHumanLink";
 import { sciencePopularizers } from "./sciencePopularizers";
@@ -13,6 +13,23 @@ export const defaultBlog: Blog = {
   content: [],
 }
 
+export const defaultParagraph: ParagraphType = {
+  type: "PARAGRAPH",
+  alignment: "LEFT",
+  text: "",
+  size: "BASE",
+  weight: "NORMAL",
+  style: "NONE",
+}
+
+export const defaultHeader: HeaderType = {
+  type: "HEADER",
+  alignment: "LEFT",
+  text: "",
+  size: "BASE",
+  weight: "BOLD",
+  style: "NONE",
+}
 export const allBlogs: Blog[] = [
   dinosaurExtinction,
   sciencePopularizers,

@@ -1,6 +1,6 @@
 "use client"
 
-import { defaultBlog } from "@/constants/Blogs/allBlogs"
+import { defaultBlog, defaultHeader, defaultParagraph } from "@/constants/Blogs/allBlogs"
 import { Blog, BlogContent, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
 import { useCallback, useState } from "react"
 import { BlogBullets } from "@/components/blogComponents/BlogBullets"
@@ -8,6 +8,8 @@ import { BlogHeader } from "@/components/blogComponents/BlogHeader"
 import { BlogImage } from "@/components/blogComponents/BlogImage"
 import { BlogParagraph } from "@/components/blogComponents/BlogParagraph"
 import { Input } from "../ui/input"
+import { NewComponentButton } from "./NewComponentButton"
+import { deepCopy } from "@/lib/utils"
 
 type EditBlogProps = {
   blogToEdit?: Blog
@@ -66,6 +68,25 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
 
   }, [blog])
 
+  const onAdd = (comp: string) => {
+    switch (comp) {
+      case "PARAGRAPH": {
+        setBlog(b => ({...b, content: [...b.content, deepCopy({...defaultParagraph, indented: false})]}))
+        break
+      }
+      case "HEADER": {
+        setBlog(b => ({...b, content: [...b.content, deepCopy({...defaultHeader, indented: false})]}))
+        break
+      }
+      case "BULLET": {
+      }
+      case "IMAGE": {
+      }
+      default: {
+      }
+    }
+  }
+
 
   return (
     <div className="flex flex-col gap-2">
@@ -86,6 +107,7 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
           setBlog({...blog, content: [...blog.content.slice(0, i), edited, ...blog.content.slice(i+1)]})
         }} moveUp={() => moveUp(i)} moveDown={() => moveDown(i)}
         />)}
+        <NewComponentButton onAdd={onAdd} />
       </div>
     </div>
   )
