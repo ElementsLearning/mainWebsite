@@ -37,7 +37,7 @@ const PuzzlePiece: React.FC<PieceProps> = ({letter, header, meaning, color, show
             </p>
           </div>
         </div>
-        <div className='size-full min-[400px]:group-hover:flex flipped-content-anti hidden flex-col justify-center items-center gap-2 leading-none text-[8px] md:text-[11px] lg:text-sm xl:text-lg px-5 drop-shadow-xl'>
+        <div className='size-full min-[400px]:group-hover:flex flipped-content-anti hidden flex-col justify-center items-center gap-2 leading-none text-[8px] md:text-[11px] lg:text-sm xl:text-base px-6 drop-shadow-xl'>
           {content}
         </div>
       </div>
