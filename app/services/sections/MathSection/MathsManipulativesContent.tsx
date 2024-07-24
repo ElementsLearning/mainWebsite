@@ -1,6 +1,8 @@
 import { BulletList } from "@/components/custom/BulletList"
+import { CarouselSingle } from "@/components/custom/CarouselSingle"
 import { CustomAccordion } from "@/components/custom/CustomAccordion"
 import { FadeIn } from "@/components/custom/FadeIn"
+import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
 import { ManipulativeCard } from "@/components/custom/ManipulativeCard"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { manipulatives } from "@/constants/MathsManipulativeContent"
@@ -39,8 +41,19 @@ export const MathsManipulativesContent = () => {
             content: 
             <div className="py-2 xs:py-4 md:py-6 lg:py-8">
               <div className="flex flex-col sm:flex-row gap-2">
-                <SlidingDiv direction={"top"} className="sm:flex-[2_0_0] aspect-[3/4] bg-neutral-400">
-                  <img src="/media/WhatsApp Image 2024-04-01 at 14.31.45_b695ae6f.jpg" alt="" className="h-full" />
+              <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-square bg-neutral-400">
+                <CarouselSingle containerClass={"size-full"} items={[
+                      <img key={1} src="/popularmath/1.jpg" className="size-full" />, 
+                      <img key={2} src="/popularmath/2.jpg" className="size-full" />, 
+                      <img key={3} src="/popularmath/3.jpg" className="size-full" />, 
+                      <img key={4} src="/popularmath/4.jpg" className="size-full" />, 
+                      <img key={5} src="/popularmath/5.jpg" className="size-full" />, 
+                  ]}
+                  nextButton={
+                    <div className="size-10 lg:size-16 pr-2 xs:pr-0">
+                      <HexagonPlayButton outerColor={"#FCBA42"} innerColor={"#FFFFFF"}/>
+                    </div>
+                  } />
                 </SlidingDiv>
                 <SlidingDiv direction={"right"} className="flex-[3_0_0] flex flex-col sm:px-4 md:px-8 gap-4 lg:gap-6 xl:gap-8 text-xs sm:text-sm md:text-base xl:text-lg">
                   <p>{`EL's activity booklets are essential tools for educators and parents looking to enhance students' math learning. Designed to complement our math manipulatives, each booklet features over 50 activities tailored to a specific tool. These resources inspire curiosity, foster creativity, and develop essential mathematical skills, encouraging meaningful exploration both in classrooms and at home.`}</p>

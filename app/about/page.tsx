@@ -1,13 +1,13 @@
 "use client"
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
+import { VideoPlayer } from "@/components/custom/VideoPlayer";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { goals } from "@/constants/goals";
 import { team } from "@/constants/team";
 import { GoalCard } from "./GoalCard";
 import { TeamCard } from "./TeamCard";
-import { VideoPlayer } from "@/components/custom/VideoPlayer";
 
 export default function About() {
   return (
@@ -58,7 +58,7 @@ export default function About() {
       <section className="flex flex-col gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-20">
         <h3 className="px-4  text-3xl min-[900px]:text-5xl text-center font-bold uppercase">Our Partners</h3>
         <div className="flex gap-4 sm:gap-8 md:gap-12 xl:gap-20 justify-center">
-          <img src="/partners/nust.jpeg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
+          <img src="/partners/NustLogo.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
           <img src="/partners/cef.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
         </div>
       </section>
