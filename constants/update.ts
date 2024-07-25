@@ -6,6 +6,11 @@ export type Update = {
 
 export const updates: Update[] = [
   {
+    src: "/News&Updates/Updates/VistLab.png",
+    title: "Visit to our Math Lab ",
+    content: "We recently had the pleasure of visiting our Math Lab at APS&C in DCI, and it was an engaging and enlightening experience for the students. The interactive environment captivated their interest, turning complex mathematical concepts into fun and understandable lessons. Through hands-on activities and practical demonstrations, students were able to explore math in a way that sparked their curiosity and enthusiasm",
+  },
+  {
     src: "/News&Updates/Updates/MOUSigningSilverOaks.JPG",
     title: "MOU Signing Silver Oaks",
     content: "Elements Learning and Silver Oaks Schools System had an MOU Signing Ceremony that marks the Establishment of 22 Math Labs and Teachers Training. It is a step toward academic excellence!",

@@ -26,7 +26,7 @@ export const MathLabEvents: Event[] = [
     name: "Math Lab",
     color: "#F8A6D6",
     innerColor: "#F46CBE",
-    src: "/drive/labs/9.JPG",
+    src: "/drive/labs/13.JPG",
     gallery: ["/drive/labs/13.JPG"]
   },
   {
