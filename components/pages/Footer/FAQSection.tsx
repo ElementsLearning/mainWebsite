@@ -1,4 +1,5 @@
 import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
+import { PlusIcon } from "lucide-react"
 import { useState } from "react"
 
 type FAQ = {
@@ -54,7 +55,10 @@ export const FAQSection = () => {
             <div className="size-10">
               <HexagonPlayButton outerColor="#FABB41" />
             </div>
-            <p className="flex items-end py-1 w-full border-b hover:border-white border-neutral-300">{faq.question}</p>
+            <div className="flex flex-1 gap-2 justify-between items-center border-b hover:border-white border-neutral-300">
+              <p className="flex items-end py-1 w-full">{faq.question}</p>
+              <PlusIcon className="size-6" />
+            </div>
           </div>
           )}
         </div>

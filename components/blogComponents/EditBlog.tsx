@@ -31,7 +31,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, 
     }
     case "BULLET": {
       // @ts-ignore
-      return <BlogBullets {...props} />
+      return <BlogBullets editable onEdit={onEdit} {...props} />
     }
     case "IMAGE": {
       // @ts-ignore
