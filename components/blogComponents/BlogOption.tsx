@@ -14,7 +14,7 @@ type BlogOptionProps = {
 
 export const BlogOption: React.FC<BlogOptionProps> = ({onChange, options, title, value}) => {
   return (
-    <div className="flex flex-col bg-neutral-50 min-w-48 gap-2 border rounded-sm justify-center p-2">
+    <div className="flex flex-col bg-neutral-50 min-w-32 xl:min-w-44 gap-2 border rounded-sm justify-center p-2">
       <p className="text-sm capitalize px-2">{title}</p>
       <Select value={value} onValueChange={onChange}>
         <SelectTrigger className="bg-white">
