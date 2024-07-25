@@ -4,6 +4,8 @@ import { BlogHeader } from "./BlogHeader"
 import { BlogBullets } from "./BlogBullets"
 import { BlogImage } from "./BlogImage"
 import { FadeIn } from "../custom/FadeIn"
+import { Calendar } from "lucide-react"
+import { PersonIcon } from "@radix-ui/react-icons"
 
 type BlogComponentProps = {
   type: string
@@ -42,14 +44,23 @@ export const BlogPage: React.FC<Blog> = ({title, headerSrc, content, author, dat
         <img src={headerSrc} alt="" className="w-full" />
       </div>
       }
-      <FadeIn threshold={0.01} className="flex flex-col gap-4 w-full p-4 xs:p-8 sm:p-12 lg:p-16 xl:px-32">
+      <FadeIn threshold={0.01} className="flex flex-col gap-4 w-full p-4 xs:p-10 sm:p-16 lg:p-20 xl:px-40">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-2">
             <h2 className="font-bold text-2xl md:text-3xl xl:text-5xl">{title}</h2>
-            <p className="text-base">{"By " + author}</p>
-            <p className="sm:hidden text-sm italic">{date}</p>
+            <div className="flex gap-1 items-center">
+              <PersonIcon className="size-4" />
+              <p className="text-base">{author}</p>
+            </div>
+            <div className="flex sm:hidden text-sm italic items-center gap-1">
+              <Calendar className="size-4" />
+              <p>{date}</p>
+            </div>
           </div>
-          <p className="hidden sm:block text-sm italic">{date}</p>
+          <div className="hidden sm:flex text-sm italic items-center gap-1">
+            <Calendar className="size-4" />
+            <p>{date}</p>
+          </div>
         </div>
         {content?.map(({type, ...props}, i) => <BlogComponent key={i} type={type} {...props} />)}
       </FadeIn>

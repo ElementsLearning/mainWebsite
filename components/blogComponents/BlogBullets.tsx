@@ -7,12 +7,12 @@ import { getTailwind } from "@/lib/utils"
 import { headerOptions, paragraphOptions } from "@/constants/Blogs/blogOptions"
 import { Card } from "../ui/card"
 import { Button } from "../ui/button"
-import { ChevronRight, XIcon } from "lucide-react"
+import { ArrowDownIcon, ArrowUpIcon, ChevronRight, ChevronRightIcon, XIcon } from "lucide-react"
 import { BlogOption } from "./BlogOption"
 import { useState } from "react"
 import { CrossCircledIcon, Pencil2Icon } from "@radix-ui/react-icons"
 
-export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({header, points, pointStyle, indented=false, style, editable=false, onEdit=()=>{}, deleteComponent=()=>{}}) => {
+export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({header, points, pointStyle, indented=false, style, editable=false, onEdit=()=>{}, deleteComponent=()=>{}, moveDown=()=>{}, moveUp=()=>{}}) => {
 
   const alignment = style === "NUMBERS" || style === "LETTERS" ? "items-center" : "items-start"
 
@@ -78,6 +78,19 @@ export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({hea
     <>
       {editable ? 
       <div className={`relative flex flex-col gap-1 ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
+        <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300  ${opened ? "w-20" : "w-0"}`} >
+          <Card className="size-full flex flex-col justify-center py-6 gap-4 border-0 group-hover:border items-center overflow-hidden text-neutral-400">
+            <Button onClick={() => moveUp()} size={"icon"} variant={"ghost"}>
+              <ArrowUpIcon className="size-6 hover:text-neutral-700" />
+            </Button>
+            <Button onClick={() => onEdit({...current, indented: !current.indented})} size={"icon"} variant={"ghost"}>
+              <ChevronRightIcon className={`size-6 hover:text-neutral-700 transition-transform duration-150 ${current.indented ? "rotate-180" : ""}`} />
+            </Button>
+            <Button onClick={() => moveDown()} size={"icon"} variant={"ghost"}>
+              <ArrowDownIcon className="size-6 hover:text-neutral-700" />
+            </Button>
+          </Card>
+        </div>
         <div className="absolute p-1 bg-neutral-50 shadow-md z-10 rounded-md translate-x-1/2 -translate-y-1/2 top-0 right-0" onClick={() => {setOpened(!opened)}}>
           {opened ? <CrossCircledIcon className="size-6" /> : <Pencil2Icon className="size-6" />}
         </div>
@@ -122,12 +135,14 @@ export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({hea
         </div>
         <div className="flex flex-col pl-2 xs:pl-4 md:pl-8 xl:pl-12 gap-1">
           {points.map((point, i) => (
-            <div key={i} className={`flex gap-2 ${alignment}`}>
+            <div key={i} className={`flex gap-2 ${alignment} relative group`}>
               <Marker i={i} />
               {/* <BlogParagraph type={"PARAGRAPH"} indented={false} {...pointStyle} text={point} /> */}
               <Input placeholder={`Point ${i+1}`} value={point} onChange={(e) => onEdit({...current, points: [...points.slice(0, i), e.target.value, ...points.slice(i+1)]})} className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName}`}/>
+              <Button onClick={() => onEdit({...current, points: [...points.slice(0, i), ...points.slice(i+1)]})} variant={"outline"} size={"icon"} className="absolute top-0 right-0 translate-x-full hidden group-hover:flex" ><XIcon className="size-4" /></Button>
             </div>
           ))}
+          <Button variant={"secondary"} onClick={() => onEdit({...current, points: [...points, ""]})}>New Point</Button>
         </div>
       </div>
       : 

@@ -11,22 +11,23 @@ export const AssessmentsContent = () => {
       <CustomAccordion containerClass={"w-full"} type="multiple"
       items={[
         {
-          title: "Teacher Assessments",
-          id: "Teacher Assessments",
-          content: 
-          
-          <div className="py-8 md:py-6 lg:p-8 flex md:flex-row gap-8 md:gap-4 flex-col">
-            {teacherAssessments.map((assessment, i) => <AssessmentCard key={i} {...assessment} index={i} />)}
-          </div>
-
-        },
-        {
           title: "Student Assessments",
           id: "Student Assessments",
           content: 
           <div className="flex flex-col flex-wrap sm:flex-row gap-4 py-2 xs:py-4 md:py-6 lg:py-8">
             {studentAssessments.map((assessment,i) => <AssessmentCard key={i} {...assessment} index={i} />)}
           </div>
+        },
+        {
+          title: "Teacher Assessments",
+          id: "Teacher Assessments",
+          disabled: true,
+          content: 
+          
+          <div className="py-8 md:py-6 lg:p-8 flex md:flex-row gap-8 md:gap-4 flex-col">
+            {teacherAssessments.map((assessment, i) => <AssessmentCard key={i} {...assessment} index={i} />)}
+          </div>
+
         },
       ]}
       />

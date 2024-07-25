@@ -43,6 +43,7 @@ export type ImageType = {
   type: "IMAGE"
   caption?: ParagraphType
   src: string
+  imgData?: string
 }
 
 export type IndentedType = {
