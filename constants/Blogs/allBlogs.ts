@@ -1,4 +1,4 @@
-import { Blog, HeaderType, ParagraphType } from "./blog";
+import { Blog, BulletType, HeaderType, ParagraphType } from "./blog";
 import { dinosaurExtinction } from "./dinosaurExtinction";
 import { missingHumanLink } from "./missingHumanLink";
 import { sciencePopularizers } from "./sciencePopularizers";
@@ -16,7 +16,7 @@ export const defaultBlog: Blog = {
 export const defaultParagraph: ParagraphType = {
   type: "PARAGRAPH",
   alignment: "LEFT",
-  text: "",
+  text: "This is a paragraph",
   size: "BASE",
   weight: "NORMAL",
   style: "NONE",
@@ -25,11 +25,24 @@ export const defaultParagraph: ParagraphType = {
 export const defaultHeader: HeaderType = {
   type: "HEADER",
   alignment: "LEFT",
-  text: "",
+  text: "This is a header",
   size: "BASE",
   weight: "BOLD",
   style: "NONE",
 }
+
+export const defaultBullets: BulletType = {
+  type: "BULLET",
+  pointStyle: {
+    alignment: "LEFT",
+    size: "BASE",
+    weight: "NORMAL",
+    style: "NONE",
+  },
+  style: "DISCS",
+  points: [],
+}
+
 export const allBlogs: Blog[] = [
   dinosaurExtinction,
   sciencePopularizers,

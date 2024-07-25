@@ -48,7 +48,7 @@ export const BlogHeader: React.FC<HeaderType & IndentedType & Editable> = ({size
             <Button size={"icon"} variant={"ghost"} onClick={() => deleteComponent()}>
               <XIcon className="size-4"/>
             </Button>
-            <p className="text-3xl text-light-black">Paragraph</p>
+            <p className="text-3xl text-light-black">Header</p>
           </div>
           <div className="flex gap-4 items-center">
             {headerOptions.map(option => 

@@ -1,6 +1,6 @@
 "use client"
 
-import { defaultBlog, defaultHeader, defaultParagraph } from "@/constants/Blogs/allBlogs"
+import { defaultBlog, defaultBullets, defaultHeader, defaultParagraph } from "@/constants/Blogs/allBlogs"
 import { Blog, BlogContent, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
 import { useCallback, useState } from "react"
 import { BlogBullets } from "@/components/blogComponents/BlogBullets"
@@ -31,7 +31,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, 
     }
     case "BULLET": {
       // @ts-ignore
-      return <BlogBullets editable onEdit={onEdit} {...props} />
+      return <BlogBullets editable deleteComponent={deleteComponent} moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
     }
     case "IMAGE": {
       // @ts-ignore
@@ -85,6 +85,8 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         break
       }
       case "BULLET": {
+        setBlog(b => ({...b, content: [...b.content, deepCopy({...defaultBullets, indented: false})]}))
+        break
       }
       case "IMAGE": {
       }
