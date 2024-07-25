@@ -1,16 +1,16 @@
 "use client"
+import { MultiCarousel } from "@/components/custom/MultiCarousel";
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
+import { Footer } from "@/components/pages/Footer/Footer";
 import { Hero } from "@/components/pages/LandingPage/Hero";
 import { OurJourney } from "@/components/pages/LandingPage/OurJourney";
 import { OurJourneyMobile } from "@/components/pages/LandingPage/OurJourneyMobile";
-import { PuzzlePieces } from "@/components/pages/LandingPage/PuzzlePieces";
 import { Pillars } from "@/components/pages/LandingPage/Pillars";
-import { WhatWeOffer } from "@/components/pages/LandingPage/WhatWeOffer";
+import { PuzzlePieces } from "@/components/pages/LandingPage/PuzzlePieces";
 import { Stats } from "@/components/pages/LandingPage/Stats";
-import { MultiCarousel } from "@/components/custom/MultiCarousel";
-import { LandingPageEvents } from "@/constants/LandingPageEvents";
 import { Testimonials } from "@/components/pages/LandingPage/Testimonials";
-import { Footer } from "@/components/pages/Footer/Footer";
+import { WhatWeOffer } from "@/components/pages/LandingPage/WhatWeOffer";
+import { LandingPageEvents } from "@/constants/LandingPageEvents";
 
 export default function Home() {
   return (
@@ -41,7 +41,7 @@ export default function Home() {
 
        <section className="flex gap-2 md:gap-8 lg:px-32 xl:px-40 md:p-10 p-4 xs:p-6 items-center flex-col md:flex-row">
         <SlidingDiv direction="left" px={50} className="w-full md:w-auto md:h-48 aspect-video bg-neutral-200 rounded-lg overflow-hidden">
-          <img src="/video/DSC_1434.JPG" alt="" className="object-cover" />
+        <iframe className="h-48 w-[350px]" src="https://www.youtube.com/embed/5Ipiy4HV2nQ?si=8VwXHvmwCTF499Cv" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
         </SlidingDiv>
         <SlidingDiv direction="right" px={50} className="flex-1">
           <p className="text-xs xs:text-sm sm:text-base">{"At Elements Learning, we are on a mission to eliminate students' anxiety about math and studies by revolutionizing how they learn. Our innovative Maths Lab, hands-on activities, and engaging manipulatives transform abstract concepts into tangible experiences. By making learning interactive and fun, we empower students to approach their education with confidence and enthusiasm, turning challenges into exciting opportunities for growth."}</p>

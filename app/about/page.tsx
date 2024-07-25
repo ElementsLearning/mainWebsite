@@ -62,6 +62,16 @@ export default function About() {
           <img src="/partners/cef.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-40" />
         </div>
       </section>
+      <section className="gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-2 w-full">
+        <h3 className="px-4  text-3xl min-[900px]:text-5xl text-center font-bold uppercase">Our Client</h3>
+        <div className="flex flex-wrap gap-4 sm:gap-8 md:gap-12 xl:gap-20 justify-center items-center">
+          <img src="/clients/sliveroaks.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
+          <img src="/clients/aps.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
+          <img src="/clients/fgel.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
+          <img src="/clients/Fde.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
+          <img src="/clients/read.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
+        </div>
+      </section>
       <Footer />
     </div>
   )
