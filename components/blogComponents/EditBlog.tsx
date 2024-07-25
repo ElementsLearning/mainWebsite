@@ -1,6 +1,6 @@
 "use client"
 
-import { defaultBlog, defaultBullets, defaultHeader, defaultParagraph } from "@/constants/Blogs/allBlogs"
+import { defaultBlog, defaultBullets, defaultHeader, defaultImage, defaultParagraph } from "@/constants/Blogs/allBlogs"
 import { Blog, BlogContent, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
 import { useCallback, useState } from "react"
 import { BlogBullets } from "@/components/blogComponents/BlogBullets"
@@ -10,6 +10,9 @@ import { BlogParagraph } from "@/components/blogComponents/BlogParagraph"
 import { Input } from "../ui/input"
 import { NewComponentButton } from "./NewComponentButton"
 import { deepCopy } from "@/lib/utils"
+import { ImageUploader } from "../custom/ImageUploader"
+import { Button } from "../ui/button"
+import { Content } from "next/font/google"
 
 type EditBlogProps = {
   blogToEdit?: Blog
@@ -35,12 +38,26 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, 
     }
     case "IMAGE": {
       // @ts-ignore
-      return <BlogImage {...props} />
+      return <BlogImage editable deleteComponent={deleteComponent} moveUp={moveUp} moveDown={moveDown} onEdit={onEdit} {...props} />
     }
     default: {
       return <p className="font-bold text-3xl text-red-500">Error in BLOG JSON</p>
     }
   }
+}
+
+const cleanBlog = (name: string, blog: Blog): string => {
+  const cleanedBlog = {...blog, content: blog.content.map(contentValue => {
+    if (contentValue.type === "IMAGE") {
+      return {
+        ...contentValue,
+        imgData: undefined,
+        src: `/blogs/${name}/${contentValue.src}`
+      }
+    } else return contentValue
+  })}
+
+  return `export const ${name} = ${JSON.stringify(cleanedBlog)}`
 }
 
 export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
@@ -89,20 +106,20 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         break
       }
       case "IMAGE": {
+        setBlog(b => ({...b, content: [...b.content, deepCopy({...defaultImage, indented: false})]}))
+        break
       }
       default: {
       }
     }
   }
 
+  const [headerData, setHeaderData] = useState("")
+  const [filename, setFileName] = useState("")
 
   return (
     <div className="flex flex-col gap-2">
-      {/* {headerSrc &&
-      <div className="relative max-h-[500px] overflow-hidden">
-        <img src={headerSrc} alt="" className="w-full" />
-      </div>
-      } */}
+      <ImageUploader onImageChange={(data, name) => {setBlog({...blog, headerSrc: name}); setHeaderData(data)}} />
       <div className="flex flex-col gap-4 w-full p-4 xs:p-8 sm:p-12 lg:p-16 xl:px-32">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-2 w-full">
@@ -116,6 +133,10 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         }} moveUp={() => moveUp(i)} moveDown={() => moveDown(i)} deleteComponent={() => deleteComponent(i)}
         />)}
         <NewComponentButton onAdd={onAdd} />
+      </div>
+      <div className="flex justify-end p-4 gap-4">
+        <Input placeholder="FileName" value={filename} onChange={(e) => setFileName(e.target.value)} className="max-w-lg" /> 
+        <Button disabled={filename === "" || filename.includes(" ")} onClick={() => navigator.clipboard.writeText(cleanBlog(filename, blog))}>Upload Blog</Button>
       </div>
     </div>
   )

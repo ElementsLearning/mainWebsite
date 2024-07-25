@@ -1,4 +1,4 @@
-import { Blog, BulletType, HeaderType, ParagraphType } from "./blog";
+import { Blog, BulletType, HeaderType, ImageType, ParagraphType } from "./blog";
 import { dinosaurExtinction } from "./dinosaurExtinction";
 import { missingHumanLink } from "./missingHumanLink";
 import { sciencePopularizers } from "./sciencePopularizers";
@@ -41,6 +41,11 @@ export const defaultBullets: BulletType = {
   },
   style: "DISCS",
   points: [],
+}
+
+export const defaultImage: ImageType = {
+  type: "IMAGE",
+  src: "",
 }
 
 export const allBlogs: Blog[] = [
