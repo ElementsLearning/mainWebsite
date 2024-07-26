@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import { useInView } from 'react-intersection-observer';
 
 interface VideoPlayerProps {
   className?: string;
@@ -7,6 +8,10 @@ interface VideoPlayerProps {
 
 export const VideoPlayer: React.FC<VideoPlayerProps> = ({ className, src }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const { ref, inView } = useInView({
+    threshold: 0.5, // Adjust this threshold as needed
+    triggerOnce: false,
+  });
 
   useEffect(() => {
     const videoElement = videoRef.current;
@@ -26,10 +31,24 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ className, src }) => {
     }
   }, []);
 
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (videoElement) {
+      if (inView) {
+        videoElement.currentTime = 0
+        videoElement.play();
+      } else {
+        videoElement.pause();
+      }
+    }
+  }, [inView]);
+
   return (
-    <video ref={videoRef} className={className} autoPlay muted>
-      <source src={src} type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
+    <div ref={ref} className={className}>
+      <video ref={videoRef} className={"size-full"} autoPlay muted>
+        <source src={src} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   );
 };
