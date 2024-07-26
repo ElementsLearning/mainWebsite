@@ -6,6 +6,7 @@ import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
 import { ManipulativeCard } from "@/components/custom/ManipulativeCard"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { manipulatives } from "@/constants/MathsManipulativeContent"
+import Marquee from "react-fast-marquee";
 
 export const MathsManipulativesContent = () => {
 
@@ -39,10 +40,10 @@ export const MathsManipulativesContent = () => {
             title: "Activity Booklets",
             id: "Activity Booklets",
             content: 
-            <div className="py-2 xs:py-4 md:py-6 lg:py-8">
+            <div className="flex flex-col gap-2 py-2 xs:py-4 md:py-6 lg:py-8">
               <div className="flex flex-col sm:flex-row gap-2">
               <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-square bg-neutral-400">
-                <CarouselSingle containerClass={"size-full"} items={[
+                <CarouselSingle containerClass={"size-full"} delay={6000} items={[
                       <img key={1} src="/popularmath/1.jpg" className="size-full" />, 
                       <img key={2} src="/popularmath/2.jpg" className="size-full" />, 
                       <img key={3} src="/popularmath/3.jpg" className="size-full" />, 
@@ -72,10 +73,27 @@ export const MathsManipulativesContent = () => {
                   </div>
                 </SlidingDiv>
               </div>
+              <Marquee>
+                <div className="size-64 mx-4 bg-neutral-800">
+                  Test
+                </div>
+                <div className="size-64 mx-4 bg-neutral-800">
+                  Test
+                </div>
+                <div className="size-64 mx-4 bg-neutral-800">
+                  Test
+                </div>
+                <div className="size-64 mx-4 bg-neutral-800">
+                  Test
+                </div>
+                <div className="size-64 mx-4 bg-neutral-800">
+                  Test
+                </div>
+              </Marquee>          
             </div>
           },
         ]}
-        />          
+        />
       </div>
     </FadeIn>
   )
