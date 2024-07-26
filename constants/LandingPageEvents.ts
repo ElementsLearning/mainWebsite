@@ -4,6 +4,10 @@ export type Event = {
   color: string
   src: string
   gallery: string[]
+  additional?: {
+    date: string
+    desc: string
+  }
 }
 
 export const LandingPageEvents = [
