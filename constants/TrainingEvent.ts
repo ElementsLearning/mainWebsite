@@ -5,15 +5,15 @@ export const TrainingEvents: Event[] = [
     name: "APS Training",
     innerColor: "#B1DA94",
     color: "#CFE8BE",
-    src: "/drive/APSTraining/aps (8).jpg",
+    src: "/drive/APSTraning/aps (8).jpg",
     gallery: [
-      "/drive/APSTraining/aps (2).jpg",
-      "/drive/APSTraining/aps (3).jpg",
-      "/drive/APSTraining/aps (4).jpg",
-      "/drive/APSTraining/aps (7).jpg",
-      "/drive/APSTraining/aps (5).jpg",
-      "/drive/APSTraining/aps (6).jpg",
-      "/drive/APSTraining/aps (1).jpg",
+      "/drive/APSTraning/aps (3).jpg",
+      "/drive/APSTraning/aps (2).jpg",
+      "/drive/APSTraning/aps (4).jpg",
+      "/drive/APSTraning/aps (7).jpg",
+      "/drive/APSTraning/aps (5).jpg",
+      "/drive/APSTraning/aps (6).jpg",
+      "/drive/APSTraning/aps (1).jpg",
     ]
   },
   {

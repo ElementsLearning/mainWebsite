@@ -4,7 +4,7 @@ import { SlidingDiv } from "@/components/custom/SlidingDiv";
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
 import { VideoPlayer } from "@/components/custom/VideoPlayer";
 import { Footer } from "@/components/pages/Footer/Footer";
-import { Mail, MapPin, Smartphone } from "lucide-react"
+import { Mail, MapPin, Smartphone } from "lucide-react";
 
 export default function Contact() {
   
@@ -43,21 +43,21 @@ export default function Contact() {
               <MapPin className="size-8 text-[#FBBB40]" /> 
               <div  className="flex flex-col gap-2">
                 <p className="text-lg lg:text-2xl font-bold">Address</p>
-                <p className="text-sm md:text-base">IAEC, NUST H-12 Islamabad</p>
+                <p className="text-sm md:text-base">MediaLab, IAEC, NUST H-12 Islamabad, 44000</p>
               </div>
             </div>
             <div className="flex gap-2 p-4 md:p-6 rounded-md bg-[#F3EEE8]">
               <Mail className="size-8 text-[#FBBB40]" /> 
               <div className="flex flex-col gap-2">
                 <p className="text-lg lg:text-2xl font-bold">Mail Us</p>
-                <p className="text-sm md:text-base">info@elements-learning.com</p>
+                <p className="text-sm md:text-base">support@elements-learning.com</p>
               </div>
             </div>
             <div className="flex gap-2 p-4 md:p-6 rounded-md bg-[#F3EEE8]">
               <Smartphone className="size-8 text-[#FBBB40]" />
               <div className="flex flex-col gap-2">
                 <p className="text-lg lg:text-2xl font-bold">Number</p>
-                <p className="text-sm md:text-base">+92 327 8698770</p>
+                <p className="text-sm md:text-base">+92 333 5549094</p>
               </div>
             </div>
           </SlidingDiv>
