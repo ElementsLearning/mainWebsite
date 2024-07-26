@@ -43,7 +43,7 @@ export default function Contact() {
               <MapPin className="size-8 text-[#FBBB40]" /> 
               <div  className="flex flex-col gap-2">
                 <p className="text-lg lg:text-2xl font-bold">Address</p>
-                <p className="text-sm md:text-base">MediaLab, IAEC, NUST H-12 Islamabad, 44000</p>
+                <p className="text-sm md:text-base">Media Lab, IAEC, NUST H-12 Islamabad, 44000</p>
               </div>
             </div>
             <div className="flex gap-2 p-4 md:p-6 rounded-md bg-[#F3EEE8]">
