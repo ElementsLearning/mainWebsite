@@ -1,6 +1,8 @@
+import { CarouselSingle } from "@/components/custom/CarouselSingle"
 import { ContentCard } from "@/components/custom/ContentCard"
 import { CustomAccordion } from "@/components/custom/CustomAccordion"
 import { FadeIn } from "@/components/custom/FadeIn"
+import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
 import { MultiCarousel } from "@/components/custom/MultiCarousel"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { MathLabEvents } from "@/constants/MathLabEvents"
@@ -39,7 +41,18 @@ export const MathsLabsContent = () => {
             <div className="py-2 xs:py-4 md:py-6 lg:py-8">
               <div className="flex flex-col sm:flex-row gap-2">
                 <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-[3/4] bg-neutral-400">
-                  <img src="/media/IMG-20240401-WA0010.jpg" alt="" className="h-full" />
+                  <CarouselSingle containerClass={"size-full"} items={[
+                        <img key={1} src="/MathLabCover/1.jpg" className="size-full" />, 
+                        <img key={2} src="/MathLabCover/2.jpg" className="size-full" />, 
+                        <img key={3} src="/MathLabCover/3.jpg" className="size-full" />, 
+                        <img key={4} src="/MathLabCover/4.jpg" className="size-full" />, 
+                        <img key={5} src="/MathLabCover/5.jpg" className="size-full" />, 
+                    ]}
+                    nextButton={
+                      <div className="size-10 lg:size-16 pr-2 xs:pr-0">
+                        <HexagonPlayButton outerColor={"#FCBA42"} innerColor={"#FFFFFF"}/>
+                      </div>
+                    } />
                 </SlidingDiv>
                 <SlidingDiv direction={"bottom"} className="flex-[3_0_0] flex flex-col  p-4 md:p-8 lg:p-10 xl:p-12 gap-4 lg:gap-6 xl:gap-8 text-xs sm:text-sm md:text-base xl:text-lg">
                   <h3 className="text-left ttext-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-[#FBBA41] font-bold">{`Our Math Lab Manuals serve as invaluable teacher's guides, meticulously designed to help educators utilize the tools and manipulatives included in our Math Lab packages.`}</h3>
