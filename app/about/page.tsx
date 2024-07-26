@@ -78,8 +78,8 @@ export default function About() {
           <div className="w-72 flex justify-center">
             <img src="/clients/Fde.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
           </div>
-          <div className="w-72 flex justify-center">
-            <img src="/clients/read.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
+          <div className="w-full flex justify-center">
+            <img src="/clients/read.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
           </div>
         </Marquee>
       </section>
