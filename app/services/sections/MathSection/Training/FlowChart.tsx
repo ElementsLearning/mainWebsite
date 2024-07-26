@@ -46,11 +46,11 @@ export const FlowChart = () => {
     <div className="flex flex-col gap-6">
       {flowchartSteps.map((step, i) =>
         <>
-        <SlidingDiv repeat px={150} direction={i % 2 === 0 ? "left" : "right"} className="p-6 text-lg shadow-md rounded-[20px]" style={{backgroundColor: step.color}}>
+        <SlidingDiv repeat px={150} direction={i % 2 === 0 ? "left" : "right"} className="p-6 text-lg shadow-md rounded-[20px]" key={i} style={{backgroundColor: step.color}}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, molestiae libero esse debitis necessitatibus aspernatur eligendi atque placeat quis totam et eaque enim vitae quibusdam, ducimus minima laborum voluptate eveniet repudiandae quidem, numquam accusantium quod? Quam excepturi sapiente placeat rerum, neque reiciendis consequatur magnam harum, modi id earum. Quaerat sapiente aspernatur placeat cum illum facere laboriosam corporis, soluta dignissimos adipisci necessitatibus velit, consectetur architecto! Reiciendis rerum quam cupiditate ea pariatur accusantium, laborum doloribus recusandae repudiandae in optio quae minus ad dolore, consequuntur deleniti hic fugit, sequi sed temporibus voluptas soluta modi voluptates. Error autem amet ratione laboriosam minima doloribus impedit.
         </SlidingDiv>
         {step.optionals?.map((optional, i) => 
-          <SlidingDiv repeat direction={i % 2 === 0 ? "left" : "right"} className="border-4 border-neutral-300 border-dashed p-6 rounded-md">
+          <SlidingDiv repeat direction={i % 2 === 0 ? "left" : "right"} key={i} className="border-4 border-neutral-300 border-dashed p-6 rounded-md">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis cumque officiis nihil temporibus ut sunt quaerat id eaque corporis qui? Nobis explicabo perspiciatis inventore aperiam necessitatibus accusantium commodi earum, eveniet ipsa ratione voluptas suscipit eaque soluta omnis vitae dicta illum autem eligendi nemo? Officia perferendis voluptatem facilis doloremque illum. Autem!
           </SlidingDiv>
         )}
