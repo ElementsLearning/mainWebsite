@@ -15,7 +15,7 @@ export const flowchartSteps: FlowChartStep[] = [
     corner: "br",
   },
   {
-    name: "Critical Fundamental Concepts",
+    name: "Critical Foundational Concepts",
     color: "#9FD5B5",
     corner: "tr",
     optionals: [

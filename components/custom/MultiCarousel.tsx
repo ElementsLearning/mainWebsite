@@ -99,10 +99,14 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
         <p className="text-xs xs:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold drop-shadow-md">
           {items[index].name}
         </p>
+        <div className="flex flex-col gap-2 text-light-black">
+          <p>Date</p>
+          <p>Additional Info</p>
+        </div>
       </div>
       <div className="relative z-10 h-1/2 sm:-translate-y-[8%]" style={{width: smallerSize}}>
         {items.map((item, i) => (
-          <div key={item.name} className={`absolute transition-all duration-700 bottom-0 ${i === index ? "h-full w-full" : "h-2/3 w-2/3 grayscale"}`} 
+          <div key={item.name} className={`absolute transition-all duration-700 bottom-0 ${i === index ? "h-full w-full" : "h-2/3 w-2/3 grayscale blur-[2px]"}`} 
           style={{backgroundColor: item.innerColor, transform: `${index > i ? `translateX(calc(${100*1/2}% + ${(index-i) * (smallerSize*(2/3) + gapSize)}px))` : `translateX(${(index-i) * (smallerSize*(2/3) + gapSize) }px)`}`}}
           onClick={() => (i === index) ? setOpened(true) : setIndex(i)}
           >
