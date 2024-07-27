@@ -9,11 +9,12 @@ type TabHeaderProps = {
   tab: Tab
   isOpen: boolean
   newLink: string
+  disabled: boolean
 }
 
-const TabHeader: React.FC<TabHeaderProps> = ({tab, isOpen, newLink}) => {
+const TabHeader: React.FC<TabHeaderProps> = ({tab, isOpen, newLink, disabled}) => {
   return (
-    <Link href={newLink} className={`xs:h-16 sm:h-24 md:h-32 flex-1 lg:h-40 xl:h-48 shadow-lg p-3 xs:p-4 lg:p-6 flex flex-col gap-2 items-center sm:items-start justify-center sm:justify-end transition-colors duration-300 ${isOpen ? "bg-white" : "bg-white/40 hover:bg-white/70"}`}>
+    <Link href={disabled ? "" : newLink} className={`xs:h-16 sm:h-24 md:h-32 flex-1 lg:h-40 xl:h-48 shadow-lg p-3 xs:p-4 lg:p-6 flex flex-col gap-2 items-center sm:items-start justify-center sm:justify-end transition-colors duration-300 ${disabled ? "bg-neutral-200 border border-neutral-500 text-neutral-500" : isOpen ? "bg-white" : "bg-white/40 hover:bg-white/70"}`}>
       <div className="hidden sm:flex h-3/5">
         <img src={tab.src} alt="" className="h-full"/>
       </div>
@@ -34,7 +35,7 @@ export const TabView: React.FC<Section & {opened?: Tab}> = ({name, color, src, v
         </div>
         {tabs.length !== 0 &&
         <div className="flex gap-2 md:gap-4 justify-center flex-wrap">
-            {tabs.map(tab => <TabHeader key={tab.tabName} tab={tab} newLink={`/services/${serviceName}/${tab.tabName}`} isOpen={opened?.tabName === tab.tabName} />)}
+            {tabs.map(tab => <TabHeader disabled={tab.disabled === true} key={tab.tabName} tab={tab} newLink={`/services/${serviceName}/${tab.tabName}`} isOpen={opened?.tabName === tab.tabName} />)}
         </div>}
       </div>
       {opened ? 

@@ -15,6 +15,7 @@ export type Tab = {
   src: string
   tabName: string
   content: React.ReactNode
+  disabled?: boolean
 }
 
 export type Section = {
@@ -64,6 +65,7 @@ export const sections: Section[] =
         name: "Assessments",
         src: "/whatweofferpage/maths/assessments.png",
         tabName: "assessments",
+        disabled: true,
         content: <AssessmentsContent />
       },
     ],
