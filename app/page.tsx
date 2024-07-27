@@ -9,6 +9,7 @@ import { Pillars } from "@/components/pages/LandingPage/Pillars";
 import { PuzzlePieces } from "@/components/pages/LandingPage/PuzzlePieces";
 import { Stats } from "@/components/pages/LandingPage/Stats";
 import { Testimonials } from "@/components/pages/LandingPage/Testimonials";
+import { VideoSection } from "@/components/pages/LandingPage/VideoSection";
 import { WhatWeOffer } from "@/components/pages/LandingPage/WhatWeOffer";
 import { LandingPageEvents } from "@/constants/LandingPageEvents";
 
@@ -39,13 +40,8 @@ export default function Home() {
         <WhatWeOffer />
       </section> 
 
-       <section className="flex gap-2 md:gap-8 lg:px-32 xl:px-40 md:p-10 p-4 xs:p-6 items-center flex-col md:flex-row">
-        <SlidingDiv direction="left" px={50} className="w-full md:w-auto md:h-48 aspect-video bg-neutral-200 rounded-lg overflow-hidden">
-        <iframe className="h-48 w-[350px]" src="https://www.youtube.com/embed/5Ipiy4HV2nQ?si=8VwXHvmwCTF499Cv" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-        </SlidingDiv>
-        <SlidingDiv direction="right" px={50} className="flex-1">
-          <p className="text-xs xs:text-sm sm:text-base">{"At Elements Learning, we are on a mission to eliminate students' anxiety about math and studies by revolutionizing how they learn. Our innovative Maths Lab, hands-on activities, and engaging manipulatives transform abstract concepts into tangible experiences. By making learning interactive and fun, we empower students to approach their education with confidence and enthusiasm, turning challenges into exciting opportunities for growth."}</p>
-        </SlidingDiv>
+      <section className="flex gap-2 md:gap-8 lg:px-32 xl:px-40 md:p-10 p-4 xs:p-6 items-center flex-col md:flex-row">
+        <VideoSection />  
       </section> 
 
       <section className="bg-[#F3EEE8] w-full grid grid-cols-2 gap-8 p-8 sm:flex xs:p-12 md:px-32 lg:px-48 md:gap-9 lg:gap-16 justify-between">
