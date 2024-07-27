@@ -7,7 +7,7 @@ export const FlowChart = () => {
     <>
     <div className="relative w-full flex flex-col md:flex-row justify-center sm:gap-2 md:h-[80vh]">
       <div className="absolute top-0 right-0 p-8 px-24 rounded-3xl rounded-tr-none bg-sky-30">
-        <h3 className="px-4 text-2xl min-[900px]:text-6xl text-center font-semibold capitalize">Our Training Pipeline</h3>
+        <h3 className=" text-3xl min-[900px]:text-5xl text-center font-semibold capitalize hidden md:flex">Our Training Pipeline</h3>
       </div>
       {flowchartSteps.map(({name, color, corner, optionals}, i) =>
         <>
