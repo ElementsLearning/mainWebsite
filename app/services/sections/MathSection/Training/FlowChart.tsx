@@ -6,9 +6,9 @@ export const FlowChart = () => {
   return (
     <>
     <div className="relative w-full flex flex-col md:flex-row justify-center sm:gap-2 md:h-[80vh]">
-      <div className="absolute top-0 right-0 p-8 px-24 rounded-3xl rounded-tr-none bg-sky-30">
-        <h3 className=" text-3xl min-[900px]:text-5xl text-center font-semibold capitalize hidden md:flex">Our Training Pipeline</h3>
-      </div>
+      {/* <div className="absolute top-0 right-0 p-8 px-32 rounded-3xl rounded-tr-none bg-sky-30">
+        <h3 className=" text-3xl min-[900px]:text-5xl xl:text-6xl text-center font-semibold capitalize hidden md:flex">Our Training Pipeline</h3>
+      </div> */}
       {flowchartSteps.map(({name, color, corner, optionals}, i) =>
         <>
           <SlidingDiv  direction={"top"} delay={i*0.3} className="flex md:flex-col justify-center">
@@ -43,10 +43,10 @@ export const FlowChart = () => {
         </>
       )}
     </div>
-    <div className="flex flex-col gap-6">
+    <div className="flex flex-col gap-6 text-sm sm:text-base md:text-lg xl:text-xl">
       {flowchartSteps.map((step, i) =>
         <>
-        <SlidingDiv repeat px={150} direction={i % 2 === 0 ? "left" : "right"} className="p-6 text-lg shadow-md rounded-[20px]" key={i} style={{backgroundColor: step.color}}>
+        <SlidingDiv repeat px={150} direction={i % 2 === 0 ? "left" : "right"} className="p-6 shadow-md rounded-[20px]" key={i} style={{backgroundColor: step.color}}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Saepe, molestiae libero esse debitis necessitatibus aspernatur eligendi atque placeat quis totam et eaque enim vitae quibusdam, ducimus minima laborum voluptate eveniet repudiandae quidem, numquam accusantium quod? Quam excepturi sapiente placeat rerum, neque reiciendis consequatur magnam harum, modi id earum. Quaerat sapiente aspernatur placeat cum illum facere laboriosam corporis, soluta dignissimos adipisci necessitatibus velit, consectetur architecto! Reiciendis rerum quam cupiditate ea pariatur accusantium, laborum doloribus recusandae repudiandae in optio quae minus ad dolore, consequuntur deleniti hic fugit, sequi sed temporibus voluptas soluta modi voluptates. Error autem amet ratione laboriosam minima doloribus impedit.
         </SlidingDiv>
         {step.optionals?.map((optional, i) => 
