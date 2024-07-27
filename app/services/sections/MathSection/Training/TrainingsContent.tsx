@@ -12,7 +12,7 @@ export const TrainingsContent = () => {
           <p>At Elements Learning, we believe that the changing face of mathematics demands a fresh approach to teaching, one that embraces innovation and fosters critical thinking skills in the mathematicians of tomorrow.</p>
           <p>{`Our comprehensive teacher's training program is the cornerstone of this evolution, aimed at upskilling Elementary and Middle School Mathematics Teachers.`}</p>
         </div>
-        <section className="p-4 sm:p-8 lg:p-12 bg-[#F3EEE8] flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-8">
+        <section className="p-4 sm:p-8 lg:p-12 bg-[#F3EEE8] flex flex-col gap-2 sm:gap-4 md:gap-6 lg:gap-8 overflow-hidden">
           {/* <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Training Journey</h3> */}
           <FlowChart />
         </section>
