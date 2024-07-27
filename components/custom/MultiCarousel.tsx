@@ -94,7 +94,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
         paddingLeft: size/8, 
         paddingTop: size/8, 
         paddingBottom: size/7, 
-        borderRadius: `${size/10}px ${size/10}px 0px ${size/10}px`
+        borderRadius: `${size/12}px ${size/12}px 0px ${size/12}px`
       }}>
         <p className="text-xs xs:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold drop-shadow-md">
           {items[index].name}
