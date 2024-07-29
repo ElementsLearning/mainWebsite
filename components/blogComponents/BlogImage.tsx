@@ -71,7 +71,7 @@ export const BlogImage: React.FC<ImageType & IndentedType & Editable> = ({src, c
         </Card>
       </div>
       
-      <ImageUploader onImageChange={(data, name) => onEdit({...current, src: name, imgData: data})} />
+      <ImageUploader onImageChange={(data, name) => onEdit({...current, src: name || "", imgData: data})} />
       <Input placeholder="Image Caption Here" value={caption?.text} onChange={(e) => onEdit({...current, caption: {...imageCaption, text: e.target.value}})}  className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName}`}/>
     </div>
     :
