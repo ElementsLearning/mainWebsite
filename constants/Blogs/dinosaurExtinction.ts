@@ -1,3 +1,5 @@
+import { Blog } from "./blog";
+
 export const dinosaurExtinction: Blog = {
   "id": "d5a91a10-3e9d-4893-818b-e99dc49d4a55",
   "author": " EL Knowledge Management Team ",
@@ -143,7 +145,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "Among exotic elements that come from space (some thirty thousand metric tons each year), there is the element IRIDIUM, which is a thousand times more abundant in space than in the Earth's crust. (it is thought, most of the iridium on Earth sank to the core when the planet was young).\nOver the following months Asaro and his colleague Helen Michel worked up to thirty hours at a stretch (“Once you started you couldn't stop,” Asaro explained) analyzing samples, always with the same results.\n",
+      "text": "Among exotic elements that come from space (some thirty thousand metric tons each year), there is the element IRIDIUM, which is a thousand times more abundant in space than in the Earth's crust. (it is thought, most of the iridium on Earth sank to the core when the planet was young).\nOver the following months Asaro and his colleague Helen Michel worked up to thirty hours at a stretch (“Once you started you couldn't stop,” Asaro explained) analyzing samples, always with the same results.",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -153,7 +155,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "Tests on other samples—from Denmark, Spain, France, New Zealand, Antarctica—showed that the \niridium deposit was worldwide and greatly elevated everywhere, sometimes by as much as five hundred times normal levels.Clearly something big and abrupt, and probably cataclysmic, had produced this arresting spike.\n",
+      "text": "Tests on other samples—from Denmark, Spain, France, New Zealand, Antarctica—showed that the \niridium deposit was worldwide and greatly elevated everywhere, sometimes by as much as five hundred times normal levels.Clearly something big and abrupt, and probably cataclysmic, had produced this arresting spike.",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -243,22 +245,25 @@ export const dinosaurExtinction: Blog = {
       "src": ""
     },
     {
-      "type": "PARAGRAPH",
-      "text": "",
-      "size": "BASE",
-      "weight": "NORMAL",
-      "style": "NONE",
-      "alignment": "LEFT",
-      "indented": false,
-      "src": "/blogs/dinosaurExtinction/unnamed (3).png"
-    },
-    {
       "type": "HEADER",
       "text": "What impact could it make!",
       "size": "BASE",
       "weight": "BOLD",
       "style": "NONE",
       "alignment": "LEFT",
+      "indented": false
+    },
+    {
+      "type": "IMAGE",
+      "src": "/blogs/dinosaurExtinction/unnamed (3).png",
+      "caption": {
+        "type": "PARAGRAPH",
+        "alignment": "LEFT",
+        "text": "",
+        "size": "BASE",
+        "weight": "NORMAL",
+        "style": "NONE"
+      },
       "indented": false
     },
     {
@@ -337,7 +342,7 @@ export const dinosaurExtinction: Blog = {
       "text": "NOTE: This Information has been collected from \nvarious books and credible sources. \nMost of the credit goes to Bill Bryson.",
       "size": "BASE",
       "weight": "NORMAL",
-      "style": "NONE",
+      "style": "ITALIC",
       "alignment": "LEFT",
       "indented": false,
       "imgData": "",
