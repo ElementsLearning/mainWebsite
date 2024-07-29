@@ -1,10 +1,10 @@
+import { BulletList } from "@/components/custom/BulletList"
+import { CarouselSingle } from "@/components/custom/CarouselSingle"
 import { CustomAccordion } from "@/components/custom/CustomAccordion"
 import { FadeIn } from "@/components/custom/FadeIn"
+import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { TextbooksPublications } from "./TextbooksPublications"
-import { CarouselSingle } from "@/components/custom/CarouselSingle"
-import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
-import { BulletList } from "@/components/custom/BulletList"
 
 export const PublicationsContent = () => {
 
@@ -41,8 +41,7 @@ export const PublicationsContent = () => {
                       <img key={1} src="/popularmath/1.jpg" className="size-full" />, 
                       <img key={2} src="/popularmath/2.jpg" className="size-full" />, 
                       <img key={3} src="/popularmath/3.jpg" className="size-full" />, 
-                      <img key={4} src="/popularmath/4.jpg" className="size-full" />, 
-                      <img key={5} src="/popularmath/5.jpg" className="size-full" />, 
+                      <img key={4} src="/popularmath/4.jpg" className="size-full" />,
                   ]}
                   nextButton={
                     <div className="size-10 lg:size-16 pr-2 xs:pr-0">
