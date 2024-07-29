@@ -5,6 +5,7 @@ export type Blog = {
   date: string
   summary: string
   headerSrc?: string
+  headerData?: string
   content: BlogContent[]
 }
 

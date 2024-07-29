@@ -9,10 +9,12 @@ import { BlogImage } from "@/components/blogComponents/BlogImage"
 import { BlogParagraph } from "@/components/blogComponents/BlogParagraph"
 import { Input } from "../ui/input"
 import { NewComponentButton } from "./NewComponentButton"
-import { deepCopy } from "@/lib/utils"
+import { createZip, deepCopy, processBlog } from "@/lib/utils"
 import { ImageUploader } from "../custom/ImageUploader"
 import { Button } from "../ui/button"
-import { Content } from "next/font/google"
+import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer"
+import { Dialog, DialogClose, DialogContent, DialogTrigger } from "../ui/dialog"
+import { Textarea } from "../ui/textarea"
 
 type EditBlogProps = {
   blogToEdit?: Blog
@@ -46,18 +48,9 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, 
   }
 }
 
-const cleanBlog = (name: string, blog: Blog): string => {
-  const cleanedBlog = {...blog, content: blog.content.map(contentValue => {
-    if (contentValue.type === "IMAGE") {
-      return {
-        ...contentValue,
-        imgData: undefined,
-        src: `/blogs/${name}/${contentValue.src}`
-      }
-    } else return contentValue
-  })}
-
-  return `export const ${name} = ${JSON.stringify(cleanedBlog)}`
+const uploadBlog = (blog: Blog, name: string) => {
+  const { blog: modifiedBlog, images, blogName } = processBlog(blog, name);
+  createZip(modifiedBlog, images, blogName)
 }
 
 export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
@@ -114,12 +107,16 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
     }
   }
 
-  const [headerData, setHeaderData] = useState("")
   const [filename, setFileName] = useState("")
+  const isAllowed = (
+    filename !== "" && 
+    !filename.includes(" ") && 
+    !filename.includes("-")
+  )
 
   return (
     <div className="flex flex-col gap-2">
-      <ImageUploader onImageChange={(data, name) => {setBlog({...blog, headerSrc: name}); setHeaderData(data)}} />
+      <ImageUploader onImageChange={(data, name) => setBlog({...blog, headerSrc: name, headerData: data})} />
       <div className="flex flex-col gap-4 w-full p-4 xs:p-8 sm:p-12 lg:p-16 xl:px-32">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-2 w-full">
@@ -135,8 +132,25 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         <NewComponentButton onAdd={onAdd} />
       </div>
       <div className="flex justify-end p-4 gap-4">
-        <Input placeholder="FileName" value={filename} onChange={(e) => setFileName(e.target.value)} className="max-w-lg" /> 
-        <Button disabled={filename === "" || filename.includes(" ")} onClick={() => navigator.clipboard.writeText(cleanBlog(filename, blog))}>Upload Blog</Button>
+        {/* <Input placeholder="FileName" value={filename} onChange={(e) => setFileName(e.target.value)} className="max-w-lg" /> 
+        <Button disabled={filename === "" || filename.includes(" ")} onClick={() => uploadBlog(blog, filename)}>Upload Blog</Button> */}
+        <Dialog>
+          <DialogTrigger asChild>
+            <Button>Upload Blog</Button>
+          </DialogTrigger>
+          <DialogContent className="sm:max-w-[500px] w-full flex flex-col gap-4 p-8 rounded-md">
+            <p className="text-center font-bold text-4xl">Upload Blog</p>
+            <Input placeholder="FileName" value={filename} onChange={(e) => setFileName(e.target.value)} className="" />
+            <Textarea placeholder="Blog Summary" value={blog.summary} onChange={(e) => setBlog({...blog, summary: e.target.value})} className="h-48" />
+            <div className="flex gap-2">
+              <DialogClose>
+                <Button variant={"secondary"}>Close</Button>
+              </DialogClose>
+              <Button disabled={!isAllowed || blog.summary === ""}
+              onClick={() => uploadBlog(blog, filename)}>Upload</Button>
+            </div>
+          </DialogContent>
+        </Dialog>
       </div>
     </div>
   )

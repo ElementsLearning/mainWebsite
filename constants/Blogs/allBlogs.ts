@@ -1,13 +1,11 @@
 import { Blog, BulletType, HeaderType, ImageType, ParagraphType } from "./blog";
 import { dinosaurExtinction } from "./dinosaurExtinction";
-import { missingHumanLink } from "./missingHumanLink";
 import { sciencePopularizers } from "./sciencePopularizers";
-import { solarSystem } from "./solarSystem";
 
 export const defaultBlog: Blog = {
   id: "",
   author: "",
-  date: Date.now().toString(),
+  date: "",
   title: "",
   summary: "",
   content: [],
@@ -50,7 +48,6 @@ export const defaultImage: ImageType = {
 
 export const allBlogs: Blog[] = [
   dinosaurExtinction,
-  sciencePopularizers,
-  missingHumanLink,
+  sciencePopularizers
   // solarSystem,
 ]

@@ -17,9 +17,9 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({onImageChange}) => 
       const reader = new FileReader()
       reader.onloadend = () => {
         setSelectedImage(reader.result)
+        onImageChange(reader.result as string, file.name)
       }
       reader.readAsDataURL(file)
-      onImageChange(reader.result as string, file.name)
     }
   }
 

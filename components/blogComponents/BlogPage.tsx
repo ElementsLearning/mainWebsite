@@ -40,7 +40,7 @@ export const BlogPage: React.FC<Blog> = ({title, headerSrc, content, author, dat
   return (
     <div className="flex flex-col gap-2">
       {headerSrc &&
-      <div className="relative max-h-[500px] overflow-hidden">
+      <div className="relative">
         <img src={headerSrc} alt="" className="w-full" />
       </div>
       }
