@@ -1,8 +1,8 @@
 import { Event } from "@/constants/LandingPageEvents"
-import { useEffect, useState } from "react"
-import { HexagonPlayButton } from "./HexagonPlayButton"
 import { ArrowRightIcon, ChevronUpIcon } from "@radix-ui/react-icons"
+import { useEffect, useState } from "react"
 import { CarouselSingle } from "./CarouselSingle"
+import { HexagonPlayButton } from "./HexagonPlayButton"
 
 type MultiCarouselProps = {
   items: Event[]
@@ -119,7 +119,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
                 </div>
                 <div className="flex justify-between gap-2 h-1/5 w-full">
                   {item.gallery.map(src => 
-                    <img key={src} src={src} className="flex-1" />
+                    <img key={src} src={src} className="" />
                   )}
                 </div>
               </div>

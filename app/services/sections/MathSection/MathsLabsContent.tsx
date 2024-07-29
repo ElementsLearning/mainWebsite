@@ -42,11 +42,11 @@ export const MathsLabsContent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
                 <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-[3/4] bg-neutral-400">
                   <CarouselSingle containerClass={"size-full"} items={[
-                        <img key={1} src="/MathLabCover/1.jpg" className="size-full" />, 
-                        <img key={2} src="/MathLabCover/2.jpg" className="size-full" />, 
-                        <img key={3} src="/MathLabCover/3.jpg" className="size-full" />, 
-                        <img key={4} src="/MathLabCover/4.jpg" className="size-full" />, 
-                        <img key={5} src="/MathLabCover/5.jpg" className="size-full" />, 
+                        <img key={1} src="/MathLabCover/1.png" className="size-full" />, 
+                        <img key={2} src="/MathLabCover/2.png" className="size-full" />, 
+                        <img key={3} src="/MathLabCover/3.png" className="size-full" />, 
+                        <img key={4} src="/MathLabCover/4.png" className="size-full" />, 
+                        <img key={5} src="/MathLabCover/5.png" className="size-full" />, 
                     ]}
                     nextButton={
                       <div className="size-10 lg:size-16 pr-2 xs:pr-0">

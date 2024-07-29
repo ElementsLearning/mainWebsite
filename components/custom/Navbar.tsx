@@ -52,13 +52,13 @@ export const Navbar = () => {
             <Link href="/about#team" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Our Team</Link>
           </NavOption>
           <NavOption text="What We Offer" link="/services">
-            <Link href="/services/ece" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>ECE</Link>
             <Link href="/services/maths/publications" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Maths</Link>
             <Link href="/services/language" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Language</Link>
-            <Link href="/services/socialscience" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Social Science</Link>
             <Link href="/services/science" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Science</Link>
-            <Link href="/services/steam" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>STEAM</Link>
-            <Link href="/services/edtech" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Ed Tech</Link>
+            <Link href="" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>ECE</Link>
+            <Link href="" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Social Science</Link>
+            <Link href="" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>STEAM</Link>
+            <Link href="" className={`transition-colors duration-500 border-b-2 border-transparent hover:border-[#FBBA41] w-full`}>Ed Tech</Link>
           </NavOption>
           <NavOption text="Blogs" link="/blogs" />
           <NavOption text="News & Updates" link="/news" />

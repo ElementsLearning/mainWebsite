@@ -6,7 +6,7 @@ import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
 import { ManipulativeCard } from "@/components/custom/ManipulativeCard"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { manipulatives } from "@/constants/MathsManipulativeContent"
-import Marquee from "react-fast-marquee";
+import Marquee from "react-fast-marquee"
 
 export const MathsManipulativesContent = () => {
 
@@ -44,11 +44,11 @@ export const MathsManipulativesContent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
               <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-square bg-neutral-400">
                 <CarouselSingle containerClass={"size-full"} delay={6000} items={[
-                      <img key={1} src="/popularmath/1.jpg" className="size-full" />, 
-                      <img key={2} src="/popularmath/2.jpg" className="size-full" />, 
-                      <img key={3} src="/popularmath/3.jpg" className="size-full" />, 
-                      <img key={4} src="/popularmath/4.jpg" className="size-full" />, 
-                      <img key={5} src="/popularmath/5.jpg" className="size-full" />, 
+                      <img key={1} src="/MathManipulative/1.jpg" className="size-full" />, 
+                      <img key={2} src="/MathManipulative/2.jpg" className="size-full" />, 
+                      <img key={3} src="/MathManipulative/3.jpg" className="size-full" />, 
+                      <img key={4} src="/MathManipulative/4.jpg" className="size-full" />, 
+                      <img key={5} src="/MathManipulative/5.jpg" className="size-full" />, 
                   ]}
                   nextButton={
                     <div className="size-10 lg:size-16 pr-2 xs:pr-0">
@@ -74,19 +74,19 @@ export const MathsManipulativesContent = () => {
                 </SlidingDiv>
               </div>
               <Marquee>
-                <div className="size-64 mx-4 bg-neutral-800">
+                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
                   Test
                 </div>
-                <div className="size-64 mx-4 bg-neutral-800">
+                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
                   Test
                 </div>
-                <div className="size-64 mx-4 bg-neutral-800">
+                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
                   Test
                 </div>
-                <div className="size-64 mx-4 bg-neutral-800">
+                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
                   Test
                 </div>
-                <div className="size-64 mx-4 bg-neutral-800">
+                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
                   Test
                 </div>
               </Marquee>          
