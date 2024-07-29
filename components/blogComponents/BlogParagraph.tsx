@@ -8,9 +8,9 @@ import { useEffect, useState } from "react"
 import { ArrowDownIcon, ArrowUpIcon, ChevronRightIcon, CrossCircledIcon, Pencil2Icon } from "@radix-ui/react-icons"
 import { Button } from "../ui/button"
 import { XIcon } from "lucide-react"
+import { ImageUploader } from "../custom/ImageUploader"
 
-export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = ({size, weight, style, text, alignment, indented, 
-  editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}, deleteComponent=()=>{}}) => {
+export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = ({size, weight, style, text, alignment, indented, src, imgData, editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}, deleteComponent=()=>{}}) => {
   
   const styleClassName = getTailwind(paragraphOptions, "Font Style", style)
   const weightClassName = getTailwind(paragraphOptions, "Font Weight", weight)
@@ -31,7 +31,9 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
     weight: weight,
     style: style,
     alignment: alignment,
-    indented: indented
+    indented: indented,
+    imgData: imgData || "",
+    src: src || ""
   }
 
   return (
@@ -73,13 +75,18 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
         </Card>
       </div>
       {opened ? 
+      <div className={`flex gap-2 ${imgData ? "" : "flex-col"}`}>
+      <ImageUploader className="w-96" data={imgData} onImageChange={(data, name) => onEdit({...current, imgData: data, src: name})} />
       <Textarea value={textAreaContent} onChange={(e) => setTextAreaContent(e.target.value)} className={`h-48 ${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`} />
+      </div>
       :
       <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
+        {imgData && <img src={imgData} className="w-96 float-start mr-4" />}
         {text}
       </p>}
       </>:
-      <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
+      <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""} gap-2 flex`}>
+        {src && <img src={src} className="w-96 float-start mr-4" />}
         {text}
       </p>}
     </div>

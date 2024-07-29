@@ -16,6 +16,8 @@ export type ParagraphType = {
   weight: "NORMAL" | "BOLD" | "SEMIBOLD"
   style: "NONE" | "ITALIC"
   alignment: "LEFT" | "CENTER" | "RIGHT"
+  src?: string
+  imgData?: string
 }
 
 export type HeaderType = {
