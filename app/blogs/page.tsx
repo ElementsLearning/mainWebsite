@@ -19,7 +19,7 @@ const BlogCard: React.FC<Blog> = ({id, title, author, date, summary}) => {
         <p className="text-xs md:text-sm">{date}</p>
       </div>
       <p className="text-xs md:text-sm transition-colors text-neutral-400 group-hover:text-light-black">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt molestiae vitae praesentium ea dolorem fugiat atque tempore itaque fugit possimus, laudantium saepe. Recusandae harum saepe odit, cupiditate repudiandae alias eum pariatur temporibus ab voluptatem voluptas? Iusto laudantium ad culpa doloribus.
+        {summary}
       </p>
     </Link>
   )
