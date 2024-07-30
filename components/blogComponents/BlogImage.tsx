@@ -12,7 +12,7 @@ import { Button } from "../ui/button"
 import { ArrowDownIcon, ArrowUpIcon, ChevronRightIcon, XIcon } from "lucide-react"
 import { BlogOption } from "./BlogOption"
 
-export const BlogImage: React.FC<ImageType & IndentedType & Editable> = ({src, caption, indented, editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}, deleteComponent=()=>{}}) => {
+export const BlogImage: React.FC<ImageType & IndentedType & Editable> = ({src, imgData, caption, indented, editable=false, onEdit=()=>{}, moveUp=()=>{}, moveDown=()=>{}, deleteComponent=()=>{}}) => {
 
   const imageCaption = caption || {...defaultParagraph, text: ""}
 
@@ -21,6 +21,7 @@ export const BlogImage: React.FC<ImageType & IndentedType & Editable> = ({src, c
   const current: ImageType & IndentedType = {
     type: "IMAGE",
     src: src,
+    imgData: imgData,
     caption: imageCaption,
     indented: indented,
   }
@@ -33,13 +34,13 @@ export const BlogImage: React.FC<ImageType & IndentedType & Editable> = ({src, c
   return (
     <>
     {editable ? 
-    <div className="flex flex-col relative">
+    <div className="flex flex-col relative group">
 
       <div className="absolute p-1 bg-neutral-50 shadow-md z-10 rounded-md translate-x-1/2 -translate-y-1/2 top-0 right-0" onClick={() => {setOpened(!opened)}}>
         {opened ? <CrossCircledIcon className="size-6" /> : <Pencil2Icon className="size-6" />}
       </div>
 
-      <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300  ${opened ? "w-20" : "w-0"}`} >
+      <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300 group-hover:w-20 min-h-40 ${opened ? "w-20" : "w-0"}`} >
         <Card className="size-full flex flex-col justify-center py-6 gap-4 border-0 group-hover:border items-center overflow-hidden text-neutral-400">
           <Button onClick={() => moveUp()} size={"icon"} variant={"ghost"}>
             <ArrowUpIcon className="size-6 hover:text-neutral-700" />
@@ -71,7 +72,7 @@ export const BlogImage: React.FC<ImageType & IndentedType & Editable> = ({src, c
         </Card>
       </div>
       
-      <ImageUploader onImageChange={(data, name) => onEdit({...current, src: name || "", imgData: data})} />
+      <ImageUploader data={imgData} src={src} onImageChange={(data, name) => onEdit({...current, src: name || "", imgData: data})} />
       <Input placeholder="Image Caption Here" value={caption?.text} onChange={(e) => onEdit({...current, caption: {...imageCaption, text: e.target.value}})}  className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName}`}/>
     </div>
     :

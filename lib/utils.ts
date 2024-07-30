@@ -42,12 +42,12 @@ export const processBlog = (blog: Blog, blogName: string) => {
   }
 
   blog.content.forEach((item: BlogContent) => {
-    if (item.type === 'IMAGE') {
-      images.push({ name: item.src, data: item.imgData!.split(",")[1] });
+    if (item.type === 'IMAGE' && item.imgData) {
+      images.push({ name: item.src, data: item.imgData.split(",")[1] });
       item.imgData = undefined
       item.src = `/blogs/${blogName}/${item.src}`;
     } else if (item.type === "PARAGRAPH" && item.imgData) {
-      images.push({ name: item.src!, data: item.imgData!.split(",")[1] });
+      images.push({ name: item.src!, data: item.imgData.split(",")[1] });
       item.imgData = undefined
       item.src = `/blogs/${blogName}/${item.src}`;
     }

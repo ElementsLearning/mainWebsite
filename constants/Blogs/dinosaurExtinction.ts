@@ -50,8 +50,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -70,8 +68,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -109,8 +105,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "PARAGRAPH",
@@ -120,8 +114,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -140,8 +132,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "PARAGRAPH",
@@ -161,8 +151,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -181,8 +169,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -201,8 +187,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -221,8 +205,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -241,8 +223,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -274,8 +254,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -294,8 +272,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "PARAGRAPH",
@@ -305,8 +281,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "HEADER",
@@ -334,8 +308,6 @@ export const dinosaurExtinction: Blog = {
       "style": "NONE",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     },
     {
       "type": "PARAGRAPH",
@@ -345,8 +317,6 @@ export const dinosaurExtinction: Blog = {
       "style": "ITALIC",
       "alignment": "LEFT",
       "indented": false,
-      "imgData": "",
-      "src": ""
     }
   ],
   "headerSrc": "/blogs/dinosaurExtinction/unnamed.png"

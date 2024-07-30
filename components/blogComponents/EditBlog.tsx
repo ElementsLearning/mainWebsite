@@ -1,7 +1,7 @@
 "use client"
 
 import { defaultBlog, defaultBullets, defaultHeader, defaultImage, defaultParagraph } from "@/constants/Blogs/allBlogs"
-import { Blog, BlogContent, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
+import { Blog, BlogContent, Editable } from "@/constants/Blogs/blog"
 import { useCallback, useState } from "react"
 import { BlogBullets } from "@/components/blogComponents/BlogBullets"
 import { BlogHeader } from "@/components/blogComponents/BlogHeader"
@@ -12,7 +12,6 @@ import { NewComponentButton } from "./NewComponentButton"
 import { createZip, deepCopy, processBlog } from "@/lib/utils"
 import { ImageUploader } from "../custom/ImageUploader"
 import { Button } from "../ui/button"
-import { Drawer, DrawerContent, DrawerTrigger } from "../ui/drawer"
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from "../ui/dialog"
 import { Textarea } from "../ui/textarea"
 
@@ -50,13 +49,14 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, 
 
 const uploadBlog = (blog: Blog, name: string) => {
   const { blog: modifiedBlog, images, blogName } = processBlog(blog, name);
-  createZip(modifiedBlog, images, blogName)
+  // createZip(modifiedBlog, images, blogName)
+  console.log({blog: modifiedBlog, images})
 }
 
 export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
 
   const [blog, setBlog] = useState<Blog>({...blogToEdit})
-  const { headerSrc, author, date, title, summary, content } = blog
+  const { headerSrc, author, headerData, title, content } = blog
 
   const moveUp = useCallback((index: number) => {
     if (index === 0) return;
@@ -115,8 +115,8 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
   )
 
   return (
-    <div className="flex flex-col gap-2">
-      <ImageUploader onImageChange={(data, name) => setBlog({...blog, headerSrc: name, headerData: data})} />
+    <div className="flex flex-col gap-2 overflow-hidden">
+      <ImageUploader src={headerSrc} data={headerData} onImageChange={(data, name) => setBlog({...blog, headerSrc: name, headerData: data})} />
       <div className="flex flex-col gap-4 w-full p-4 xs:p-8 sm:p-12 lg:p-16 xl:px-32">
         <div className="flex justify-between items-center">
           <div className="flex flex-col gap-2 w-full">
@@ -132,8 +132,6 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
         <NewComponentButton onAdd={onAdd} />
       </div>
       <div className="flex justify-end p-4 gap-4">
-        {/* <Input placeholder="FileName" value={filename} onChange={(e) => setFileName(e.target.value)} className="max-w-lg" /> 
-        <Button disabled={filename === "" || filename.includes(" ")} onClick={() => uploadBlog(blog, filename)}>Upload Blog</Button> */}
         <Dialog>
           <DialogTrigger asChild>
             <Button>Upload Blog</Button>

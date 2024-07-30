@@ -7,9 +7,10 @@ type ImageUploaderProps = {
   onImageChange: (data?: string, name?: string) => void
   className?: string
   data?: string
+  src?: string
 }
 
-export const ImageUploader: React.FC<ImageUploaderProps> = ({onImageChange, data, className=""}) => {
+export const ImageUploader: React.FC<ImageUploaderProps> = ({onImageChange, src, data, className=""}) => {
 
   const [selectedImage, setSelectedImage] = useState<string | ArrayBuffer | null>(data as string)
 
@@ -31,7 +32,8 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({onImageChange, data
         <XIcon className="size-4" />
       </Card>
       <Input type="file" accept="image/*" onChange={handleImageChange} />
-      {selectedImage && <img src={selectedImage as string} alt="Selected Image" className={className} />}
+      {selectedImage ? <img src={selectedImage as string} alt="Selected Image" className={className} /> :
+      src && <img src={src} alt="Cant Find Image" className={className} />}
     </div>
   )
 }

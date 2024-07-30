@@ -32,8 +32,8 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
     style: style,
     alignment: alignment,
     indented: indented,
-    imgData: imgData || "",
-    src: src || ""
+    imgData: imgData,
+    src: src
   }
 
   return (
@@ -61,7 +61,7 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
           </div>
         </Card>
       </div>
-      <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300  ${opened ? "w-20" : "w-0"}`} >
+      <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300 group-hover:w-20 min-h-40 ${opened ? "w-20" : "w-0"}`} >
         <Card className="size-full flex flex-col justify-between py-6 gap-2 border-0 group-hover:border items-center overflow-hidden text-neutral-400">
           <Button onClick={() => moveUp()} size={"icon"} variant={"ghost"}>
             <ArrowUpIcon className="size-6 hover:text-neutral-700" />
@@ -76,12 +76,12 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
       </div>
       {opened ? 
       <div className={`flex gap-2 ${imgData ? "" : "flex-col"}`}>
-      <ImageUploader className="w-96" data={imgData} onImageChange={(data, name) => onEdit({...current, imgData: data, src: name})} />
+      <ImageUploader className="w-96" src={src} data={imgData} onImageChange={(data, name) => onEdit({...current, imgData: data, src: name})} />
       <Textarea value={textAreaContent} onChange={(e) => setTextAreaContent(e.target.value)} className={`h-48 ${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`} />
       </div>
       :
       <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
-        {imgData && <img src={imgData} className="w-96 float-start mr-4" />}
+        {imgData ? <img src={imgData} className="w-96 float-start mr-4" /> : src && <img src={src} alt="Image Not Found" className="w-96 float-start mr-4" />}
         {text}
       </p>}
       </>:

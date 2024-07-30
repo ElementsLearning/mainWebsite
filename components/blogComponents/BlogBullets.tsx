@@ -77,9 +77,9 @@ export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({hea
   return (
     <>
       {editable ? 
-      <div className={`relative flex flex-col gap-1 ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
-        <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300  ${opened ? "w-20" : "w-0"}`} >
-          <Card className="size-full flex flex-col justify-center py-6 gap-4 border-0 group-hover:border items-center overflow-hidden text-neutral-400">
+      <div className={`relative group/parent flex flex-col gap-1 ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
+        <div className={`absolute px-2 left-0 top-0 bottom-0 -translate-x-full overflow-hidden transition-all duration-300 group-hover/parent:w-20 min-h-40 ${opened ? "w-20" : "w-0"}`}>
+          <Card className="size-full flex flex-col justify-center py-6 gap-4 border-0 group-hover/parent:border items-center overflow-hidden text-neutral-400">
             <Button onClick={() => moveUp()} size={"icon"} variant={"ghost"}>
               <ArrowUpIcon className="size-6 hover:text-neutral-700" />
             </Button>
