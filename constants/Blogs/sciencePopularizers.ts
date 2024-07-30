@@ -35,5 +35,4 @@ export const sciencePopularizers: Blog = {
       "indented": false
     }
   ],
-  "headerSrc": "/blogs/sciencePopularizers/view1.jpg"
 };
