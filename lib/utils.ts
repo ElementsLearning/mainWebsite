@@ -3,6 +3,7 @@ import { Option } from "@/constants/Blogs/blogOptions"
 import { type ClassValue, clsx } from "clsx"
 import { twMerge } from "tailwind-merge"
 import { v4 as randomID } from "uuid"
+import { formatDistance } from "date-fns"
 
 import JSZip from 'jszip';
 import { saveAs } from 'file-saver';
@@ -72,3 +73,7 @@ export const createZip = async (blog: Blog, images: ZipImage[], blogName: string
   const content = await zip.generateAsync({ type: 'blob' });
   saveAs(content, `${blogName}.zip`);
 }
+
+export const daysAgo = (date: Date): string => {
+  return formatDistance(date, new Date(), { addSuffix: true })
+} 

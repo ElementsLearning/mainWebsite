@@ -9,6 +9,13 @@ export type Blog = {
   content: BlogContent[]
 }
 
+export type Comment = {
+  blogID: string
+  name: string
+  content: string
+  createdAt: Date
+}
+
 export type ParagraphType = {
   type: "PARAGRAPH"
   text: string

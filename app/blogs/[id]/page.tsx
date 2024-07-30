@@ -11,8 +11,11 @@ export default function Page({ params }: { params: { id: string }}) {
 
   return (
     <>
-    {blog && <BlogPage {...blog} />}
-    {/* <CommentSection /> */}
+    {blog && 
+    <>
+    <BlogPage {...blog} />
+    <CommentSection id={id}/>
+    </>}
     <Footer />
     </>
   )
