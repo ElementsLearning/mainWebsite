@@ -80,15 +80,19 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
       <Textarea value={textAreaContent} onChange={(e) => setTextAreaContent(e.target.value)} className={`h-48 ${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`} />
       </div>
       :
+      <div>
+      {imgData ? <img src={imgData} className="w-96 float-start mr-4" /> : src && <img src={src} alt="Image Not Found" className="w-96 float-start mr-4" />}
       <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
-        {imgData ? <img src={imgData} className="w-96 float-start mr-4" /> : src && <img src={src} alt="Image Not Found" className="w-96 float-start mr-4" />}
         {text}
-      </p>}
+      </p>
+      </div>}
       </>:
-      <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""} gap-2 flex`}>
+      <div>
         {src && <img src={src} className="w-96 float-start mr-4" />}
-        {text}
-      </p>}
+        <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""} gap-2`}>
+          {text}
+        </p>
+      </div>}
     </div>
   )
 }

@@ -49,7 +49,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
           <Card className='flex flex-col p-6 bg-secondary shadow-lg text-xl gap-2'>
             <div className='flex gap-2 items-center justify-between'>
               <div className='flex gap-2 items-center flex-1'>
-                <PersonIcon className='size-8 md:size-10 rounded-full p-1 border md:border-2 border-black bg-white' />
+                <PersonIcon className='size-8 flex-1 md:size-10 rounded-full p-1 border md:border-2 border-black bg-white' />
                 <Input value={name} onChange={(e) => setName(e.target.value)} placeholder='Your Name' className='bg-white max-w-sm'/>
               </div>
               <div className='hidden sm:flex gap-2'>
@@ -68,7 +68,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
         <div key={i} className='flex flex-col gap-4 p-6 px-4 xs:px-6 sm:px-10 md:px-12 lg:px-16 border-b border-black'>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-2">
             <div className='flex gap-2 items-center text-xl sm:text-2xl font-bold tracking-wide'>
-              <PersonIcon className='size-8 md:size-10 rounded-full p-1 border md:border-2 border-black bg-neutral-200' />
+              <PersonIcon className='size-8 flex-1 md:size-10 rounded-full p-1 border md:border-2 border-black bg-neutral-200' />
               <p>{name}</p>
             </div>
             <div>
