@@ -28,7 +28,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
       method: 'POST',
       body: JSON.stringify({comment : {blogID: id, name, content}}),
     })).json()
-    setComments([...comments , comment])
+    setComments([comment, ...comments])
   }
 
   const [name, setName] = useState("")
