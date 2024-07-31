@@ -26,7 +26,7 @@ const NavOption: React.FC<NavOptionProps> = ({text, link, children, clamp="left"
           <Link href={link} className={LinkClassName}>{text}</Link>
           <svg className="size-5 group-hover:rotate-90 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10,17L15,12L10,7V17Z" fill="currentColor"/></svg>
         </div>
-        <div className={`absolute flex flex-col items-start gap-2 translate-y-full overflow-hidden text-nowrap ${clamp}-0 bottom-0 h-0 w-0 group-hover:w-48 group-hover:h-fit group-hover:p-4 bg-white transition-all duration-300 shadow-md rounded-lg border`}>
+        <div className={`absolute z-10 flex flex-col items-start gap-2 translate-y-full overflow-hidden text-nowrap ${clamp}-0 bottom-0 h-0 w-0 group-hover:w-48 group-hover:h-fit group-hover:p-4 bg-white transition-all duration-300 shadow-md rounded-lg border`}>
           {children}
         </div>
       </div>
