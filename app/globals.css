@@ -1,6 +1,6 @@
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
   @keyframes flight {
     0% { left: 0%; top: 65.74074074074075%; transform: translate(-50%, -50%) rotate(-0.09966865249116204rad); }

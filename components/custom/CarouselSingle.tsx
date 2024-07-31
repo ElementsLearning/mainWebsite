@@ -7,9 +7,10 @@ type CarouselSingleProps = {
   prevButton?: React.ReactNode
   autoScroll?: boolean
   delay?: number
+  onIndexChange?: (index: number) => void
 }
 
-export const CarouselSingle: React.FC<CarouselSingleProps> = ({containerClass, items, nextButton, prevButton, autoScroll=true, delay=3000}) => {
+export const CarouselSingle: React.FC<CarouselSingleProps> = ({containerClass, items, nextButton, prevButton, autoScroll=true, delay=3000, onIndexChange=()=>{}}) => {
 
   const [index, setIndex] = useState(0)
   const [intervalID, setIntervalID] = useState<NodeJS.Timeout>()
@@ -26,6 +27,10 @@ export const CarouselSingle: React.FC<CarouselSingleProps> = ({containerClass, i
     }
 
   }, [paused, autoScroll])
+
+  useEffect(() => {
+    onIndexChange(index)
+  }, [index])
 
   return (
     <div className="size-full" 

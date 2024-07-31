@@ -42,7 +42,11 @@ export default function AllBlogs() {
         <div className="flex gap-2 w-full justify-center">
           <Input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search..." className="w-full max-w-sm" />
           <Button onClick={() => {
-            setFilteredBlogs(allBlogs.filter(blog => blog.title.toLowerCase().includes(searchTerm.toLowerCase())))
+            setFilteredBlogs(allBlogs.filter(blog => 
+              (blog.title.toLowerCase().includes(searchTerm.toLowerCase()) || 
+              blog.author.toLowerCase().includes(searchTerm.toLowerCase()) || 
+              blog.summary.toLowerCase().includes(searchTerm.toLowerCase()))
+            ))
             setSearchTerm("")
           }} variant="outline" size={"icon"}>
             <SearchIcon className="size-4" />
@@ -57,11 +61,6 @@ export default function AllBlogs() {
         </div>
         <div className="flex flex-wrap gap-4">
           {filteredBlogs.map(blog => <BlogCard key={blog.id} {...blog} />)}
-          {/* 
-          {filteredBlogs.map(blog => <BlogCard key={blog.id} {...blog} />)}
-          {filteredBlogs.map(blog => <BlogCard key={blog.id} {...blog} />)}
-          {filteredBlogs.map(blog => <BlogCard key={blog.id} {...blog} />)}
-           */}
         </div>
       </section>
       <Footer />

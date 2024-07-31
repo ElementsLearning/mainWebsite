@@ -6,9 +6,20 @@ import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
 import { ManipulativeCard } from "@/components/custom/ManipulativeCard"
 import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { manipulatives } from "@/constants/MathsManipulativeContent"
+import { useState } from "react"
 import Marquee from "react-fast-marquee"
 
+const colors: string[][] = [
+  ["bg-red-100", "bg-red-200", "bg-red-300", "bg-red-400", "bg-red-500"],
+  ["bg-sky-100", "bg-sky-200", "bg-sky-300", "bg-sky-400", "bg-sky-500"],
+  ["bg-pink-100", "bg-pink-200", "bg-pink-300", "bg-pink-400", "bg-pink-500"],
+  ["bg-slate-100", "bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500"],
+  ["bg-emerald-100", "bg-emerald-200", "bg-emerald-300", "bg-emerald-400", "bg-emerald-500"],
+]
+
 export const MathsManipulativesContent = () => {
+
+  const [index, setIndex] = useState(0)
 
   return (
     <FadeIn threshold={0.01} className="flex flex-col w-full p-4 xs:p-8 sm:p-12 lg:p-16 xl:p-20 xl:px-32">
@@ -43,7 +54,7 @@ export const MathsManipulativesContent = () => {
             <div className="flex flex-col gap-2 py-2 xs:py-4 md:py-6 lg:py-8">
               <div className="flex flex-col sm:flex-row gap-2">
               <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-square bg-neutral-400">
-                <CarouselSingle containerClass={"size-full"} delay={6000} items={[
+                <CarouselSingle onIndexChange={(i) => setIndex(i)} containerClass={"size-full"} delay={6000} items={[
                       <img key={1} src="/MathManipulative/1.jpg" className="size-full" />, 
                       <img key={2} src="/MathManipulative/2.jpg" className="size-full" />, 
                       <img key={3} src="/MathManipulative/3.jpg" className="size-full" />, 
@@ -74,21 +85,9 @@ export const MathsManipulativesContent = () => {
                 </SlidingDiv>
               </div>
               <Marquee>
-                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
-                  Test
-                </div>
-                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
-                  Test
-                </div>
-                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
-                  Test
-                </div>
-                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
-                  Test
-                </div>
-                <div className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4 bg-neutral-800">
-                  Test
-                </div>
+                {Array.from({length: 5}).map((_, i) => 
+                <div key={i} className={`size-40 sm:size-48 md:size-52 lg:size-64 mx-4 ${colors[index][i]}`}>
+                </div>)}
               </Marquee>          
             </div>
           },
