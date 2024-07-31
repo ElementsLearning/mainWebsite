@@ -71,11 +71,11 @@ export const sections: Section[] =
     ],
   },
   {
-    name: "Early Childhood Education",
-    serviceName: "ece",
-    color: "#DA037F50",
-    src: "/landingpage/ece.png",
-    content: <ECEContent />
+    name: "Science",
+    serviceName: "science",
+    color: "#55088C50",
+    src: "/landingpage/science.png",
+    content: <ScienceContent />
   },
   {
     name: "Language",
@@ -84,32 +84,32 @@ export const sections: Section[] =
     src: "/landingpage/language.png",
     content: <LanguageContent />
   },
-  {
-    name: "STEAM",
-    serviceName: "steam",
-    color: "#00678F50",
-    src: "/landingpage/steam.png",
-    content: <SteamContent />
-  },
-  {
-    name: "EdTech",
-    serviceName: "edtech",
-    color: "#DA037F50",
-    src: "/landingpage/edtech.png",
-    content: <EdTechContent />
-  },
-  {
-    name: "Science",
-    serviceName: "science",
-    color: "#55088C50",
-    src: "/landingpage/science.png",
-    content: <ScienceContent />
-  },
-  {
-    name: "Social Science",
-    serviceName: "socialscience",
-    color: "#007E3D50",
-    src: "/landingpage/socialscience.png",
-    content: <SocialSciencesContent />
-  },
+  // {
+  //   name: "Early Childhood Education",
+  //   serviceName: "ece",
+  //   color: "#DA037F50",
+  //   src: "/landingpage/ece.png",
+  //   content: <ECEContent />
+  // },
+  // {
+  //   name: "STEAM",
+  //   serviceName: "steam",
+  //   color: "#00678F50",
+  //   src: "/landingpage/steam.png",
+  //   content: <SteamContent />
+  // },
+  // {
+  //   name: "EdTech",
+  //   serviceName: "edtech",
+  //   color: "#DA037F50",
+  //   src: "/landingpage/edtech.png",
+  //   content: <EdTechContent />
+  // },
+  // {
+  //   name: "Social Science",
+  //   serviceName: "socialscience",
+  //   color: "#007E3D50",
+  //   src: "/landingpage/socialscience.png",
+  //   content: <SocialSciencesContent />
+  // },
 ]
