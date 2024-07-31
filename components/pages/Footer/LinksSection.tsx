@@ -22,7 +22,7 @@ export const LinksSection = () => {
         <div className="flex-1 flex flex-col gap-2">
           <Link href={"https://elemaths.shop/"} target="_blank" className="font-bold text-lg sm:pb-6 hover:underline">Our Shop</Link>
           <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "} href={"https://elemaths.shop/product/tangram"} target="_blank">Tangram</Link>
-          <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "} href={"https://elemaths.shop/product/geoboard"}>Geoboard</Link>
+          <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "} href={"https://elemaths.shop/product/geoboard"} target="_blank">Geoboard</Link>
           <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "} href={"https://elemaths.shop/product/base-10-blocks"} target="_blank">Base 10 Blocks</Link>
           <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "} href={"https://elemaths.shop/product/fration-board"} target="_blank">Fraction Board</Link>
           <Link className={"hover:text-white text-neutral-300 sm:h-10 md:h-auto xl:h-10 leading-tight "} href={"https://elemaths.shop/product/circular-geoboard"} target="_blank">Circular Geoboard</Link>
