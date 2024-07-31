@@ -83,7 +83,7 @@ export const OurJourney = () => {
           </div>
         ))}
         <Dots inc={inc} />
-        <div className='absolute w-32 lg:w-40 xl:w-48 z-20 jahaaz' style={{left:`99%`, top: `${getPercentageY(99/100)}%`, transform: `translate(-50%, -50%) rotate(-${getTangentAngle(99/100)}rad)`}}>
+        <div className='absolute w-32 lg:w-40 xl:w-48 z-20 jahaaz bg-red-500' style={{left:`99%`, top: `${getPercentageY(99/100)}%`, transform: `translate(-50%, -50%) rotate(-${getTangentAngle(99/100)}rad)`}}>
           <Jahaaz />
         </div>
         </>}
