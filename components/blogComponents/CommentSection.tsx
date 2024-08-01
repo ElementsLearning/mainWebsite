@@ -36,10 +36,12 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
 
   return (
     <div className='flex flex-col'>
-      <div className='h-px w-full bg-light-black flex justify-center'>
-        <div className='relative size-px bg-white'>
-          <div className="border-light-black border w-fit text-light-black bg-white rounded-full sm:text-xl md:text-3xl p-2 sm:p-4 -translate-x-1/2 -translate-y-1/2" >
-            Comments
+      <div className="flex flex-col justify-center h-10 sm:h-16 lg:h-20">
+        <div className='h-px w-full bg-light-black flex justify-center'>
+          <div className='relative size-px bg-white'>
+            <div className="border-light-black border w-fit text-light-black bg-white rounded-full sm:text-xl md:text-3xl p-2 sm:p-4 -translate-x-1/2 -translate-y-1/2" >
+              Comments
+            </div>
           </div>
         </div>
       </div>
