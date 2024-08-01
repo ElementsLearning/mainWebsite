@@ -60,7 +60,7 @@ export default function AllBlogs() {
           </Button>}
         </div>
         <div className="flex flex-wrap gap-4">
-          {filteredBlogs.map(blog => <BlogCard key={blog.id} {...blog} />)}
+          {filteredBlogs.length >= 1 ? filteredBlogs.map(blog => <BlogCard key={blog.id} {...blog} />) : <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold uppercase text-neutral-600">No Blogs Found</h3>}
         </div>
       </section>
       <Footer />
