@@ -9,12 +9,35 @@ import { manipulatives } from "@/constants/MathsManipulativeContent"
 import { useState } from "react"
 import Marquee from "react-fast-marquee"
 
-const colors: string[][] = [
-  ["bg-red-100", "bg-red-200", "bg-red-300", "bg-red-400", "bg-red-500"],
-  ["bg-sky-100", "bg-sky-200", "bg-sky-300", "bg-sky-400", "bg-sky-500"],
-  ["bg-pink-100", "bg-pink-200", "bg-pink-300", "bg-pink-400", "bg-pink-500"],
-  ["bg-slate-100", "bg-slate-200", "bg-slate-300", "bg-slate-400", "bg-slate-500"],
-  ["bg-emerald-100", "bg-emerald-200", "bg-emerald-300", "bg-emerald-400", "bg-emerald-500"],
+const src: string[][] = [
+  [
+    "/MathManipulative/circularGeoboard/1.jpg",
+    "/MathManipulative/circularGeoboard/2.jpg",
+    "/MathManipulative/circularGeoboard/3.jpg",
+    "/MathManipulative/circularGeoboard/4.jpg",
+    "/MathManipulative/circularGeoboard/5.jpg",
+    "/MathManipulative/circularGeoboard/6.jpg",
+    "/MathManipulative/circularGeoboard/7.jpg",
+    "/MathManipulative/circularGeoboard/8.jpg",
+    "/MathManipulative/circularGeoboard/9.jpg",
+    "/MathManipulative/circularGeoboard/10.jpg"
+  
+  ],
+  [
+    "/MathManipulative/tangram/1.jpg",
+    "/MathManipulative/tangram/2.jpg",
+    "/MathManipulative/tangram/3.jpg",
+    "/MathManipulative/tangram/4.jpg",
+    "/MathManipulative/tangram/5.jpg",
+    "/MathManipulative/Tangram/6.jpg",
+    "/MathManipulative/Tangram/7.jpg",
+    "/MathManipulative/Tangram/8.jpg",
+  
+  ],
+  ["/MathManipulative/circularGeoboard/1.jpg", "/MathManipulative/circularGeoboard/2.jpg", "/MathManipulative/circularGeoboard/3.jpg", "/MathManipulative/circularGeoboard/4.jpg", "/MathManipulative/circularGeoboard/5.jpg", "/MathManipulative/circularGeoboard/6.jpg", "/MathManipulative/circularGeoboard/7.jpg", "/MathManipulative/circularGeoboard/8.jpg", "/MathManipulative/circularGeoboard/9.jpg","/MathManipulative/circularGeoboard/10.jpg"],
+  ["/MathManipulative/circularGeoboard/1.jpg", "/MathManipulative/circularGeoboard/2.jpg", "/MathManipulative/circularGeoboard/3.jpg", "/MathManipulative/circularGeoboard/4.jpg", "/MathManipulative/circularGeoboard/5.jpg", "/MathManipulative/circularGeoboard/6.jpg", "/MathManipulative/circularGeoboard/7.jpg", "/MathManipulative/circularGeoboard/8.jpg", "/MathManipulative/circularGeoboard/9.jpg","/MathManipulative/circularGeoboard/10.jpg"],
+  ["/MathManipulative/circularGeoboard/1.jpg", "/MathManipulative/circularGeoboard/2.jpg", "/MathManipulative/circularGeoboard/3.jpg", "/MathManipulative/circularGeoboard/4.jpg", "/MathManipulative/circularGeoboard/5.jpg", "/MathManipulative/circularGeoboard/6.jpg", "/MathManipulative/circularGeoboard/7.jpg", "/MathManipulative/circularGeoboard/8.jpg", "/MathManipulative/circularGeoboard/9.jpg","/MathManipulative/circularGeoboard/10.jpg"],
+  
 ]
 
 export const MathsManipulativesContent = () => {
@@ -55,11 +78,11 @@ export const MathsManipulativesContent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
               <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-square bg-neutral-400">
                 <CarouselSingle onIndexChange={(i) => setIndex(i)} containerClass={"size-full"} delay={6000} items={[
-                      <img key={1} src="/MathManipulative/1.jpg" className="size-full" />, 
-                      <img key={2} src="/MathManipulative/2.jpg" className="size-full" />, 
+                      <img key={1} src="/MathManipulative/4.jpg" className="size-full" />, 
+                      <img key={2} src="/MathManipulative/5.jpg" className="size-full" />, 
                       <img key={3} src="/MathManipulative/3.jpg" className="size-full" />, 
-                      <img key={4} src="/MathManipulative/4.jpg" className="size-full" />, 
-                      <img key={5} src="/MathManipulative/5.jpg" className="size-full" />, 
+                      <img key={4} src="/MathManipulative/1.jpg" className="size-full" />, 
+                      <img key={5} src="/MathManipulative/2.jpg" className="size-full" />,
                   ]}
                   nextButton={
                     <div className="size-10 lg:size-16 pr-2 xs:pr-0">
@@ -84,11 +107,11 @@ export const MathsManipulativesContent = () => {
                   </div>
                 </SlidingDiv>
               </div>
-              <Marquee>
-                {Array.from({length: 5}).map((_, i) => 
-                <div key={i} className={`size-40 sm:size-48 md:size-52 lg:size-64 mx-4 ${colors[index][i]}`}>
-                </div>)}
-              </Marquee>          
+              <Marquee pauseOnClick>
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <img key={i} src={src[index][i]} className="size-40 sm:size-48 md:size-52 lg:size-64 mx-4"/>
+                ))}
+              </Marquee>        
             </div>
           },
         ]}
