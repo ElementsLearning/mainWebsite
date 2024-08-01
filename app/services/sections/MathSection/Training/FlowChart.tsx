@@ -46,12 +46,14 @@ export const FlowChart = () => {
     <div className="flex flex-col gap-6 text-sm sm:text-base md:text-lg xl:text-xl">
       {flowchartSteps.map((step, i) =>
         <>
-        <SlidingDiv repeat px={150} direction={i % 2 === 0 ? "left" : "right"} className="p-6 shadow-md rounded-[20px]" key={i} style={{backgroundColor: step.color}}>
-          {step.content}
+        <SlidingDiv repeat px={150} direction={i % 2 === 0 ? "left" : "right"} className="flex flex-col gap-2 p-6 shadow-md rounded-[20px]" key={i} style={{backgroundColor: step.color}}>
+          <h1 className="font-semibold">{step.name}</h1>
+          <p>{step.content}</p>
         </SlidingDiv>
         {step.optionals?.map((optional, i) => 
-          <SlidingDiv repeat direction={i % 2 === 0 ? "left" : "right"} key={i} className="border-4 border-neutral-300 border-dashed p-6 rounded-md">
-            {optional.content}
+          <SlidingDiv repeat direction={i % 2 === 0 ? "left" : "right"} key={i} className="flex flex-col gap-2 border-4 border-neutral-300 border-dashed p-6 rounded-md">
+            <h1 className="font-semibold">{optional.name}</h1>
+            <p>{optional.content}</p>
           </SlidingDiv>
         )}
         </> 
