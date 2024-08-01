@@ -47,11 +47,11 @@ const src: string[][] = [
     "/MathManipulative/tensBlock/4.jpg",
   ], 
   [
-    "/MathManipulative/circulargeoBoard/5.jpg",
-    "/MathManipulative/circulargeoBoard/5.jpg",
-    "/MathManipulative/circulargeoBoard/5.jpg",
-    "/MathManipulative/circulargeoBoard/5.jpg",
-    "/MathManipulative/circulargeoBoard/5.jpg",  
+    "/MathManipulative/circularGeoboard/5.jpg",
+    "/MathManipulative/circularGeoboard/5.jpg",
+    "/MathManipulative/circularGeoboard/5.jpg",
+    "/MathManipulative/circularGeoboard/5.jpg",
+    "/MathManipulative/circularGeoboard/5.jpg",  
   ],
 ]
 
