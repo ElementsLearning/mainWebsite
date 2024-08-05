@@ -43,4 +43,4 @@ export const MathLabEvents: Event[] = [
     src: "/drive/labs/view2.jpg",
     gallery: ["/drive/labs/view2.jpg"]
   },
-]
+].reverse()

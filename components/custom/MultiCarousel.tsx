@@ -1,5 +1,6 @@
 import { Event } from "@/constants/LandingPageEvents"
 import { ArrowRightIcon, ChevronUpIcon } from "@radix-ui/react-icons"
+import { CalendarIcon } from "lucide-react"
 import { useEffect, useState } from "react"
 import { CarouselSingle } from "./CarouselSingle"
 import { HexagonPlayButton } from "./HexagonPlayButton"
@@ -62,20 +63,20 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
   return (
     <>
     {opened && <div onClick={() => setOpened(false)} className="fixed inset-0 bg-black/80 z-50 flex justify-center items-center">
-      <div className="size-4/5">
-        <CarouselSingle containerClass={"size-full"} 
+      <div className="w-11/12 md:w-10/12 lg:w-3/4 ">
+        <CarouselSingle containerClass={"size-full aspect-[3/2]"} 
         items={items[index].gallery.map((src) => 
           <div key={src} className="size-full flex flex-col justify-center">
             <img onClick={(e) => e.stopPropagation()} src={src} alt="" className="w-full bg-neutral-400" />
           </div>
         )}
         nextButton={
-          <div className="size-10 lg:size-16">
+          <div className="size-7 sm:size-10 md:size-12 lg:size-16">
             <HexagonPlayButton outerColor={"#FCBA42"} innerColor={"#FFFFFF"}/>
           </div>
         }
         prevButton={
-          <div className="size-10 lg:size-16 rotate-180">
+          <div className="size-7 sm:size-10 md:size-12 lg:size-16 rotate-180">
             <HexagonPlayButton outerColor={"#FCBA42"} innerColor={"#FFFFFF"}/>
           </div>
         }
@@ -99,14 +100,17 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
         <p className="text-xs xs:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold drop-shadow-md">
           {items[index].name}
         </p>
-        {items[index].additional && <div className="flex flex-col gap-2 text-light-black">
-          <p>{items[index].additional.date}</p>
-          <p>{items[index].additional.desc}</p>
+        {items[index].additional && <div style={{paddingRight: size/8}} className="flex flex-col gap-2 text-light-black font-semibold text-xl">
+          <div className="flex gap-2 justify-center items-centers">
+            <CalendarIcon className="size-6" />
+            <p className="">{items[index].additional.date}</p>
+          </div>
+          {items[index].additional.desc && <p className="text-center">{items[index].additional.desc}</p>}
         </div>}
       </div>
       <div className="relative z-10 h-1/2 sm:-translate-y-[8%]" style={{width: smallerSize}}>
         {items.map((item, i) => (
-          <div key={item.name} className={`absolute transition-all duration-700 bottom-0 ${i === index ? "h-full w-full" : "h-2/3 w-2/3 grayscale blur-[2px]"}`} 
+          <div key={item.name} className={`absolute transition-all duration-700 bottom-0 ${i === index ? "h-full w-full" : "h-2/3 w-2/3 grayscale blur-[1px]"}`} 
           style={{backgroundColor: item.innerColor, transform: `${index > i ? `translateX(calc(${100*1/2}% + ${(index-i) * (smallerSize*(2/3) + gapSize)}px))` : `translateX(${(index-i) * (smallerSize*(2/3) + gapSize) }px)`}`}}
           onClick={() => (i === index) ? setOpened(true) : setIndex(i)}
           >

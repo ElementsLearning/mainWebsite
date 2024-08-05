@@ -81,4 +81,4 @@ export const TrainingEvents: Event[] = [
       "/drive/Attock/4.jpg",
     ]            
   },
-]
+].reverse()
