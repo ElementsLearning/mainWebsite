@@ -1,7 +1,5 @@
 "use client"
 
-import { VideoPlayer } from "@/components/custom/VideoPlayer"
-import { Footer } from "@/components/pages/Footer/Footer"
 import Link from "next/link"
 import { Section, Tab } from "../sections/sections"
 import { Footer } from "@/components/pages/Footer/Footer"
