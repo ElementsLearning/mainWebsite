@@ -4,6 +4,7 @@ import Link from "next/link"
 import { Section, Tab } from "../sections/sections"
 import { Footer } from "@/components/pages/Footer/Footer"
 import { VideoPlayer } from "@/components/custom/VideoPlayer"
+import { useEffect, useRef } from "react"
 
 type TabHeaderProps = {
   tab: Tab
@@ -24,6 +25,18 @@ const TabHeader: React.FC<TabHeaderProps> = ({tab, isOpen, newLink, disabled}) =
 }
 
 export const TabView: React.FC<Section & {opened?: Tab}> = ({name, color, src, videoSrc, serviceName, tabs=[], content=<></>, opened}) => {
+
+  const contentRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (opened) {
+      const timer = setTimeout(() => {
+        contentRef.current?.scrollIntoView({ behavior: "smooth" })
+      }, 300)
+
+      return () => clearTimeout(timer)
+    }
+  }, [opened])
   
   return (
     <div className="flex flex-col w-full">
@@ -38,11 +51,13 @@ export const TabView: React.FC<Section & {opened?: Tab}> = ({name, color, src, v
             {tabs.map(tab => <TabHeader disabled={tab.disabled === true} key={tab.tabName} tab={tab} newLink={`/services/${serviceName}/${tab.tabName}`} isOpen={opened?.tabName === tab.tabName} />)}
         </div>}
       </div>
-      {opened ? 
-      <>
-        {opened.content}
-      </>
-      : content}
+      <div ref={contentRef}>
+        {opened ? 
+        <>
+          {opened.content}
+        </>
+        : content}
+      </div>
       <Footer />
     </div>
   )
