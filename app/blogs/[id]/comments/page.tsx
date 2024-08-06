@@ -1,5 +1,6 @@
 "use client"
 import { CommentSection } from "@/components/blogComponents/CommentSection"
+import { Authenticator } from "@/components/custom/Authenticator"
 import { allBlogs } from "@/constants/Blogs/allBlogs"
 import { PersonIcon } from "@radix-ui/react-icons"
 import { Calendar } from "lucide-react"
@@ -10,7 +11,7 @@ export default function Page({ params }: { params: { id: string }}) {
   const blog = allBlogs.find(b => b.id === id)
 
   return (
-    <>
+    <Authenticator>
     {blog &&
     <>
       <div className="flex flex-col gap-4 w-full p-4 xs:p-10 sm:px-16 lg:px-20 xl:px-40">
@@ -34,6 +35,6 @@ export default function Page({ params }: { params: { id: string }}) {
       </div>
       <CommentSection admin={true} id={id}/>
     </>}
-    </>
+    </Authenticator>
   )
 }

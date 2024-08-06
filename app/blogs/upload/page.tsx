@@ -1,8 +1,11 @@
 import { EditBlog } from "@/components/blogComponents/EditBlog";
+import { Authenticator } from "@/components/custom/Authenticator";
 
 export default function UploadPage() {
  
   return (
-    <EditBlog />
+    <Authenticator>
+      <EditBlog />
+    </Authenticator>
   )
 }
