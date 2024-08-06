@@ -85,7 +85,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
     </div>}
     <div className="relative w-full flex overflow-hidden justify-center items-center gap-8" 
     style={{height: size}}>
-      <div className="absolute flex flex-col justify-between transition-transform duration-500" 
+      <div className="absolute flex flex-col justify-between transition-transform duration-500 text-xs xs:text-sm md:text-lg lg:text-xl xl:text-2xl" 
       onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}
       style={{
         backgroundColor: items[index].color, 
@@ -97,10 +97,11 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
         paddingBottom: size/7, 
         borderRadius: `${size/12}px ${size/12}px 0px ${size/12}px`
       }}>
-        <p className="text-xs xs:text-sm md:text-lg lg:text-xl xl:text-2xl font-bold drop-shadow-md">
+        <p className="font-bold drop-shadow-md">
           {items[index].name}
         </p>
-        {items[index].additional && <div style={{paddingRight: size/8}} className="flex flex-col gap-2 text-light-black font-semibold text-xl">
+        {items[index].additional && 
+        <div style={{paddingRight: size/8}} className="flex md:hidden flex-col gap-2 text-light-black font-semibold text-xl">
           <div className="flex gap-2 justify-center items-centers">
             <CalendarIcon className="size-6" />
             <p className="">{items[index].additional.date}</p>
