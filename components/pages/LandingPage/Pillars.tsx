@@ -61,7 +61,7 @@ export const Pillars = () => {
 
   return (
     <>
-    <div className="flex gap-4 sm:gap-8 md:gap-16 w-full flex-col  sm:flex-row justify-center sm:items-end">
+    <div className="flex gap-4 sm:gap-8 md:gap-16 w-full flex-col sm:flex-row justify-center sm:items-end">
       <StaggeredPillarHeader />
       <div className="flex flex-col items-start gap-2 md:gap-4">
         <SlidingDiv className='relative flex-1' direction="right" px={50}>

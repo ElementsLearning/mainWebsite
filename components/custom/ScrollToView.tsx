@@ -14,13 +14,22 @@ export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children 
   const sectionRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    console.log({
+      inView,
+      ref: sectionRef
+    })
     if (inView && sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: 'smooth'});
+      // sectionRef.current.scrollIntoView({ behavior: 'smooth'});
+      const topPosition = sectionRef.current.offsetTop;
+      window.scrollTo({
+        top: topPosition,
+        behavior: 'smooth'
+      });
     }
   }, [inView, sectionRef]);
 
   return (
-    <section style={{backgroundColor: inView ? "#ff0000" : "transparent"}} ref={(node) => { ref(node); sectionRef.current = node; }} className={className}>
+    <section ref={(node) => { ref(node); sectionRef.current = node; }} className={className}>
       {children}
     </section>
   );

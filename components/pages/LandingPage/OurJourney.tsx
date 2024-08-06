@@ -21,7 +21,7 @@ const JourneyMarker: React.FC<JourneyMarkerProps> = ({color, content, header, re
   return (
     <SlidingDiv direction={reverse ? "bottom" : "top"} delay={index*animationTime/5} className={`relative w-full`} >
       <div className={`relative w-full flex justify-center -translate-y-1/2`} >
-        <div className={`absolute flex flex-col items-center w-[120%] min-[1400px]:w-full text-center p-4 lg:py-6 xl:py-8 ${reverse ? "top-0 -translate-y-full" : "bottom-0 translate-y-full"}`}>
+        <div className={`absolute flex flex-col items-center w-[130%] min-[1400px]:w-full text-center p-4 lg:py-6 xl:py-8 ${reverse ? "top-0 -translate-y-full" : "bottom-0 translate-y-full"}`}>
           <h4 className='font-semibold md:text-2xl xl:text-3xl'>{header}</h4>
           {content}
         </div>
@@ -72,7 +72,7 @@ export const OurJourney = () => {
   })
 
   return (
-    <div className='min-[900px]:flex hidden flex-col w-full gap-2 lg:gap-4 py-10 px-10 lg:px-20'>
+    <div className='min-[1000px]:flex hidden flex-col w-full gap-2 lg:gap-4 px-10 lg:px-20'>
       <div ref={ref} className={"relative aspect-video flex"}>
         {inView && 
         <>
