@@ -40,7 +40,7 @@ export const Testimonials = () => {
     <div className="relative flex flex-col justify-center">
       <div className={`absolute top-1/2 right-0 -translate-y-1/2 size-10 lg:size-16 z-10 transition-all duration-500 ${indexChanged ? "translate-x-full" : "translate-x-1/2"}`}>
         <SlidingDiv direction="right" px={20} threshold={0.1}>
-          <button className="size-full" onClick={() => {setIndexChanged(true); setIndex((index+1)%testimonials.length)}}>
+          <button className="size-full" onClick={() => {setIndexChanged(true); setTimeout(() => setIndex((index+1)%testimonials.length), 500)}}>
             <HexagonPlayButton outerColor="#FABB41" />
           </button>
         </SlidingDiv>
