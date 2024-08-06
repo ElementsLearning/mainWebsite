@@ -1,5 +1,6 @@
 "use client"
 import { MultiCarousel } from "@/components/custom/MultiCarousel";
+import { ScrollToView } from "@/components/custom/ScrollToView";
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { Hero } from "@/components/pages/LandingPage/Hero";
@@ -20,13 +21,13 @@ export default function Home() {
         <Hero />
       </section>
 
-      <section className="w-full py-12">
+      <ScrollToView className="w-full py-12">
         <SlidingDiv direction={"right"} px={75}>
           <h3 className="px-4 text-3xl min-[900px]:text-5xl min-[900px]:text-center font-bold uppercase">Our Journey</h3>
         </SlidingDiv>
         <OurJourney />
         <OurJourneyMobile />
-      </section>
+      </ScrollToView>
 
       <section className="w-full bg-[#F3EEE8]">
         <PuzzlePieces />
