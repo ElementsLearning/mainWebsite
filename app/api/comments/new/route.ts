@@ -11,7 +11,7 @@ export async function POST(request: NextRequest) {
   try {
     await connectMongo()
 
-    const newComment = await Comment.create({...comment})
+    const newComment = await Comment.create({...comment, approved: false})
     await newComment.save()
 
     return NextResponse.json({ comment: newComment })

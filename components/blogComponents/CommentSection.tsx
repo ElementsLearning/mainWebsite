@@ -6,29 +6,48 @@ import { Card } from '../ui/card'
 import { Button } from '../ui/button'
 import { Comment } from '@/constants/Blogs/blog'
 import { daysAgo } from '@/lib/utils'
+import { Trash, Trash2, Trash2Icon } from 'lucide-react'
 
 type CommentSectionProps = {
   id: string
+  admin?: boolean 
 }
 
-export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
+export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false}) => {
 
   const [comments, setComments] = useState<Comment[]>([])
+  const [loading, setLoading] = useState(false)
 
   useEffect(() => {
     const fetchComments = async () => {
-      const {comments: fetchedComments} = await (await fetch(`/api/comments/${id}`)).json()
+      const {comments: fetchedComments} = await (await fetch(`/api/comments/${admin ? "all/" : ""}${id}`)).json()
       setComments(fetchedComments)
     }
     fetchComments()
   }, [])
 
   const uploadComment = async (name: string, content: string) => {
+    setLoading(true)
     const { comment } = await (await fetch(`/api/comments/new`, {
       method: 'POST',
       body: JSON.stringify({comment : {blogID: id, name, content}}),
     })).json()
     setComments([comment, ...comments])
+    setLoading(false)
+  }
+  
+  const toggleApprove = async (id: string) => {
+    setLoading(true)
+    const { comment } = await (await fetch(`/api/comments/approve/${id}`)).json()
+    setComments(comments.map(c => c._id === comment._id ? comment : c))
+    setLoading(false)
+  }
+
+  const deleteComment = async (id: string) => {
+    setLoading(true)
+    const { comment } = await (await fetch(`/api/comments/delete/${id}`)).json()
+    setComments(comments.filter(c => c._id !== comment._id))
+    setLoading(false)
   }
 
   const [name, setName] = useState("")
@@ -45,7 +64,8 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
           </div>
         </div>
       </div>
-      <div className="flex flex-col py-6 gap-2">
+      <div className="flex flex-col py-6">
+        {!admin && 
         <div className='p-2 px-4 xs:px-6 sm:px-10 md:px-12 lg:px-16 flex flex-col gap-2'>
           <p className='text-2xl font-semibold'>Add Your Own Comment</p>
           <Card className='flex flex-col p-6 bg-secondary shadow-lg text-xl gap-2'>
@@ -56,30 +76,44 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id}) => {
               </div>
               <div className='hidden sm:flex gap-2'>
                 <Button onClick={() => {setName(""); setContent("")}} variant={'outline'}>Clear</Button>
-                <Button disabled={!name || !content} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>Post</Button>
+                <Button disabled={!name || !content || loading} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>Post</Button>
               </div>
             </div>
             <Textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder='Comment...' className='h-32 bg-white' />
             <div className='flex sm:hidden gap-2'>
               <Button onClick={() => {setName(""); setContent("")}} variant={'outline'}>Clear</Button>
-              <Button disabled={!name || !content} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>Post</Button>
+              <Button disabled={!name || !content || loading} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>Post</Button>
             </div>
           </Card>
-        </div>
-        {comments.map(({name, content, createdAt}, i) => 
-        <div key={i} className='flex flex-col gap-4 p-6 px-4 xs:px-6 sm:px-10 md:px-12 lg:px-16 border-b border-black'>
+        </div>}
+        {comments.length !== 0 ?
+        <>
+        {comments.map(({_id, approved, name, content, createdAt}, i) => 
+        <div key={i} className={`flex flex-col gap-4 p-6 px-4 xs:px-6 sm:px-10 md:px-12 lg:px-16 border-b border-black ${!admin && !approved && "bg-red-100"}`}>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-2">
             <div className='flex gap-2 items-center text-xl sm:text-2xl font-bold tracking-wide'>
               <PersonIcon className='size-8 md:size-10 rounded-full p-1 border md:border-2 border-black bg-neutral-200' />
-              <p>{name}</p>
+              <div className='flex flex-col'>
+                <p>{name}</p>
+                {admin && <p className='text-neutral-400 text-xs font-normal'>{_id}</p>}
+              </div>
             </div>
             <div>
-              <p>{daysAgo(createdAt)}</p>
+              {!admin ? 
+              approved ?
+              <p>{daysAgo(createdAt)}</p> :
+              <p>Waiting for Approval</p> :
+              <div className='flex gap-2'>
+                <Button disabled={loading} onClick={() => toggleApprove(_id)} className={`${!approved ? "bg-green-500" : "bg-red-500"} text-white font-bold`}>{approved ? "Disapprove" : "Approve"}</Button>
+                <Button variant={"outline"} size={"icon"} onClick={() => deleteComment(_id)}><Trash2Icon className='' /></Button>
+              </div>}
             </div>
           </div>
           <p className='md:text-lg'>{content}</p>
         </div>
         )}
+        </>:
+        admin ? <p className='text-center text-lg xs:text-xl lg:text-3xl italic text-neutral-400'>Nothing to see here</p> : <></>}
       </div>
     </div>
   )

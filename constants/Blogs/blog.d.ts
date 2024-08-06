@@ -10,10 +10,12 @@ export type Blog = {
 }
 
 export type Comment = {
+  _id: string
   blogID: string
   name: string
   content: string
   createdAt: Date
+  approved: boolean
 }
 
 export type ParagraphType = {

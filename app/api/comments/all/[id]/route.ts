@@ -16,7 +16,7 @@ export async function GET(request: NextRequest, { params }: RouteParams) {
 
   await connectMongo()
 
-  const comments = await Comment.find({blogID: id, approved: true}).sort({createdAt: -1})
+  const comments = await Comment.find({blogID: id}).sort({createdAt: -1})
 
   return Response.json({comments})
 }
