@@ -101,7 +101,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
           {items[index].name}
         </p>
         {items[index].additional && 
-        <div style={{paddingRight: size/8}} className="flex md:hidden flex-col gap-2 text-light-black font-semibold text-xl">
+        <div style={{paddingRight: size/8}} className="md:flex hidden flex-col gap-2 text-light-black font-semibold text-xl">
           <div className="flex gap-2 justify-center items-centers">
             <CalendarIcon className="size-6" />
             <p className="">{items[index].additional.date}</p>
