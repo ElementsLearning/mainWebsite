@@ -4,11 +4,12 @@ import { useInView } from 'react-intersection-observer';
 type ScrollToViewProps = {
   className?: string;
   children: ReactNode;
+  threshold?: number
 };
 
-export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children }) => {
+export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children, threshold=0.05 }) => {
   const { ref, inView } = useInView({
-    threshold: 0.05,
+    threshold: threshold,
   });
 
   const sectionRef = useRef<HTMLElement | null>(null);

@@ -55,7 +55,7 @@ export default function Home() {
         <MultiCarousel items={LandingPageEvents} />
       </ScrollToView>
 
-      <ScrollToView className="w-full p-6 sm:p-10 flex flex-col justify-center xs:items-start min-[550px]:flex-row min-[550px]:items-center sm:gap-8 gap-4">
+      <ScrollToView threshold={0.3} className="w-full p-6 sm:p-10 flex flex-col justify-center xs:items-start min-[550px]:flex-row min-[550px]:items-center sm:gap-8 gap-4">
         <Testimonials />
       </ScrollToView>
 
