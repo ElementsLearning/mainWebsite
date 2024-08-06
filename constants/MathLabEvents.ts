@@ -5,42 +5,63 @@ export const MathLabEvents: Event[] = [
     name: "Math Lab",
     color: "#CAB9DB",
     innerColor: "#A98CC2",
-    src: "/drive/labs/8.JPG",
-    gallery: ["/drive/labs/8.JPG"]
+    src: "/driveT/MathLab/1.JPG",
+    gallery: ["/driveT/MathLab/1.JPG"]
   },
   {
     name: "Math Lab",
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
-    src: "/drive/labs/13.JPG",
-    gallery: ["/drive/labs/13.JPG"]
+    src: "/driveT/MathLab/2.JPG",
+    gallery: ["/driveT/MathLab/2.JPG"]
   },
   {
     name: "Math Lab",
     color: "#FEE7BD",
     innerColor: "#FED792",
-    src: "/drive/labs/11.jpg",
-    gallery: ["/drive/labs/11.jpg",]
+    src: "/driveT/MathLab/3.jpg",
+    gallery: ["/driveT/MathLab/3.jpg",]
   },
   {
     name: "Math Lab",
     color: "#F8A6D6",
     innerColor: "#F46CBE",
-    src: "/drive/labs/13.JPG",
-    gallery: ["/drive/labs/13.JPG"]
+    src: "/driveT/MathLab/4.JPG",
+    gallery: ["/driveT/MathLab/4.JPG"]
   },
   {
     name: "Math Lab",
     color: "#CAB9DB",
     innerColor: "#A98CC2",
-    src: "/drive/labs/view1.jpg",
-    gallery: ["/drive/labs/view1.jpg"]
+    src: "/driveT/MathLab/5.jpg",
+    gallery: ["/driveT/MathLab/5.jpg"]
   },
   {
     name: "Math Lab",
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
-    src: "/drive/labs/view2.jpg",
-    gallery: ["/drive/labs/view2.jpg"]
+    src: "/driveT/MathLab/6.jpg",
+    gallery: ["/driveT/MathLab/6.jpg"]
+  },
+  {
+    name: "Math Lab",
+    color: "#CAB9DB",
+    innerColor: "#6DD1F5",
+    src: "/driveT/MathLab/7.jpg",
+    gallery: ["/driveT/MathLab/7.jpg"]
+  },
+  {
+    name: "Math Lab",
+    color: "#FEE7BD",
+    innerColor: "#6DD1F5",
+    src: "/driveT/MathLab/8.jpg",
+    gallery: ["/driveT/MathLab/8.jpg"]
+  },
+  {
+    name: "Math Lab",
+    color: "#CAB9DB",
+    innerColor: "#6DD1F5",
+    src: "/driveT/MathLab/9.jpg",
+    gallery: ["/driveT/MathLab/9.jpg"]
   },
 ].reverse()
