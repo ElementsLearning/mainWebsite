@@ -72,7 +72,7 @@ export const OurJourney = () => {
   })
 
   return (
-    <div className='min-[1000px]:flex hidden flex-col w-full gap-2 lg:gap-4 px-10 lg:px-20'>
+    <div className='min-[950px]:flex hidden flex-col w-full gap-2 lg:gap-4 px-10 lg:px-20'>
       <div ref={ref} className={"relative aspect-video flex"}>
         {inView && 
         <>

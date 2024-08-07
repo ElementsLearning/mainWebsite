@@ -36,7 +36,7 @@ const Dots = () => {
 
 export const OurJourneyMobile = () => {
   return (
-    <div className="relative w-full p-4 flex min-[1000px]:hidden flex-col gap-4">
+    <div className="relative w-full p-4 flex min-[950px]:hidden flex-col gap-4">
       {journeySteps.map(({color, header, content}, i) => (
         <JourneyCard color={color} header={header} content={content} key={i} />
       ))}
