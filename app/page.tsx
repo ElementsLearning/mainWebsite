@@ -22,7 +22,7 @@ export default function Home() {
         <Hero />
       </section>
 
-      <ScrollToView className="w-full relative py-4">
+      <ScrollToView className="w-full relative py-4 min-h-screen">
         <SlidingDiv className="min-[1100px]:absolute lg:top-8 right-0 left-0" direction={"right"} px={75}>
           <h3 className="px-4 text-3xl min-[900px]:text-5xl min-[900px]:text-center font-bold uppercase">Our Journey</h3>
         </SlidingDiv>
@@ -34,11 +34,11 @@ export default function Home() {
         <PuzzlePieces />
       </section>
       
-      <ScrollToView className="flex p-4 xs:px-10 sm:px-20 gap-12 md:gap-16 flex-col justify-center">
+      <ScrollToView className="flex p-4 xs:px-10 sm:px-20 gap-12 md:gap-16 flex-col justify-center min-h-screen">
         <Pillars />
       </ScrollToView>
 
-      <ScrollToView className="bg-[#F3EEE8] p-8 sm:p-10 lg:p-20 w-full" >
+      <ScrollToView className="bg-[#F3EEE8] p-8 sm:p-10 lg:p-20 w-full min-h-screen flex flex-col justify-center" >
         <WhatWeOffer />
       </ScrollToView> 
 
@@ -52,7 +52,7 @@ export default function Home() {
 
       <section className="w-full p-2"></section>
 
-      <ScrollToView className="bg-[#F3EEE8] w-full p-4 sm:p-8 lg:p-12">
+      <ScrollToView className="bg-[#F3EEE8] w-full p-4 sm:p-8 lg:p-12 md:min-h-screen md:flex md:flex-col md:justify-center">
         <MultiCarousel items={LandingPageEvents} />
       </ScrollToView>
 
@@ -60,13 +60,13 @@ export default function Home() {
         <Testimonials />
       </section>
 
-      <ScrollToView className="flex flex-col gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-20">
+      <section className="flex flex-col gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-20">
         <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Partners</h3>
         <div className="flex gap-4 sm:gap-8 md:gap-12 xl:gap-20 justify-center items-center">
           <img src="/partners/NustLogo.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
           <img src="/partners/cef.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-40" />
         </div>
-      </ScrollToView>
+      </section>
 
       <section className="gap-4 md:gap-12 px-4 py-6 lg:py-10 lg:px-2 w-full flex flex-col">
         <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Clients</h3>
@@ -88,7 +88,6 @@ export default function Home() {
           </div>
         </Marquee>
       </section>
-
       <Footer />
     </div>
   );
