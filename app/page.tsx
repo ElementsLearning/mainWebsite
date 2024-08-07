@@ -50,16 +50,6 @@ export default function Home() {
         <Stats />
       </section>
 
-      <section className="w-full p-2"></section>
-
-      <ScrollToView className="bg-[#F3EEE8] w-full p-4 sm:p-8 lg:p-12 md:min-h-screen md:flex md:flex-col md:justify-center">
-        <MultiCarousel items={LandingPageEvents} />
-      </ScrollToView>
-
-      <section className="w-full p-6 sm:p-10 flex flex-col justify-center xs:items-start min-[550px]:flex-row min-[550px]:items-center sm:gap-8 gap-4">
-        <Testimonials />
-      </section>
-
       <section className="flex flex-col gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-20">
         <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Partners</h3>
         <div className="flex gap-4 sm:gap-8 md:gap-12 xl:gap-20 justify-center items-center">
@@ -88,6 +78,15 @@ export default function Home() {
           </div>
         </Marquee>
       </section>
+
+      <ScrollToView className="bg-[#F3EEE8] w-full p-4 sm:p-8 lg:p-12 md:min-h-screen md:flex md:flex-col md:justify-center">
+        <MultiCarousel items={LandingPageEvents} />
+      </ScrollToView>
+
+      <section className="w-full p-6 sm:p-10 flex flex-col justify-center xs:items-start min-[550px]:flex-row min-[550px]:items-center sm:gap-8 gap-4">
+        <Testimonials />
+      </section>
+
       <Footer />
     </div>
   );
