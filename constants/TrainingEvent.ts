@@ -185,22 +185,6 @@ export const TrainingEvents: Event[] = [
     ]      
   },
   {
-    name: "AJK Trainings",
-    color: "#A7E4F9",
-    innerColor: "#6DD1F5",
-    src: "/driveT/AJK/2.jpg",
-    additional: {
-      date: "March 2024",
-      desc: ""
-    },
-    
-    gallery: [
-      "/driveT/AJK/1.jpg",
-      "/driveT/AJK/3.jpg",
-      "/driveT/AJK/4.jpg",
-      "/driveT/AJK/5.jpg",
-    ]      
-  },{
     name: "Silver Oaks Trainings",
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
