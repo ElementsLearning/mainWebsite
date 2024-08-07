@@ -125,7 +125,7 @@ export const LearningToRead = () => {
     
     <div className="lg:hidden flex flex-col gap-2 p-2">
       {readingSteps.map(({heading, text, src, color}, i) => 
-        <div className="flex gap-4 items-center">
+        <div key={i} className="flex gap-4 items-center">
           <Bullet color={color} />
           <Card className="shadow-md p-6 flex gap-2 items-center">
             <div className="w-fit xs:w-20 sm:w-28 md:w-36 flex justify-center">
