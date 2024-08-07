@@ -15,6 +15,7 @@ export const services: Service[] = [
     disabled: false,
     content: "Enhancing math education with innovative resources like Maths Labs, interactive corners, and recreational activities, all based on the CPA methodology for deeper understanding.",
     illustrationSrc: "/landingpage/maths.png",
+    videoSrc: "/animations/math.mp4",
     link: "/services/maths/publications",
     linkText: "Learn more",
     color: "#D36E0850"
