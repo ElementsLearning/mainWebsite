@@ -5,15 +5,15 @@ export const MathLabEvents: Event[] = [
     name: "Math Lab",
     color: "#CAB9DB",
     innerColor: "#A98CC2",
-    src: "/driveT/MathLab/1.JPG",
-    gallery: ["/driveT/MathLab/1.JPG"]
+    src: "/driveT/MathLab/1.jpg",
+    gallery: ["/driveT/MathLab/1.jpg"]
   },
   {
     name: "Math Lab",
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
-    src: "/driveT/MathLab/2.JPG",
-    gallery: ["/driveT/MathLab/2.JPG"]
+    src: "/driveT/MathLab/2.jpg",
+    gallery: ["/driveT/MathLab/2.jpg"]
   },
   {
     name: "Math Lab",
@@ -26,8 +26,8 @@ export const MathLabEvents: Event[] = [
     name: "Math Lab",
     color: "#F8A6D6",
     innerColor: "#F46CBE",
-    src: "/driveT/MathLab/4.JPG",
-    gallery: ["/driveT/MathLab/4.JPG"]
+    src: "/driveT/MathLab/4.jpg",
+    gallery: ["/driveT/MathLab/4.jpg"]
   },
   {
     name: "Math Lab",
