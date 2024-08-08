@@ -7,7 +7,7 @@ type ScrollToViewProps = {
   threshold?: number
 };
 
-export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children, threshold=0.05 }) => {
+export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children, threshold=0.1 }) => {
   const { ref, inView } = useInView({
     threshold: threshold,
   });
@@ -18,7 +18,7 @@ export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children,
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    if (scrollTop < lastScrollTop) {
+    if (lastScrollTop - scrollTop > 10) {
       setIsScrollingUp(true);
     } else {
       setIsScrollingUp(false);
