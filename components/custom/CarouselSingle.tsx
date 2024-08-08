@@ -38,7 +38,7 @@ export const CarouselSingle: React.FC<CarouselSingleProps> = ({containerClass, i
     style={{position: "relative"}}>
       <div className={containerClass} style={{overflow: "hidden", position: "relative"}}>
         {items.map((item, i) => 
-          <div key={i} className="absolute inset-0 transition-transform duration-300" style={{transform: `translateX(${(i-index)*100}%)`}}>
+          <div key={`item-${i}`} className="absolute inset-0 transition-transform duration-300" style={{transform: `translateX(${(i-index)*100}%)`}}>
             {item}
           </div>
         )}

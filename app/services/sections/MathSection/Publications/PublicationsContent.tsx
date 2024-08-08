@@ -38,10 +38,10 @@ export const PublicationsContent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
                 <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-square bg-neutral-400">
                 <CarouselSingle containerClass={"size-full"} items={[
-                      <img key={1} src="/popularmath/1.jpg" className="size-full" />, 
-                      <img key={2} src="/popularmath/2.jpg" className="size-full" />, 
-                      <img key={3} src="/popularmath/3.jpg" className="size-full" />, 
-                      <img key={4} src="/popularmath/4.jpg" className="size-full" />,
+                      <img key={`popularMath-1`} src="/popularmath/1.jpg" className="size-full" />, 
+                      <img key={`popularMath-2`} src="/popularmath/2.jpg" className="size-full" />, 
+                      <img key={`popularMath-3`} src="/popularmath/3.jpg" className="size-full" />, 
+                      <img key={`popularMath-4`} src="/popularmath/4.jpg" className="size-full" />,
                   ]}
                   nextButton={
                     <div className="size-10 lg:size-16 pr-2 xs:pr-0">

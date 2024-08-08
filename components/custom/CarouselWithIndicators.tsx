@@ -45,7 +45,7 @@ export const CarouselWithIndicators: React.FC<Props> = ({itemClassName, contentC
         >
         <CarouselContent className={contentClassName}>
           {items.map((item, i) => 
-          <CarouselItem key={i} className={itemClassName}>
+          <CarouselItem key={`carouselItem-${i}`} className={itemClassName}>
             {item}
           </CarouselItem>)}
         </CarouselContent>
@@ -55,7 +55,7 @@ export const CarouselWithIndicators: React.FC<Props> = ({itemClassName, contentC
         </div>
       </Carousel>
       {count !== 1 && <div className={`self-center justify-self-center flex gap-2 ${indicatorClassName}`}>
-        {[...Array(count)].map((_, i) => <div key={i} className={`w-1 h-1 sm:h-2 sm:w-2 rounded-full bg-primary ${current === i ? "opacity-100" : "opacity-30"}`}></div>)}
+        {[...Array(count)].map((_, i) => <div key={`indicator-${i}`} className={`w-1 h-1 sm:h-2 sm:w-2 rounded-full bg-primary ${current === i ? "opacity-100" : "opacity-30"}`}></div>)}
       </div>}
     </div>
   )

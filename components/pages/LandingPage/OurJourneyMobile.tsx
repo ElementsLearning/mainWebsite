@@ -30,7 +30,7 @@ const Dots = () => {
   }
 
   return coords.map(({x, y}) => (
-    <FadeIn key={x} className="absolute ml-10 sm:ml-[2.75rem] bg-black size-2 rounded-full -translate-x-1/2 -translate-y-1/2" style={{left: `${x*100}%`, top: `${y*100}%`}} delay={0.2}/>
+    <FadeIn key={`JourneyDotMobile-${y}`} className="absolute ml-10 sm:ml-[2.75rem] bg-black size-2 rounded-full -translate-x-1/2 -translate-y-1/2" style={{left: `${x*100}%`, top: `${y*100}%`}} delay={0.2}/>
   ))
 }
 
@@ -38,7 +38,7 @@ export const OurJourneyMobile = () => {
   return (
     <div className="relative w-full p-4 flex min-[950px]:hidden flex-col gap-4">
       {journeySteps.map(({color, header, content}, i) => (
-        <JourneyCard color={color} header={header} content={content} key={i} />
+        <JourneyCard color={color} header={header} content={content} key={header} />
       ))}
       <Dots />
     </div>

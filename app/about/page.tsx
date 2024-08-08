@@ -6,9 +6,10 @@ import { Footer } from "@/components/pages/Footer/Footer";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { goals } from "@/constants/goals";
 import { team } from "@/constants/team";
-import Marquee from "react-fast-marquee";
 import { GoalCard } from "./GoalCard";
 import { TeamCard } from "./TeamCard";
+import { Clients } from "@/components/custom/Clients";
+import { Partners } from "@/components/custom/Partners";
 
 export default function About() {
   return (
@@ -56,33 +57,8 @@ export default function About() {
           </div>
         </ScrollArea>
       </section>
-      <section className="flex flex-col gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-20">
-        <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Partners</h3>
-        <div className="flex gap-4 sm:gap-8 md:gap-12 xl:gap-20 justify-center items-center">
-          <img src="/partners/NustLogo.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
-          <img src="/partners/cef.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-40" />
-        </div>
-      </section>
-      <section className="gap-4 md:gap-12 px-4 py-6 lg:py-10 lg:px-2 w-full flex flex-col">
-        <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Clients</h3>
-        <Marquee>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/sliveroaks.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
-          </div>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/aps.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48 scale-[80%]" />
-          </div>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/fgel.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
-          </div>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/Fde.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48 scale-[80%]" />
-          </div>
-          <div className="w-full flex justify-center">
-            <img src="/clients/read.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
-          </div>
-        </Marquee>
-      </section>
+      <Partners />
+      <Clients />      
       <Footer />
     </div>
   )

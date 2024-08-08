@@ -94,7 +94,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
         {comments.length !== 0 ?
         <>
         {comments.map(({_id, approved, name, content, createdAt}, i) => 
-        <div key={i} className={`flex flex-col gap-4 p-6 px-4 xs:px-6 sm:px-10 md:px-12 lg:px-16 border-b border-black ${!admin && !approved && "bg-red-100"}`}>
+        <div key={_id} className={`flex flex-col gap-4 p-6 px-4 xs:px-6 sm:px-10 md:px-12 lg:px-16 border-b border-black ${!admin && !approved && "bg-red-100"}`}>
           <div className="flex flex-col md:flex-row justify-between md:items-center gap-2">
             <div className='flex gap-2 items-center text-xl sm:text-2xl font-bold tracking-wide'>
               <PersonIcon className='size-8 md:size-10 rounded-full p-1 border md:border-2 border-black bg-neutral-200' />

@@ -53,7 +53,7 @@ const Dots: React.FC<{inc?: number, allowed?: boolean}> = ({inc=0.01, allowed=fa
   }
 
   return coords.map(({x, y}) => 
-    <FadeIn key={x} className="absolute bg-black size-2 rounded-full -translate-x-1/2 -translate-y-1/2" style={{left: `${x*100}%`, top: `${y}%`}} delay={(x-0.1)/0.8*animationTime}/>
+    <FadeIn key={`JourneyDot-${x}`} className="absolute bg-black size-2 rounded-full -translate-x-1/2 -translate-y-1/2" style={{left: `${x*100}%`, top: `${y}%`}} delay={(x-0.1)/0.8*animationTime}/>
   )
 }
 

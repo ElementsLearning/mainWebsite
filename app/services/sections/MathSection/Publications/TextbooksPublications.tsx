@@ -43,19 +43,19 @@ export const TextbooksPublications = () => {
     "OVERVIEW": <img src="/media/IMG-20240401-WA0010.jpg" className="h-full" />,
     "TEACHERS": <>
       <CarouselSingle containerClass={"size-full"} items={[
-        <Link key={1} href={"/pdfs/sample1.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`teacherPublication-1`} href={"/pdfs/sample1.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book1.jpg" className="size-full" />
         </Link>, 
-        <Link key={2} href={"/pdfs/sample2.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`teacherPublication-2`} href={"/pdfs/sample2.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book2.jpg" className="size-full" />
         </Link>, 
-        <Link key={3} href={"/pdfs/sample3.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`teacherPublication-3`} href={"/pdfs/sample3.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book3.jpg" className="size-full" />
         </Link>, 
-        <Link key={4} href={"/pdfs/sample4.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`teacherPublication-4`} href={"/pdfs/sample4.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book4.jpg" className="size-full" />
         </Link>, 
-        <Link key={5} href={"/pdfs/sample5.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`teacherPublication-5`} href={"/pdfs/sample5.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book5.jpg" className="size-full" />
         </Link>, 
       ]}
@@ -67,19 +67,19 @@ export const TextbooksPublications = () => {
     </>,
     "STUDENTS": <>
       <CarouselSingle containerClass={"size-full"} items={[
-        <Link key={1} href={"/pdfs/sample1.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`studentPublication-1`} href={"/pdfs/sample1.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book1.jpg" className="size-full" />
         </Link>, 
-        <Link key={2} href={"/pdfs/sample2.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`studentPublication-2`} href={"/pdfs/sample2.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book2.jpg" className="size-full" />
         </Link>, 
-        <Link key={3} href={"/pdfs/sample3.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`studentPublication-3`} href={"/pdfs/sample3.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book3.jpg" className="size-full" />
         </Link>, 
-        <Link key={4} href={"/pdfs/sample4.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`studentPublication-4`} href={"/pdfs/sample4.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book4.jpg" className="size-full" />
         </Link>, 
-        <Link key={5} href={"/pdfs/sample5.pdf"} target="_blank" rel="noreferrer"> 
+        <Link key={`studentPublication-5`} href={"/pdfs/sample5.pdf"} target="_blank" rel="noreferrer"> 
           <img src="/bookcovers/book5.jpg" className="size-full" />
         </Link>, 
       ]}

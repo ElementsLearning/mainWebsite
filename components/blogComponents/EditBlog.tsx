@@ -124,7 +124,7 @@ export const EditBlog: React.FC<EditBlogProps> = ({blogToEdit=defaultBlog}) => {
             <Input placeholder="Author of Blog" value={author} onChange={(e) => setBlog({...blog, author: e.target.value})} className="text-base h-fit border-0" />
           </div>
         </div>
-        {content?.map(({type, ...props}, i) => <BlogComponent key={i} type={type} {...props} 
+        {content?.map(({type, ...props}, i) => <BlogComponent key={`blogComponent-${i}`} type={type} {...props} 
         onEdit={(edited: BlogContent) => {
           setBlog({...blog, content: [...blog.content.slice(0, i), edited, ...blog.content.slice(i+1)]})
         }} moveUp={() => moveUp(i)} moveDown={() => moveDown(i)} deleteComponent={() => deleteComponent(i)}

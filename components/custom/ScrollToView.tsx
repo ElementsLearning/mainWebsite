@@ -15,6 +15,7 @@ export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children,
   const sectionRef = useRef<HTMLElement | null>(null);
   const [lastScrollTop, setLastScrollTop] = useState<number>(0);
   const [isScrollingUp, setIsScrollingUp] = useState<boolean>(false);
+  const [canScroll, setCanScroll] = useState(true)
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
@@ -34,14 +35,19 @@ export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children,
   }, [lastScrollTop]);
 
   useEffect(() => {
-    if (inView && sectionRef.current && !isScrollingUp) {
+    if (inView && sectionRef.current && !isScrollingUp && canScroll) {
       const topPosition = sectionRef.current.offsetTop;
       window.scrollTo({
         top: topPosition,
         behavior: 'smooth'
       });
+      setCanScroll(false)
     }
   }, [inView, sectionRef, isScrollingUp]);
+
+  useEffect(() => {
+    if (!canScroll) setTimeout(() => setCanScroll(true), 5000)
+  }, [canScroll])
 
   return (
     <section ref={(node) => { ref(node); sectionRef.current = node; }} className={className}>

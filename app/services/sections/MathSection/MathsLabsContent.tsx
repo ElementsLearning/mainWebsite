@@ -29,7 +29,7 @@ export const MathsLabsContent = () => {
             <div className="flex flex-col gap-4 py-2 xs:py-4 md:py-6 lg:py-8">
               <p className="text-base md:text-lg xl:text-xl">We offer three packages in our Maths Labs. Each package is tailored to meet the diverse needs of schools and educators.</p>    
               <div className="flex flex-col flex-wrap sm:flex-row gap-4">
-                {packages.map((pkg, i) => <ContentCard key={i} {...pkg} index={i} />)}
+                {packages.map((pkg, i) => <ContentCard key={`package-${i}`} {...pkg} index={i} />)}
               </div>
             </div>
 
@@ -42,11 +42,11 @@ export const MathsLabsContent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
                 <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-[3/4] bg-neutral-400">
                   <CarouselSingle containerClass={"size-full"} items={[
-                        <img key={1} src="/MathLabCover/1.png" className="size-full" />, 
-                        <img key={2} src="/MathLabCover/2.png" className="size-full" />, 
-                        <img key={3} src="/MathLabCover/3.png" className="size-full" />, 
-                        <img key={4} src="/MathLabCover/4.png" className="size-full" />, 
-                        <img key={5} src="/MathLabCover/5.png" className="size-full" />, 
+                        <img key={`mathLabCover-1`} src="/MathLabCover/1.png" className="size-full" />, 
+                        <img key={`mathLabCover-2`} src="/MathLabCover/2.png" className="size-full" />, 
+                        <img key={`mathLabCover-3`} src="/MathLabCover/3.png" className="size-full" />, 
+                        <img key={`mathLabCover-4`} src="/MathLabCover/4.png" className="size-full" />, 
+                        <img key={`mathLabCover-5`} src="/MathLabCover/5.png" className="size-full" />, 
                     ]}
                     nextButton={
                       <div className="size-10 lg:size-16 pr-2 xs:pr-0">

@@ -1,5 +1,7 @@
 "use client"
 import { MultiCarousel } from "@/components/custom/MultiCarousel";
+import { Clients } from "@/components/custom/Clients";
+import { Partners } from "@/components/custom/Partners";
 import { ScrollToView } from "@/components/custom/ScrollToView";
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
 import { Footer } from "@/components/pages/Footer/Footer";
@@ -13,7 +15,6 @@ import { Testimonials } from "@/components/pages/LandingPage/Testimonials";
 import { VideoSection } from "@/components/pages/LandingPage/VideoSection";
 import { WhatWeOffer } from "@/components/pages/LandingPage/WhatWeOffer";
 import { LandingPageEvents } from "@/constants/LandingPageEvents";
-import Marquee from "react-fast-marquee";
 
 export default function Home() {
   return (
@@ -50,34 +51,9 @@ export default function Home() {
         <Stats />
       </section>
 
-      <section className="flex flex-col gap-4 md:gap-8 px-4 py-6 lg:py-10 lg:px-20">
-        <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Partners</h3>
-        <div className="flex gap-4 sm:gap-8 md:gap-12 xl:gap-20 justify-center items-center">
-          <img src="/partners/NustLogo.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
-          <img src="/partners/cef.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-40" />
-        </div>
-      </section>
+      <Partners />
 
-      <section className="gap-4 md:gap-12 px-4 py-6 lg:py-10 lg:px-2 w-full flex flex-col">
-        <h3 className="px-4  text-2xl min-[900px]:text-4xl text-center font-bold uppercase">Our Clients</h3>
-        <Marquee>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/sliveroaks.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48" />
-          </div>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/aps.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-32 xl:h-48 scale-[80%]" />
-          </div>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/fgel.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
-          </div>
-          <div className="w-24 sm:w-44 md:64 lg:w-72  flex justify-center">
-            <img src="/clients/Fde.jpg" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48 scale-[80%]" />
-          </div>
-          <div className="w-full flex justify-center">
-            <img src="/clients/read.png" alt="" className="h-16 sm:h-20 md:h-24 lg:h-30 xl:h-48" />
-          </div>
-        </Marquee>
-      </section>
+      <Clients />      
 
       <ScrollToView className="bg-[#F3EEE8] w-full p-4 sm:p-8 lg:p-12 md:min-h-screen md:flex md:flex-col md:justify-center">
         <MultiCarousel items={LandingPageEvents} />

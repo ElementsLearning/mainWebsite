@@ -32,7 +32,7 @@ const Dots: React.FC<{vertical: boolean}> = ({vertical}) => {
   return (
     <div className={`absolute flex justify-between ${vertical ? "flex-col left-1/2 -translate-x-1/2 top-0 bottom-0" : "top-1/2 left-0 right-0 -translate-y-1/2"}`}>
       {Array.from({length: count}, (_, i) => (
-        <div key={i} className={"bg-light-black size-2 rounded-full"} />
+        <div key={`readingDot-${i}`} className={"bg-light-black size-2 rounded-full"} />
       ))}
     </div>
   )
@@ -45,7 +45,7 @@ export const LearningToRead = () => {
       <Dots vertical={false} />
       <div className="size-full flex z-10">
         {readingSteps.map(({heading, text, color, src, scale=100, translateY=0, translateX=0}, i) => (
-          <SlidingDiv delay={i*0.2} direction={i % 2 === 0 ? "top" : "bottom"} px={50}  className={`relative flex-1 flex gap-4 justify-center items-center ${i % 2 === 0 ? "flex-col" : "flex-col-reverse"}`} key={i}>
+          <SlidingDiv delay={i*0.2} direction={i % 2 === 0 ? "top" : "bottom"} px={50}  className={`relative flex-1 flex gap-4 justify-center items-center ${i % 2 === 0 ? "flex-col" : "flex-col-reverse"}`} key={heading}>
             <div className="rounded-full scale-75 w-full aspect-square p-3 min-[1250px]:p-5" style={{backgroundColor: color}}>
               <div className="relative w-full aspect-square rounded-full bg-white">
                 <img style={{transform: `translateX(calc(-50% + ${translateX}%)) translateY(calc(-50% + ${translateY}%)) scale(${scale}%) `}} src={src} alt="" className="absolute top-1/2 left-1/2" />
