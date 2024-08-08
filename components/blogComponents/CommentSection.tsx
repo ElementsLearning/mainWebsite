@@ -7,6 +7,7 @@ import { Button } from '../ui/button'
 import { Comment } from '@/constants/Blogs/blog'
 import { daysAgo } from '@/lib/utils'
 import { Trash, Trash2, Trash2Icon } from 'lucide-react'
+import { useToast } from '../ui/use-toast'
 
 type CommentSectionProps = {
   id: string
@@ -17,6 +18,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
 
   const [comments, setComments] = useState<Comment[]>([])
   const [loading, setLoading] = useState(false)
+  const { toast } = useToast()
 
   useEffect(() => {
     const fetchComments = async () => {
@@ -34,6 +36,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
     })).json()
     setComments([comment, ...comments])
     setLoading(false)
+    toast({title: "Comment has been Posted", description: "Your comments has been posted, and will be visible after approval"})
   }
   
   const toggleApprove = async (id: string) => {
@@ -41,6 +44,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
     const { comment } = await (await fetch(`/api/comments/approve/${id}`)).json()
     setComments(comments.map(c => c._id === comment._id ? comment : c))
     setLoading(false)
+    toast({title: `Comment has been ${comment ? "Made Public" : "Hidden"}`})
   }
 
   const deleteComment = async (id: string) => {
@@ -48,6 +52,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
     const { comment } = await (await fetch(`/api/comments/delete/${id}`)).json()
     setComments(comments.filter(c => c._id !== comment._id))
     setLoading(false)
+    toast({title: "Comment has been Deleted"})
   }
 
   const [name, setName] = useState("")
@@ -76,13 +81,13 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
               </div>
               <div className='hidden sm:flex gap-2'>
                 <Button onClick={() => {setName(""); setContent("")}} variant={'outline'}>Clear</Button>
-                <Button disabled={!name || !content || loading} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>Post</Button>
+                <Button disabled={!name || !content || loading} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>{loading ? "Loading" : "Post"}</Button>
               </div>
             </div>
             <Textarea value={content} onChange={(e) => setContent(e.target.value)} placeholder='Comment...' className='h-32 bg-white' />
             <div className='flex sm:hidden gap-2'>
               <Button onClick={() => {setName(""); setContent("")}} variant={'outline'}>Clear</Button>
-              <Button disabled={!name || !content || loading} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>Post</Button>
+              <Button disabled={!name || !content || loading} onClick={() => {uploadComment(name, content); setName(""); setContent("")}}>{loading ? "Loading" : "Post"}</Button>
             </div>
           </Card>
         </div>}

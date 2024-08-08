@@ -7,6 +7,7 @@ import { Footer } from "@/components/pages/Footer/Footer";
 import { Mail, MapPin, Smartphone } from "lucide-react";
 import { useEffect, useState } from "react";
 import emailjs from '@emailjs/browser';
+import { useToast } from "@/components/ui/use-toast";
 
 
 type Email = {
@@ -25,7 +26,7 @@ export default function Contact() {
   })
 
   const [loading, setLoading] = useState(false)
-  const [response, setResponse] = useState<{successful: boolean, message: string}>()
+  const { toast } = useToast()
   
   const sendMail = () => {
     const { name, emailID, message } = email
@@ -44,8 +45,8 @@ export default function Contact() {
       message,
       email: emailID,
     }).then(
-      (response) => setResponse({successful: true, message: "Email Sent Successfully"}),
-      (error) => setResponse({successful: false, message: "Email Not Sent"})
+      (response) => toast({title: "Email Sent Successfully"}),
+      (error) => toast({title: "Email Not Sent", variant: "destructive"})
     )
 
     setEmail({
@@ -54,10 +55,6 @@ export default function Contact() {
       message: "",
     })
   }
-
-  useEffect(() => {
-    setTimeout(() => setResponse(undefined), 3000)
-  }, [response])
 
   return (
     <div className="flex flex-col">
@@ -81,12 +78,11 @@ export default function Contact() {
 
         <div className="flex flex-col sm:flex-row p-16 lg:px-32 xl:px-40 px-4 gap-4 justify-center">
           <SlidingDiv id="form" direction={"left"} className="flex flex-col flex-[2_0_0] gap-4">
-          <h1 className=" font-bold text-3xl text-center sm:hidden">Fill out the Form</h1>
+            <h1 className="font-bold text-3xl text-center sm:hidden">Fill out the Form</h1>
             <input value={email.name} onChange={(e) => setEmail({ ...email, name: e.target.value })} type="text" placeholder="Your Name" className="bg-[#F3EEE8] rounded-md p-3 sm:p-4 text-xs sm:text-base w-full"/>
             <input value={email.emailID} onChange={(e) => setEmail({ ...email, emailID: e.target.value })} type="text" placeholder="Enter Your Email" className="bg-[#F3EEE8] rounded-md p-3 sm:p-4 text-xs sm:text-base  w-full"/>
             <textarea value={email.message} onChange={(e) => setEmail({ ...email, message: e.target.value })} placeholder="Your Message" className="sm:flex-1 bg-[#F3EEE8] rounded-md p-3 sm:p-4 h-32 text-xs sm:text-base  w-full"/>
-            {response && <p className={`text-center text-sm rounded-md p-2 text-white font-bold ${response.successful ? "bg-green-500" : "bg-red-500"}`}>{response.message}</p>}
-            <button disabled={email.name === "" || email.emailID === "" || email.message === ""} onClick={sendMail} className="bg-[#FBBA41] disabled:bg-neutral-200 disabled:text-light-black hover:bg-light-black hover:text-[#FBBA41] transition-colors rounded-md p-2 sm:text-base text-sm sm:p-4 font-bold">Submit</button>
+            <button disabled={email.name === "" || email.emailID === "" || email.message === "" || loading} onClick={sendMail} className="bg-[#FBBA41] disabled:bg-neutral-200 disabled:text-light-black hover:bg-light-black hover:text-[#FBBA41] transition-colors rounded-md p-2 sm:text-base text-sm sm:p-4 font-bold">{loading ? "Loading" : "Submit"}</button>
           </SlidingDiv>
           <SlidingDiv id="info" direction={"right"} className="flex-[1.5_0_0] flex flex-col gap-4">
           <h1 className=" font-bold text-3xl text-center sm:hidden">Our Info</h1>
