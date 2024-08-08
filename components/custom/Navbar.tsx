@@ -41,7 +41,7 @@ export const Navbar = () => {
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY - lastScrollY > 3) {
+      if (window.scrollY > lastScrollY) {
         // Scroll down
         setIsVisible(false)
         setOpened(false)
