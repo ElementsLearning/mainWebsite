@@ -38,8 +38,8 @@ export default function Contact() {
     else toast({title: "Email Not Sent", variant: "destructive"})
 
     setEmail({
-      name: "Taha Shah",
-      emailID: "test@gmail.com",
+      name: "",
+      emailID: "",
       message: "",
     })
   }
