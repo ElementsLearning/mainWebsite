@@ -36,7 +36,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
     })).json()
     setComments([comment, ...comments])
     setLoading(false)
-    toast({title: "Comment has been Posted", description: "Your comments has been posted, and will be visible after approval"})
+    toast({title: "Comment has been Posted", description: "Your comments has been posted, and will be visible after approval", variant: "success"})
   }
   
   const toggleApprove = async (id: string) => {
@@ -44,7 +44,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
     const { comment } = await (await fetch(`/api/comments/approve/${id}`)).json()
     setComments(comments.map(c => c._id === comment._id ? comment : c))
     setLoading(false)
-    toast({title: `Comment has been ${comment ? "Made Public" : "Hidden"}`})
+    toast({title: `Comment has been ${comment.approved ? "Made Public" : "Hidden"}`, variant: comment.approved ? "success" : "destructive"})
   }
 
   const deleteComment = async (id: string) => {
@@ -52,7 +52,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({id, admin=false})
     const { comment } = await (await fetch(`/api/comments/delete/${id}`)).json()
     setComments(comments.filter(c => c._id !== comment._id))
     setLoading(false)
-    toast({title: "Comment has been Deleted"})
+    toast({title: "Comment has been Deleted", variant: "destructive"})
   }
 
   const [name, setName] = useState("")

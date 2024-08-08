@@ -34,7 +34,7 @@ export default function Contact() {
       body: JSON.stringify({email}),
     })).json()
 
-    if (message) toast({title: "Email Sent Successfully"})
+    if (message) toast({variant: "success", title: "Email Sent Successfully"})
     else toast({title: "Email Not Sent", variant: "destructive"})
 
     setEmail({
