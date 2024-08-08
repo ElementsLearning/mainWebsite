@@ -82,14 +82,14 @@ export const BlogParagraph: React.FC<ParagraphType & IndentedType & Editable> = 
       :
       <div>
       {imgData ? <img src={imgData} className="w-96 float-start mr-4" /> : src && <img src={src} alt="Image Not Found" className="w-96 float-start mr-4" />}
-      <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
+      <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} whitespace-pre-wrap ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
         {text}
       </p>
       </div>}
       </>:
       <div>
         {src && <img src={src} className="w-96 float-start mr-4" />}
-        <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""} gap-2`}>
+        <p className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName} whitespace-pre-wrap ${indented ? "pl-2 xs:pl-4 md:pl-8 xl:pl-12" : ""}`}>
           {text}
         </p>
       </div>}

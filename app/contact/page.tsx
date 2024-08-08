@@ -5,8 +5,7 @@ import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
 import { VideoPlayer } from "@/components/custom/VideoPlayer";
 import { Footer } from "@/components/pages/Footer/Footer";
 import { Mail, MapPin, Smartphone } from "lucide-react";
-import { useEffect, useState } from "react";
-import emailjs from '@emailjs/browser';
+import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
 
@@ -28,30 +27,19 @@ export default function Contact() {
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
   
-  const sendMail = () => {
-    const { name, emailID, message } = email
-    
-    emailjs.init({
-      publicKey: 'lqxeJa3RR9b1m1tkX',
-      blockHeadless: true,
-      limitRate: {
-        id: 'elements',
-        throttle: 1000,
-      },
-    });
+  const sendMail = async () => {
 
-    emailjs.send("service_ogzs4cn","template_18vcbcb",{
-      name,
-      message,
-      email: emailID,
-    }).then(
-      (response) => toast({title: "Email Sent Successfully"}),
-      (error) => toast({title: "Email Not Sent", variant: "destructive"})
-    )
+    const { message } = await (await fetch("/api/mail", {
+      method: "POST",
+      body: JSON.stringify({email}),
+    })).json()
+
+    if (message) toast({title: "Email Sent Successfully"})
+    else toast({title: "Email Not Sent", variant: "destructive"})
 
     setEmail({
-      name: "",
-      emailID: "",
+      name: "Taha Shah",
+      emailID: "test@gmail.com",
       message: "",
     })
   }
