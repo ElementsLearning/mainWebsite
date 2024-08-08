@@ -29,6 +29,7 @@ export default function Contact() {
   
   const sendMail = async () => {
 
+    setLoading(true)
     const { message } = await (await fetch("/api/mail", {
       method: "POST",
       body: JSON.stringify({email}),
@@ -36,7 +37,8 @@ export default function Contact() {
 
     if (message) toast({variant: "success", title: "Email Sent Successfully"})
     else toast({title: "Email Not Sent", variant: "destructive"})
-
+  
+    setLoading(true)
     setEmail({
       name: "",
       emailID: "",
