@@ -18,9 +18,9 @@ export const Footer = () => {
           <LinksSection />
         </div>
       </div>
-      <div className="text-white font-bold flex justify-between py-2 xl:p-4 text-xs sm:text-sm md:text-base xl:text-lg">
-        <p>Copyright 2011 © Elements Learning Pvt Ltd.</p>
-        <p>Privacy Policy</p>
+      <div className="text-white font-bold items-center flex justify-between py-2 xl:p-4 text-xs sm:text-sm md:text-base xl:text-lg">
+        <p className="flex-1">Copyright 2011 © Elements Learning Pvt Ltd.</p>
+        <p className="flex-1 text-right">Privacy Policy</p>
       </div>
     </footer>
   )
