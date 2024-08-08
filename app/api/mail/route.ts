@@ -31,6 +31,6 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.log(error)
-    return NextResponse.json({message: { error: error, user: process.env.ZOHO_EMAIL, pass: process.env.ZOHO_PASSWORD }})
+    return NextResponse.json({ error: error})
   }
 }

@@ -34,11 +34,8 @@ export default function Contact() {
       body: JSON.stringify({email}),
     })).json()
 
-    if (!message.error) toast({title: "Email Sent Successfully"})
-    else {
-      toast({title: "Email Not Sent", variant: "destructive"})
-      console.log({message})
-    }
+    if (message) toast({title: "Email Sent Successfully"})
+    else toast({title: "Email Not Sent", variant: "destructive"})
 
     setEmail({
       name: "Taha Shah",
