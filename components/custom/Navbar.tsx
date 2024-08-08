@@ -41,9 +41,10 @@ export const Navbar = () => {
 
   const controlNavbar = () => {
     if (typeof window !== "undefined") {
-      if (window.scrollY > lastScrollY) {
+      if (window.scrollY - lastScrollY > 3) {
         // Scroll down
         setIsVisible(false)
+        setOpened(false)
       } else {
         // Scroll up
         setIsVisible(true)
@@ -103,7 +104,7 @@ export const Navbar = () => {
             </button>
           </div>
         </div>
-        <div className={`w-full transition-all duration-300 overflow-hidden ${opened ? "h-64" : "h-0"}`}>
+        <div className={`absolute bottom-0 left-0 px-10 border-b-2 border-[#FBBA41] translate-y-full bg-white w-full transition-all duration-300 overflow-hidden ${opened ? "h-64" : "h-0"}`}>
           <div onClick={() => setOpened(false)} className="flex flex-col h-full text-xl gap-4 xl:gap-10 justify-center items-start">
             <Link href="/about" className={`border-b-2 border-[#FBBA41]`}>About Us</Link>
             <Link href="/services" className={`border-b-2 border-[#FBBA41]`}>What we Offer</Link>
