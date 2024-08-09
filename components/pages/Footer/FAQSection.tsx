@@ -23,7 +23,7 @@ const FAQs: FAQ[] = [
   },
   {
     question: "Are math manipulative tools safe for children to use?",
-    answer: "Yes, math manipulative tools provided by EL are designed with safety in mind. We ensure that our tools meet safety standards and regulations (Omit ISO-9001) to provide a safe learning environment for children. Additionally, our materials are carefully selected and tested to ensure durability and suitability for educational purposes. We recommend supervision by adults while children are using the manipulative tools to ensure safe and effective learning experiences."
+    answer: "Yes, math manipulative tools provided by EL are designed with safety in mind. We ensure that our tools meet safety standards and regulations to provide a safe learning environment for children. Additionally, our materials are carefully selected and tested to ensure durability and suitability for educational purposes. We recommend supervision by adults while children are using the manipulative tools to ensure safe and effective learning experiences."
   },
   {
     question: "What sets EL apart from other educational platforms?",
