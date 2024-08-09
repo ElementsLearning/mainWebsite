@@ -47,14 +47,14 @@ export const readingSteps: ReadingStep[] = [
     translateY: -12
   },
   {
-    heading: "BOOKLETS",
-    text: "Reading and comprehending small books to reinforce language skills.",
+    heading: "WHO AM I",
+    text: "A journal for children of grade 4 onwards, for knowing and discovering about 'self' with multiple other purposes like writing and thinking skills and character development.",
     color: "#6C3A92",
     src: "/language/reading/6.png",
   },
   {
-    heading: "LITERATURE & BOOK REVIEW",
-    text: "Engaging deeply with literature, developing the ability to read critically and review books.",
+    heading: "BE AN AUTHOR",
+    text: "Every child is an author in area of his or her area of interest. In EL we create many opportunities for children to express themselves in a variety of arts and ways.",
     color: "#F10229",
     src: "/language/reading/7.png",
     translateY: -20,

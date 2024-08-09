@@ -1,4 +1,5 @@
 import { Event } from "@/constants/LandingPageEvents"
+import { useOnEscape } from "@/lib/hooks/useOnEscape"
 import { ArrowRightIcon, ChevronUpIcon } from "@radix-ui/react-icons"
 import { CalendarIcon } from "lucide-react"
 import { useEffect, useState } from "react"
@@ -20,6 +21,7 @@ export const MultiCarousel: React.FC<MultiCarouselProps> = ({items, autoScroll=t
   const [paused, setPaused] = useState(false)
 
   const [opened, setOpened] = useState(false)
+  useOnEscape(() => setOpened(false))
   const smallerSize = size * 0.75
 
   useEffect(() => {

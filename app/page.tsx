@@ -1,6 +1,6 @@
 "use client"
-import { MultiCarousel } from "@/components/custom/MultiCarousel";
 import { Clients } from "@/components/custom/Clients";
+import { MultiCarousel } from "@/components/custom/MultiCarousel";
 import { Partners } from "@/components/custom/Partners";
 import { ScrollToView } from "@/components/custom/ScrollToView";
 import { SlidingDiv } from "@/components/custom/SlidingDiv";

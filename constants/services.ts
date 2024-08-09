@@ -61,7 +61,7 @@ export const services: Service[] = [
     color: "#007E3D50"
   },
   {
-    title: "STEAM (connected learning)",
+    title: "Connected Learning (STEAM)",
     disabled: true,
     content: " Integrating history and geography with real-life contexts, our Connected Learning approach builds a holistic understanding of the world and its interconnected elements.",
     illustrationSrc: "/landingpage/steam.png",
