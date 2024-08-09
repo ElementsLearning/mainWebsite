@@ -1,11 +1,11 @@
-import { Blog, BlogContent } from "@/constants/Blogs/blog"
-import { BlogParagraph } from "./BlogParagraph"
-import { BlogHeader } from "./BlogHeader"
-import { BlogBullets } from "./BlogBullets"
-import { BlogImage } from "./BlogImage"
-import { FadeIn } from "../custom/FadeIn"
-import { Calendar } from "lucide-react"
+import { Blog } from "@/constants/Blogs/blog"
 import { PersonIcon } from "@radix-ui/react-icons"
+import { Calendar } from "lucide-react"
+import { FadeIn } from "../custom/FadeIn"
+import { BlogBullets } from "./BlogBullets"
+import { BlogHeader } from "./BlogHeader"
+import { BlogImage } from "./BlogImage"
+import { BlogParagraph } from "./BlogParagraph"
 
 type BlogComponentProps = {
   type: string
@@ -62,7 +62,7 @@ export const BlogPage: React.FC<Blog> = ({title, headerSrc, content, author, dat
             <p>{date}</p>
           </div>
         </div>
-        {content?.map(({type, ...props}, i) => <BlogComponent key={i} type={type} {...props} />)}
+        {content?.map(({type, ...props}, i) => <BlogComponent key={`blogComponent-${i}`} type={type} {...props} />)}
       </FadeIn>
     </div>
   )
