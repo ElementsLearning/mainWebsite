@@ -40,13 +40,23 @@ export const MathsLabsContent = () => {
             content: 
             <div className="py-2 xs:py-4 md:py-6 lg:py-8">
               <div className="flex flex-col sm:flex-row gap-2">
-                <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-[3/4] bg-neutral-400">
+                <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-[3/4] bg-blue-950">
                   <CarouselSingle containerClass={"size-full"} items={[
-                        <img key={`mathLabCover-1`} src="/MathLabCover/1.png" className="size-full" />, 
-                        <img key={`mathLabCover-2`} src="/MathLabCover/2.png" className="size-full" />, 
-                        <img key={`mathLabCover-3`} src="/MathLabCover/3.png" className="size-full" />, 
-                        <img key={`mathLabCover-4`} src="/MathLabCover/4.png" className="size-full" />, 
-                        <img key={`mathLabCover-5`} src="/MathLabCover/5.png" className="size-full" />, 
+                        <div className="p-3">
+                          <img key={`mathLabCover-1`} src="/MathLabCover/1.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        </div>,
+                        <div className="p-3">
+                          <img key={`mathLabCover-2`} src="/MathLabCover/2.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        </div>,
+                        <div className="p-3">
+                          <img key={`mathLabCover-3`} src="/MathLabCover/3.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        </div>,
+                        <div className="p-3">
+                          <img key={`mathLabCover-4`} src="/MathLabCover/4.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        </div>,
+                        <div className="p-3">
+                          <img key={`mathLabCover-5`} src="/MathLabCover/5.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        </div>,
                     ]}
                     nextButton={
                       <div className="size-10 lg:size-16 pr-2 xs:pr-0">
