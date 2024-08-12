@@ -42,20 +42,20 @@ export const MathsLabsContent = () => {
               <div className="flex flex-col sm:flex-row gap-2">
                 <SlidingDiv direction={"left"} className="sm:flex-[2_0_0] aspect-[3/4] bg-blue-950">
                   <CarouselSingle containerClass={"size-full"} items={[
-                        <div className="p-3">
-                          <img key={`mathLabCover-1`} src="/MathLabCover/1.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        <div key={`mathLabCover-1`} className="p-3">
+                          <img src="/MathLabCover/1.jpg" className="size-full shadow-lg shadow-slate-400" />
                         </div>,
-                        <div className="p-3">
-                          <img key={`mathLabCover-2`} src="/MathLabCover/2.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        <div key={`mathLabCover-2`} className="p-3">
+                          <img src="/MathLabCover/2.jpg" className="size-full shadow-lg shadow-slate-400" />
                         </div>,
-                        <div className="p-3">
-                          <img key={`mathLabCover-3`} src="/MathLabCover/3.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        <div key={`mathLabCover-3`} className="p-3">
+                          <img src="/MathLabCover/3.jpg" className="size-full shadow-lg shadow-slate-400" />
                         </div>,
-                        <div className="p-3">
-                          <img key={`mathLabCover-4`} src="/MathLabCover/4.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        <div key={`mathLabCover-4`} className="p-3">
+                          <img src="/MathLabCover/4.jpg" className="size-full shadow-lg shadow-slate-400" />
                         </div>,
-                        <div className="p-3">
-                          <img key={`mathLabCover-5`} src="/MathLabCover/5.jpg" className="size-full shadow-lg shadow-slate-400" />
+                        <div key={`mathLabCover-5`} className="p-3">
+                          <img src="/MathLabCover/5.jpg" className="size-full shadow-lg shadow-slate-400" />
                         </div>,
                     ]}
                     nextButton={
