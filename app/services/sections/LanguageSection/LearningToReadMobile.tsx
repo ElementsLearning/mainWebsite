@@ -37,7 +37,7 @@ const Dots = () => {
   }
 
   return coords.map(({x, y}) => (
-    <FadeIn key={`readingDotV-${x}`} className="absolute ml-10 sm:ml-[2.75rem] bg-black size-2 rounded-full -translate-x-1/2 -translate-y-1/2" style={{left: `${x*100}%`, top: `${y*100}%`}} delay={0.2}/>
+    <FadeIn key={`readingDotV-${y}`} className="absolute ml-10 sm:ml-[2.75rem] bg-black size-2 rounded-full -translate-x-1/2 -translate-y-1/2" style={{left: `${x*100}%`, top: `${y*100}%`}} delay={0.2}/>
   ))
 }
 

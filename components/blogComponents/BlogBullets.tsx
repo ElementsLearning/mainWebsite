@@ -1,16 +1,16 @@
-import { BulletType, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
-import { BlogParagraph } from "./BlogParagraph"
-import { BlogHeader } from "./BlogHeader"
-import { Input } from "../ui/input"
 import { defaultHeader } from "@/constants/Blogs/allBlogs"
-import { getTailwind } from "@/lib/utils"
+import { BulletType, Editable, IndentedType, ParagraphType } from "@/constants/Blogs/blog"
 import { headerOptions, paragraphOptions } from "@/constants/Blogs/blogOptions"
-import { Card } from "../ui/card"
-import { Button } from "../ui/button"
-import { ArrowDownIcon, ArrowUpIcon, ChevronRight, ChevronRightIcon, XIcon } from "lucide-react"
-import { BlogOption } from "./BlogOption"
-import { useState } from "react"
+import { getTailwind } from "@/lib/utils"
 import { CrossCircledIcon, Pencil2Icon } from "@radix-ui/react-icons"
+import { ArrowDownIcon, ArrowUpIcon, ChevronRight, ChevronRightIcon, XIcon } from "lucide-react"
+import { useState } from "react"
+import { Button } from "../ui/button"
+import { Card } from "../ui/card"
+import { Input } from "../ui/input"
+import { BlogHeader } from "./BlogHeader"
+import { BlogOption } from "./BlogOption"
+import { BlogParagraph } from "./BlogParagraph"
 
 export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({header, points, pointStyle, indented=false, style, editable=false, onEdit=()=>{}, deleteComponent=()=>{}, moveDown=()=>{}, moveUp=()=>{}}) => {
 
@@ -135,7 +135,7 @@ export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({hea
         </div>
         <div className="flex flex-col pl-2 xs:pl-4 md:pl-8 xl:pl-12 gap-1">
           {points.map((point, i) => (
-            <div key={i} className={`flex gap-2 ${alignment} relative group`}>
+            <div key={`point-${i}`} className={`flex gap-2 ${alignment} relative group`}>
               <Marker i={i} />
               {/* <BlogParagraph type={"PARAGRAPH"} indented={false} {...pointStyle} text={point} /> */}
               <Input placeholder={`Point ${i+1}`} value={point} onChange={(e) => onEdit({...current, points: [...points.slice(0, i), e.target.value, ...points.slice(i+1)]})} className={`${sizeClassName} ${weightClassName} ${styleClassName} ${alignmentClassName}`}/>
@@ -150,7 +150,7 @@ export const BlogBullets: React.FC<BulletType & IndentedType & Editable> = ({hea
         {header && <BlogHeader indented={false} {...header}/>}
         <div className="flex flex-col pl-2 xs:pl-4 md:pl-8 xl:pl-12 gap-1">
           {points.map((point, i) => (
-            <div key={i} className={`flex gap-2 ${alignment}`}>
+            <div key={`point-${i}`} className={`flex gap-2 ${alignment}`}>
               <Marker i={i} />
               <BlogParagraph type={"PARAGRAPH"} indented={false} {...pointStyle} text={point} />
             </div>

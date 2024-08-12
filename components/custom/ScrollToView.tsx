@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, ReactNode, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 type ScrollToViewProps = {
@@ -7,7 +7,7 @@ type ScrollToViewProps = {
   threshold?: number
 };
 
-export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children, threshold=0.1 }) => {
+export const ScrollToView: React.FC<ScrollToViewProps> = ({ className, children, threshold=0.25 }) => {
   const { ref, inView } = useInView({
     threshold: threshold,
   });
