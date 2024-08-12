@@ -11,7 +11,7 @@ export const WhatWeOffer = () => {
 
   return (
     <>
-      <div className="flex flex-col lg:flex-row items-start gap-12 lg:gap-20">
+      <div className="flex flex-col lg:flex-row items-start gap-4 sm:gap-12 lg:gap-20">
 
         <div className="rounded-md flex-1 flex flex-col sm:flex-row lg:flex-col gap-12 sm:gap-8 justify-end items-end">
           <div className="max-w-[400px]">
