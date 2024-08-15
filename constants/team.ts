@@ -42,7 +42,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Saad Ali",
-    designation: "Admin Manager",
+    designation: "Admin Assistant",
     corner: "br"
   },
   {
@@ -72,7 +72,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Sana Naeem",
-    designation: "Maths Trainer",
+    designation: "Maths Trainer & Researcher",
     corner: "br"
   },
   {
@@ -112,7 +112,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Taha Shah",
-    designation: "Web Developers",
+    designation: "Web Developer",
     corner: "br"
   },
   {
