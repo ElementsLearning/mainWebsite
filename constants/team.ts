@@ -75,4 +75,55 @@ export const team: TeamMember[] = [
     designation: "Maths Trainer",
     corner: "br"
   },
+  {
+    name: "Hira Abbasi",
+    designation: "Dir HR & OD",
+    corner: "br"
+  },
+  {
+    name: "Shafqat Faisal",
+    designation: "Math Trainer & Researcher",
+    corner: "br"
+  },
+  {
+    name: "Muhammad Abdullah",
+    designation: "Communications Manager",
+    corner: "br"
+  },
+  {
+    name: "Zoha Rizvi",
+    designation: "Math Trainer & Researcher",
+    corner: "br"
+  },
+  {
+    name: "Yasir Anwar",
+    designation: "Admin Manager",
+    corner: "br"
+  },
+  {
+    name: "Kulsoom Ayyaz",
+    designation: "Chair Women",
+    corner: "br"
+  },
+  {
+    name: "Amna Rafique",
+    designation: "Graphics Illustrator",
+    corner: "br"
+  },
+  {
+    name: "Taha Shah",
+    designation: "Web Developers",
+    corner: "br"
+  },
+  {
+    name: "Umair Ijaz",
+    designation: "Web Developer Intern",
+    corner: "br"
+  },
+  {
+    name: "Adan Haider",
+    designation: "Math Research Intern",
+    corner: "br"
+  },
+  
 ]
