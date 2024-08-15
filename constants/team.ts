@@ -102,7 +102,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Kulsoom Ayyaz",
-    designation: "Chair Women",
+    designation: "Graphics Designer & Illustrator",
     corner: "br"
   },
   {
