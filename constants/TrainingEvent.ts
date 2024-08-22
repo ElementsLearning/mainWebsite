@@ -1,21 +1,21 @@
 import { Event } from "./LandingPageEvents";
 
 export const TrainingEvents: Event[] = [
-  // {
-  //   name: "APS Training",
-  //   innerColor: "#B1DA94",
-  //   color: "#CFE8BE",
-  //   src: "/drive/APSTraning/aps (8).jpg",
-  //   gallery: [
-  //     "/drive/APSTraning/aps (3).jpg",
-  //     "/drive/APSTraning/aps (2).jpg",
-  //     "/drive/APSTraning/aps (4).jpg",
-  //     "/drive/APSTraning/aps (7).jpg",
-  //     "/drive/APSTraning/aps (5).jpg",
-  //     "/drive/APSTraning/aps (6).jpg",
-  //     "/drive/APSTraning/aps (1).jpg",
-  //   ]
-  // },
+  {
+    name: "APS Training",
+    innerColor: "#B1DA94",
+    color: "#CFE8BE",
+    src: "/drive/APSTraning/aps (8).jpg",
+    gallery: [
+      "/drive/APSTraning/aps (3).jpg",
+      "/drive/APSTraning/aps (2).jpg",
+      "/drive/APSTraning/aps (4).jpg",
+      "/drive/APSTraning/aps (7).jpg",
+      "/drive/APSTraning/aps (5).jpg",
+      "/drive/APSTraning/aps (6).jpg",
+      "/drive/APSTraning/aps (1).jpg",
+    ]
+  },
   // {
   //   name: "Jhang Training",
   //   innerColor: "#B1DA94",
