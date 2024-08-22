@@ -190,7 +190,7 @@ export const TrainingEvents: Event[] = [
     innerColor: "#6DD1F5",
     src: "/driveT/SilverOks/7.jpg",
     additional: {
-      date: "March 2024",
+      date: "July 2024",
       desc: ""
     },
     
