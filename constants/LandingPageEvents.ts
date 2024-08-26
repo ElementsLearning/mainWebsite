@@ -185,6 +185,39 @@ export const LandingPageEvents: Event[] = [
       "/drive/CEOCEFVisit/4.jpg",
     ]            
   },
+  {
+    name: "Silver Oaks Trainings",
+    color: "#A7E4F9",
+    innerColor: "#6DD1F5",
+    src: "/driveT/SilverOks/7.jpg",    
+    gallery: [
+      "/driveT/SilverOks/1.jpg",
+      "/driveT/SilverOks/2.jpg",
+      "/driveT/SilverOks/3.jpg",
+      "/driveT/SilverOks/4.jpg",
+      "/driveT/SilverOks/5.jpg",
+      "/driveT/SilverOks/6.jpg",
+      "/driveT/SilverOks/7.jpg",
+      "/driveT/SilverOks/8.jpg",
+      "/driveT/SilverOks/9.jpg",
+      "/driveT/SilverOks/10.jpg",
+    ]      
+  },
+  {
+    name: "APS Training",
+    innerColor: "#B1DA94",
+    color: "#CFE8BE",
+    src: "/drive/APSTraning/aps (8).jpg",
+    gallery: [
+      "/drive/APSTraning/aps (3).jpg",
+      "/drive/APSTraning/aps (2).jpg",
+      "/drive/APSTraning/aps (4).jpg",
+      "/drive/APSTraning/aps (7).jpg",
+      "/drive/APSTraning/aps (5).jpg",
+      "/drive/APSTraning/aps (6).jpg",
+      "/drive/APSTraning/aps (1).jpg",
+    ]
+  },
   // {
   //   name: "RWU Jobfair 2024",
   //   color: "#F8A6D6",

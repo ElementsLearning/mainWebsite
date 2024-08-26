@@ -40,7 +40,7 @@ const Dots: React.FC<{vertical: boolean}> = ({vertical}) => {
 export const LearningToRead = () => {
   return (
     <>
-    <div className="relative hidden w-full h-screen min-[950px]:flex flex-col">
+    <div className="relative hidden w-full h-screen min-[950px]:flex flex-col origin-center scale-90">
       <Dots vertical={false} />
       <div className="size-full flex z-10">
         {readingSteps.map(({heading, text, color, src, scale=100, translateY=0, translateX=0}, i) => (

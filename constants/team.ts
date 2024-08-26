@@ -82,7 +82,7 @@ export const team: TeamMember[] = [
   },
   {
     name: "Shafqat Faisal",
-    designation: "Math Trainer & Researcher",
+    designation: "ECE & Parenting Specialist  ",
     corner: "br"
   },
   {
