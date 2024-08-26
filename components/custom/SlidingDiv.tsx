@@ -11,9 +11,10 @@ type SlidingDivProps = {
   delay?: number
   px?: number
   threshold?: number
+  onClick?: ()=>void
 }
 
-export const SlidingDiv: React.FC<SlidingDivProps> = ({children, direction, className="", repeat=false, style={}, id="", delay=0, px=10, threshold=0.5}) => {
+export const SlidingDiv: React.FC<SlidingDivProps> = ({children, direction, className="", repeat=false, style={}, id="", delay=0, px=10, threshold=0.5, onClick=()=>{}}) => {
 
   const [x, y] = [
     (direction === "left" ? -px : direction === "right" ? px : 0),
@@ -27,6 +28,7 @@ export const SlidingDiv: React.FC<SlidingDivProps> = ({children, direction, clas
 
   return (
     <motion.div
+      onClick={onClick}
       ref={ref} className={className}
       style={style}
       initial={{x, y, opacity: 0}}
