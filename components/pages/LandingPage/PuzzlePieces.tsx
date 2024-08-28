@@ -66,6 +66,12 @@ export const PuzzlePieces = () => {
 
   const [showTabs, setShowTabs] = useState(true)
 
+  const [showContent, setShowContent] = useState([false, false, false, false, false])
+
+  const toggleContent = (index: number) => {
+    setShowContent(sc => sc.map((c, i) => i !== index ? c : !c))
+  }
+
   return (
     <>
     <motion.div
@@ -82,13 +88,15 @@ export const PuzzlePieces = () => {
     )}
     </motion.div>
 
-    {/* Mobile View */}
+    {/*- Mobile View */}
     <div className='flex sm:hidden flex-col text-white'>
       <div className="grid grid-cols-2 grid-rows-3 ">
-        <SlidingDiv direction={"left"} className="aspect-square relative" style={{backgroundColor: puzzles[0].color, zIndex: puzzles.length - 0}}>
-          <div className="absolute size-10 rounded-md right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45" style={{backgroundColor: puzzles[0].color}}/>
+        <SlidingDiv onClick={() => toggleContent(0)} direction={"left"} className="aspect-square relative p-1" style={{backgroundColor: puzzles[0].color, zIndex: puzzles.length - 0}}>
+          {showContent[1] === false && <div className="absolute size-10 rounded-md right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45" style={{backgroundColor: puzzles[0].color}}/>}
           
           <div className='size-full flex flex-col justify-center items-center gap-2'>
+            {showContent[0] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[0].content}</p> :
+            <>
             <p className="font-bold text-5xl">{puzzles[0].letter}</p>
             <div className={`flex flex-col`}>
               <p className="uppercase text-center tracking-widest">{puzzles[0].header}</p>
@@ -98,12 +106,15 @@ export const PuzzlePieces = () => {
                 <span className="flex-1 h-0 border border-white "/>
               </p>
             </div>
+            </>}
           </div>
         </SlidingDiv>
-        <SlidingDiv direction={"top"} delay={0.2} className="aspect-square relative" style={{backgroundColor: puzzles[1].color, zIndex: puzzles.length - 1}}>
-          <div className="absolute size-10 rounded-md right-1/2 bottom-0 translate-x-1/2 translate-y-1/2 rotate-45" style={{backgroundColor: puzzles[1].color}}/>
+        <SlidingDiv onClick={() => toggleContent(1)} direction={"top"} delay={0.2} className="aspect-square relative p-1" style={{backgroundColor: puzzles[1].color, zIndex: puzzles.length - 1}}>
+          {showContent[2] === false && <div className="absolute size-10 rounded-md right-1/2 bottom-0 translate-x-1/2 translate-y-1/2 rotate-45" style={{backgroundColor: puzzles[1].color}}/>}
           
           <div className='size-full flex flex-col justify-center items-center gap-2'>
+            {showContent[1] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[1].content}</p>:
+            <>
             <p className="font-bold text-5xl">{puzzles[1].letter}</p>
             <div className={`flex flex-col-reverse`}>
               <p className="uppercase text-center tracking-widest">{puzzles[1].header}</p>
@@ -113,49 +124,59 @@ export const PuzzlePieces = () => {
                 <span className="flex-1 h-0 border border-white "/>
               </p>
             </div>
+            </>}
           </div>
         </SlidingDiv>
-        <SlidingDiv direction={"top"} delay={0.4} className="col-span-2 relative" style={{backgroundColor: puzzles[2].color, zIndex: puzzles.length - 2}}>
-          <div className="absolute size-10 rounded-md left-1/4 bottom-0 -translate-x-1/2 translate-y-1/2 rotate-45" style={{backgroundColor: puzzles[2].color}}/>
+        <SlidingDiv onClick={() => toggleContent(2)} direction={"top"} delay={0.4} className="col-span-2 relative p-1" style={{backgroundColor: puzzles[2].color, zIndex: puzzles.length - 2}}>
+          {showContent[3] === false && <div className="absolute size-10 rounded-md left-1/4 bottom-0 -translate-x-1/2 translate-y-1/2 rotate-45" style={{backgroundColor: puzzles[2].color}}/>}
           
           <div className='size-full flex flex-col justify-center items-center gap-2'>
+            {showContent[2] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[2].content}</p>:
+            <>
             <p className="font-bold text-5xl">{puzzles[2].letter}</p>
             <div className={`flex flex-col`}>
-              <p className="uppercase text-center tracking-widest">{puzzles[2].header}</p>
+            <p className="uppercase text-center tracking-widest">{puzzles[2].header}</p>
               <p className="flex justify-center items-center gap-1 w-full">
                 <span className="flex-1 h-0 border border-white "/>
                   {puzzles[2].meaning}
                 <span className="flex-1 h-0 border border-white "/>
               </p>
             </div>
+            </>}
           </div>
         </SlidingDiv>
-        <SlidingDiv direction={"left"} delay={0.6} className="aspect-square relative" style={{backgroundColor: puzzles[3].color, zIndex: puzzles.length - 3}}>
-          <div className="absolute size-10 rounded-md right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45" style={{backgroundColor: puzzles[3].color}}/>
+        <SlidingDiv onClick={() => toggleContent(3)} direction={"left"} delay={0.6} className="aspect-square relative p-1" style={{backgroundColor: puzzles[3].color, zIndex: puzzles.length - 3}}>
+          {showContent[4] === false && <div className="absolute size-10 rounded-md right-0 top-1/2 -translate-y-1/2 translate-x-1/2 rotate-45" style={{backgroundColor: puzzles[3].color}}/>}
           
           <div className='size-full flex flex-col justify-center items-center gap-2'>
+            {showContent[3] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[3].content}</p>:
+            <>
             <p className="font-bold text-5xl">{puzzles[3].letter}</p>
             <div className={`flex flex-col`}>
-              <p className="uppercase text-center tracking-widest">{puzzles[3].header}</p>
-              <p className="flex justify-center items-center gap-1 w-full">
-                <span className="flex-1 h-0 border border-white "/>
-                  {puzzles[3].meaning}
-                <span className="flex-1 h-0 border border-white "/>
-              </p>
+            <p className="uppercase text-center tracking-widest">{puzzles[3].header}</p>
+            <p className="flex justify-center items-center gap-1 w-full">
+            <span className="flex-1 h-0 border border-white "/>
+            {puzzles[3].meaning}
+            <span className="flex-1 h-0 border border-white "/>
+            </p>
             </div>
+            </>}
           </div>
         </SlidingDiv>
-        <SlidingDiv direction={"right"} delay={0.8} className="aspect-square relative" style={{backgroundColor: puzzles[4].color, zIndex: puzzles.length - 4}}>          
+        <SlidingDiv onClick={() => toggleContent(4)} direction={"right"} delay={0.8} className="aspect-square relative p-1" style={{backgroundColor: puzzles[4].color, zIndex: puzzles.length - 4}}>          
           <div className='size-full flex flex-col justify-center items-center gap-2'>
+            {showContent[4] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[4].content}</p>:
+            <>
             <p className="font-bold text-5xl">{puzzles[4].letter}</p>
             <div className={`flex flex-col-reverse`}>
-              <p className="uppercase text-center tracking-widest">{puzzles[4].header}</p>
-              <p className="flex justify-center items-center gap-1 w-full">
-                <span className="flex-1 h-0 border border-white "/>
+            <p className="uppercase text-center tracking-widest">{puzzles[4].header}</p>
+            <p className="flex justify-center items-center gap-1 w-full">
+            <span className="flex-1 h-0 border border-white "/>
                   {puzzles[4].meaning}
                 <span className="flex-1 h-0 border border-white "/>
               </p>
             </div>
+            </>}
           </div>
         </SlidingDiv>
       </div>
