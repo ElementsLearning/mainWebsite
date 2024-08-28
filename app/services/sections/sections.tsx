@@ -1,5 +1,3 @@
-import { ECEContent } from "./ECESection/ECEContent"
-import { EdTechContent } from "./EdTechSection/EdTechContent"
 import { LanguageContent } from "./LanguageSection/LanguageContent"
 import { AssessmentsContent } from "./MathSection/AssessmentsContent"
 import { MathsLabsContent } from "./MathSection/MathsLabsContent"
@@ -7,8 +5,6 @@ import { MathsManipulativesContent } from "./MathSection/MathsManipulativesConte
 import { PublicationsContent } from "./MathSection/Publications/PublicationsContent"
 import { TrainingsContent } from "./MathSection/Training/TrainingsContent"
 import { ScienceContent } from "./ScienceSection/ScienceContent"
-import { SocialSciencesContent } from "./SocialSciencesSection/SocialSciencesContent"
-import { SteamContent } from "./SteamSection/SteamContent"
 
 export type Tab = {
   name: string
@@ -39,31 +35,31 @@ export const sections: Section[] =
     tabs: [
       {
         name: "Publications",
-        src: "/whatweofferpage/maths/publication.png",
+        src: "/whatweofferpage/maths/Publication.png",
         tabName: "publications",
         content: <PublicationsContent />
       },
       {
         name: "Trainings",
-        src: "/whatweofferpage/maths/trainings.png",
+        src: "/whatweofferpage/maths/Trainings.png",
         tabName: "trainings",
         content: <TrainingsContent />
       },
       {
         name: "Maths Lab",
-        src: "/whatweofferpage/maths/maths-lab.png",
+        src: "/whatweofferpage/maths/MathsLab.png",
         tabName: "labs",
         content: <MathsLabsContent />
       },
       {
         name: "Manipulatives",
-        src: "/whatweofferpage/maths/maths-manipulatives.png",
+        src: "/whatweofferpage/maths/Manipulatives.png",
         tabName: "manipulatives",
         content: <MathsManipulativesContent />
       },
       {
         name: "Assessments",
-        src: "/whatweofferpage/maths/assessments.png",
+        src: "/whatweofferpage/maths/Assessments.png",
         tabName: "assessments",
         disabled: true,
         content: <AssessmentsContent />
