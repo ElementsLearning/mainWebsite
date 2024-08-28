@@ -35,31 +35,31 @@ export const sections: Section[] =
     tabs: [
       {
         name: "Publications",
-        src: "/whatweofferpage/maths/Publication.png",
+        src: "/whatweofferpage/maths/publication.png",
         tabName: "publications",
         content: <PublicationsContent />
       },
       {
         name: "Trainings",
-        src: "/whatweofferpage/maths/Trainings.png",
+        src: "/whatweofferpage/maths/trainings.png",
         tabName: "trainings",
         content: <TrainingsContent />
       },
       {
         name: "Maths Lab",
-        src: "/whatweofferpage/maths/MathsLab.png",
+        src: "/whatweofferpage/maths/mathsLab.png",
         tabName: "labs",
         content: <MathsLabsContent />
       },
       {
         name: "Manipulatives",
-        src: "/whatweofferpage/maths/Manipulatives.png",
+        src: "/whatweofferpage/maths/manipulatives.png",
         tabName: "manipulatives",
         content: <MathsManipulativesContent />
       },
       {
         name: "Assessments",
-        src: "/whatweofferpage/maths/Assessments.png",
+        src: "/whatweofferpage/maths/assessments.png",
         tabName: "assessments",
         disabled: true,
         content: <AssessmentsContent />
