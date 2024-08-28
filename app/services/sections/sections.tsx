@@ -47,7 +47,7 @@ export const sections: Section[] =
       },
       {
         name: "Maths Lab",
-        src: "/whatweofferpage/maths/mathlab.png",
+        src: "/whatweofferpage/maths/maths-labs.png",
         tabName: "labs",
         content: <MathsLabsContent />
       },
