@@ -43,7 +43,7 @@ export const sections: Section[] =
         name: "Trainings",
         src: "/whatweofferpage/maths/trainings.png",
         tabName: "trainings",
-        content: <TrainingsContent />
+        content: <TrainingsContent /> //change kry maine copy paste kia sab set hai 
       },
       {
         name: "Maths Lab",
