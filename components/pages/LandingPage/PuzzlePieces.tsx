@@ -152,7 +152,7 @@ export const PuzzlePieces = () => {
             {showContent[3] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[3].content}</p>:
             <>
             <p className="font-bold text-5xl">{puzzles[3].letter}</p>
-            <div className={`flex flex-col`}>
+            <div className={`flex flex-col-reverse`}>
             <p className="uppercase text-center tracking-widest">{puzzles[3].header}</p>
             <p className="flex justify-center items-center gap-1 w-full">
             <span className="flex-1 h-0 border border-white "/>
@@ -168,7 +168,7 @@ export const PuzzlePieces = () => {
             {showContent[4] ? <p style={{zIndex: 10}} className="text-xs xs:text-sm min-[550px]:text-base">{puzzles[4].content}</p>:
             <>
             <p className="font-bold text-5xl">{puzzles[4].letter}</p>
-            <div className={`flex flex-col-reverse`}>
+            <div className={`flex flex-col`}>
             <p className="uppercase text-center tracking-widest">{puzzles[4].header}</p>
             <p className="flex justify-center items-center gap-1 w-full">
             <span className="flex-1 h-0 border border-white "/>
