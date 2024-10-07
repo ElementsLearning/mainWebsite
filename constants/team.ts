@@ -78,6 +78,11 @@ export const team: TeamMember[] = [
   {
     name: "Sana Naeem",
     designation: "Maths Trainer & Researcher",
+    corner: "br",
+  },
+  {
+    name: "Naveera Khan",
+    designation: "Science Researcher",
     corner: "br"
   },
   {
