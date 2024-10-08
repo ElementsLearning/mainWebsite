@@ -1,4 +1,6 @@
 "use client"
+import { Clients } from "@/components/custom/Clients";
+import { Partners } from "@/components/custom/Partners";
 import { SlidingDiv } from "@/components/custom/SlidingDiv";
 import { StaggeredHeaders } from "@/components/custom/StaggeredHeaders";
 import { VideoPlayer } from "@/components/custom/VideoPlayer";
@@ -8,8 +10,6 @@ import { goals } from "@/constants/goals";
 import { team } from "@/constants/team";
 import { GoalCard } from "./GoalCard";
 import { TeamCard } from "./TeamCard";
-import { Clients } from "@/components/custom/Clients";
-import { Partners } from "@/components/custom/Partners";
 
 export default function About() {
   return (
@@ -51,7 +51,7 @@ export default function About() {
             <p className="text-base md:text-xl lg:text-xl xl:tet-2xl">Meet our dedicated team of education experts and innovators, committed to revolutionizing K-12 education through research-based practices and accessible resources.</p>
           </SlidingDiv>
         </div>
-        <ScrollArea className="sm:flex-1 md:flex-auto h-96 lg:h-[600px] lg:flex-1">
+        <ScrollArea className="sm:flex-1 pr-3 md:pr-5 md:flex-auto h-96 lg:h-[600px] lg:flex-1">
           <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-4 lg:grid-cols-2 min-[1100px]:grid-cols-3 flex-col">
             {team.map(member => <TeamCard key={member.name} {...member} />)}
           </div>
