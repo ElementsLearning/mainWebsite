@@ -218,16 +218,18 @@ export const LandingPageEvents: Event[] = [
       "/drive/APSTraning/aps (1).jpg",
     ]
   },
-  // {
-  //   name: "RWU Jobfair 2024",
-  //   color: "#F8A6D6",
-  //   innerColor: "#F46CBE",
-  //   src: "/drive/RWU/0.jpg",
-  //   gallery: [
-  //     "/drive/RWU/0.jpg",
-  //     "/drive/RWU/1.jpg",
-  //     "/drive/RWU/2.jpg",
-  //     "/drive/RWU/3.jpg",
-  //   ]            
-  // },
+  {
+    name: "Visit of Mrs. Rector NUST",
+    color: "#F8A6D6",
+    innerColor: "#F46CBE",
+    src: "/drive/VisitMrsRector/1.jpg",
+    gallery: [
+      "/drive/VisitMrsRector/2.jpg",
+      "/drive/VisitMrsRector/3.jpg",
+      "/drive/VisitMrsRector/4.jpg",
+      "/drive/VisitMrsRector/5.jpg",
+      "/drive/VisitMrsRector/6.jpg",
+      "/drive/VisitMrsRector/7.jpg",
+    ]            
+  },
 ].reverse()

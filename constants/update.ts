@@ -38,6 +38,13 @@ export const updates: Update[] = [
   {
     src: "/News&Updates/Updates/9.jpg",
     title: "Team Celebration: Corporate Dinner Event",
-    content: "Elements Learning  hosted a corporate dinner for our dedicated team. This event provided an opportunity to celebrate our collective achievements, strengthen team bonds, and discuss future goals in a relaxed and enjoyable setting. The event was a testament to our commitment to fostering a collaborative and supportive work environment.",
+    content: "Elements Learning  hosted a corporate dinner for our dedicated team. This event provided an opportunity to celebrate our collective achievements, strengthen team bonds, and discuss future goals in a relaxed and enjoyable setting. The event was a testament to our commitment to fostering a collaborative and supportive work environment.",
   },
+  {
+    src: "/News&Updates/Updates/VisitMrsRector.jpg",
+    title: "Visit of Mrs. Rector NUST to Our Premium Math Lab at APS-DCI",
+    content: "Mrs. Rector NUST visited our recently established Premium Maths Lab at APS-DCI, where she witnessed firsthand the transformative impact of this cutting-edge facility.During her visit, she explored the lab's high-quality resources and their implementation in enhancing the teaching and learning of mathematics. Mrs. Rector engaged with both teachers and students, observing the notable transformation in their interactions and understanding of mathematical concepts facilitated by the EL Maths Lab. She commended the innovative approach and its positive influence on students' learning experiences.",
+
+
+  }
 ]
