@@ -42,12 +42,12 @@ export const team: TeamMember[] = [
   },
   {
     name: "Waqar Ahmed",
-    designation: "Asst.Project Manager (Lead QA, NOC/Copyright) & KM ",
+    designation: "Asst.Project Manager ( Lead QA & IP Specialist) & KM. ",
     corner: "br"
   },
   {
     name: "Fizza Haq",
-    designation: "Quality Assurance Assistant",
+    designation: "Quality Assistant",
     corner: "br"
   },
   {
