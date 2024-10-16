@@ -232,4 +232,21 @@ export const LandingPageEvents: Event[] = [
       "/drive/VisitMrsRector/7.jpg",
     ]            
   },
+  {
+    name: "Science Fair",
+    color: "#B1DA94",
+    innerColor: "#CFE8BE",
+    src: "/drive/ScienceFair/1.jpg",
+    gallery: [
+      "/drive/ScienceFair/2.jpg",
+      "/drive/ScienceFair/3.jpg",
+      "/drive/ScienceFair/4.jpg",
+      "/drive/ScienceFair/5.jpg",
+      "/drive/ScienceFair/6.jpg",
+      "/drive/ScienceFair/7.jpg",
+      "/drive/ScienceFair/8.jpg",
+      "/drive/ScienceFair/9.jpg",
+      "/drive/ScienceFair/10.jpg",
+    ]            
+  },
 ].reverse()
