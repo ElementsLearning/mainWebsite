@@ -164,6 +164,10 @@ export const LandingPageEvents: Event[] = [
     innerColor: "#B1DA94",
     color: "#CFE8BE",
     src: "/drive/ACAttockVisit/0.jpg",
+    additional: {
+      date: "October 23",
+      desc: ""
+    },
     gallery: [
       "/drive/ACAttockVisit/0.jpg",
       "/drive/ACAttockVisit/1.jpg",
@@ -177,6 +181,10 @@ export const LandingPageEvents: Event[] = [
     color: "#CAB9DB",
     innerColor: "#A98CC2",
     src: "/drive/CEOCEFVisit/0.jpg",
+    additional: {
+      date: "December 2024",
+      desc: ""
+    },
     gallery: [
       "/drive/CEOCEFVisit/0.jpg",
       "/drive/CEOCEFVisit/1.jpg",
@@ -189,7 +197,11 @@ export const LandingPageEvents: Event[] = [
     name: "Silver Oaks Trainings",
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
-    src: "/driveT/SilverOks/7.jpg",    
+    src: "/driveT/SilverOks/7.jpg",  
+    additional: {
+      date: "September 2024",
+      desc: ""
+    },  
     gallery: [
       "/driveT/SilverOks/1.jpg",
       "/driveT/SilverOks/2.jpg",
@@ -208,6 +220,10 @@ export const LandingPageEvents: Event[] = [
     innerColor: "#B1DA94",
     color: "#CFE8BE",
     src: "/drive/APSTraning/aps (8).jpg",
+    additional: {
+      date: "Aug 2024",
+      desc: ""
+    },
     gallery: [
       "/drive/APSTraning/aps (3).jpg",
       "/drive/APSTraning/aps (2).jpg",
@@ -223,6 +239,10 @@ export const LandingPageEvents: Event[] = [
     color: "#F8A6D6",
     innerColor: "#F46CBE",
     src: "/drive/VisitMrsRector/1.jpg",
+    additional: {
+      date: "October 2024",
+      desc: ""
+    },
     gallery: [
       "/drive/VisitMrsRector/2.jpg",
       "/drive/VisitMrsRector/3.jpg",
@@ -237,6 +257,10 @@ export const LandingPageEvents: Event[] = [
     color: "#B1DA94",
     innerColor: "#CFE8BE",
     src: "/drive/ScienceFair/1.jpg",
+    additional: {
+      date: "October 2024",
+      desc: ""
+    },
     gallery: [
       "/drive/ScienceFair/2.jpg",
       "/drive/ScienceFair/3.jpg",
@@ -249,4 +273,5 @@ export const LandingPageEvents: Event[] = [
       "/drive/ScienceFair/10.jpg",
     ]            
   },
+
 ].reverse()
