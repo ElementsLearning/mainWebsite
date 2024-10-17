@@ -165,7 +165,7 @@ export const LandingPageEvents: Event[] = [
     color: "#CFE8BE",
     src: "/drive/ACAttockVisit/0.jpg",
     additional: {
-      date: "October 23",
+      date: "October 2023",
       desc: ""
     },
     gallery: [
