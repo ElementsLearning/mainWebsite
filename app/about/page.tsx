@@ -48,7 +48,7 @@ export default function About() {
           
           <SlidingDiv direction="bottom" repeat={true} className="flex flex-col xl:gap-2 max-w-96 xl:text-right">
             <h2 className="uppercase font-bold text-3xl sm:text-4xl md:text-5xl lg:text-4xl xl:text-5xl">Meet our Team</h2>
-            <p className="text-base md:text-xl lg:text-xl xl:tet-2xl">Meet our dedicated team of education experts and innovators, committed to revolutionizing K-12 education through research-based practices and accessible resources.</p>
+            <p className="text-base md:text-xl lg:text-xl xl:text-2xl">Meet our dedicated team of education experts and innovators, committed to revolutionizing K-12 education through research-based practices and accessible resources.</p>
           </SlidingDiv>
         </div>
         <ScrollArea className="sm:flex-1 pr-3 md:pr-5 md:flex-auto h-96 lg:h-[600px] lg:flex-1">
