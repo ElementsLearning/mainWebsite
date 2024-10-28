@@ -25,6 +25,7 @@
     "embla-carousel-react": "^8.1.6",
     "file-saver": "^2.0.5",
     "framer-motion": "^11.3.2",
+    "iphone-inline-video": "^2.2.2",
     "jszip": "^3.10.1",
     "lucide-react": "^0.408.0",
     "mongoose": "^8.5.1",

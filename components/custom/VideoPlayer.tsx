@@ -5,7 +5,6 @@ interface VideoPlayerProps {
   className?: string;
   src: string;
   controls?: boolean;
-  playsInline?: boolean;
   muted?: boolean;
 }
 
@@ -48,7 +47,7 @@ export const VideoPlayer: React.FC<VideoPlayerProps> = ({ className, src }) => {
 
   return (
     <div ref={ref} className={className}>
-      <video ref={videoRef} className={"size-full"} autoPlay muted>
+      <video ref={videoRef} className={"size-full"} playsInline webkit-playsinline="true" controls={false} autoPlay muted>
         <source src={src} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
