@@ -15,7 +15,8 @@ export const WhatWeOffer = () => {
 
         <div className="rounded-md flex-1 flex flex-col sm:flex-row lg:flex-col gap-12 sm:gap-8 justify-end items-end">
           <div className="max-w-[400px]">
-            <VideoPlayer src="/animations/services.mp4" className="size-full" />
+            <VideoPlayer src="/animations/services.mp4" className="size-full" controls={false} playsInline muted/>
+
             {/* <img src="/landingpage/services.png" alt="" /> */}
           </div>
           
@@ -32,13 +33,13 @@ export const WhatWeOffer = () => {
             <div className={`flex justify-start gap-2 p-2`}>
               <div className="w-24 sm:p-4 xs:w-32 sm:w-40 md:w-48 lg:w-32 xl:w-64">
                 {service.videoSrc ?
-                <VideoPlayer src={service.videoSrc} className="w-full"/> 
+                <VideoPlayer controls={false} muted playsInline src={service.videoSrc} className="w-full"/> 
                 : <img src={service.illustrationSrc} className="w-full h-fit" />}
               </div>
               <div className="flex flex-1 flex-col gap-4 items-start">
               <p className="text-xs sm:text-base md:text-lg lg:text-sm xl:text-base">
                 {service.content}
-              </p>
+              </p>  
               <Link href={service.disabled ? "" : service.link}>
                 <IconButton icon={<ArrowRightIcon className="size-full"/>} text={"Learn More"} className={`font-bold text-sm sm:text-lg p-2 sm:p-2 ${service.disabled ? "bg-gray-300 text-gray-600" : "bg-[#353535] text-[#FBBA41]"}`} />
               </Link>

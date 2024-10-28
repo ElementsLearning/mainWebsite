@@ -1,9 +1,12 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useInView } from 'react-intersection-observer';
 
 interface VideoPlayerProps {
   className?: string;
   src: string;
+  controls?: boolean;
+  playsInline?: boolean;
+  muted?: boolean;
 }
 
 export const VideoPlayer: React.FC<VideoPlayerProps> = ({ className, src }) => {

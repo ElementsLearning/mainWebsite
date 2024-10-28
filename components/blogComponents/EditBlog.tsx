@@ -1,19 +1,19 @@
 "use client"
 
-import { defaultBlog, defaultBullets, defaultHeader, defaultImage, defaultParagraph } from "@/constants/Blogs/allBlogs"
-import { Blog, BlogContent, Editable } from "@/constants/Blogs/blog"
-import { useCallback, useState } from "react"
 import { BlogBullets } from "@/components/blogComponents/BlogBullets"
 import { BlogHeader } from "@/components/blogComponents/BlogHeader"
 import { BlogImage } from "@/components/blogComponents/BlogImage"
 import { BlogParagraph } from "@/components/blogComponents/BlogParagraph"
-import { Input } from "../ui/input"
-import { NewComponentButton } from "./NewComponentButton"
+import { defaultBlog, defaultBullets, defaultHeader, defaultImage, defaultParagraph } from "@/constants/Blogs/allBlogs"
+import { Blog, BlogContent, Editable } from "@/constants/Blogs/blog"
 import { createZip, deepCopy, processBlog } from "@/lib/utils"
+import { useCallback, useState } from "react"
 import { ImageUploader } from "../custom/ImageUploader"
 import { Button } from "../ui/button"
 import { Dialog, DialogClose, DialogContent, DialogTrigger } from "../ui/dialog"
+import { Input } from "../ui/input"
 import { Textarea } from "../ui/textarea"
+import { NewComponentButton } from "./NewComponentButton"
 
 type EditBlogProps = {
   blogToEdit?: Blog
@@ -49,7 +49,7 @@ const BlogComponent: React.FC<BlogComponentProps> = ({onEdit, moveUp, moveDown, 
 
 const uploadBlog = (blog: Blog, name: string) => {
   const { blog: modifiedBlog, images, blogName } = processBlog(blog, name);
-  // createZip(modifiedBlog, images, blogName)
+  createZip(modifiedBlog, images, blogName)
   console.log({blog: modifiedBlog, images})
 }
 
