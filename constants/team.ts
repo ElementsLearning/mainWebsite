@@ -89,7 +89,11 @@ export const team: TeamMember[] = [
     designation: "Math Trainer & Researcher",
     corner: "br"
   },
-  
+  {
+    name: "Darjat Muhammad",
+    designation: "Math Trainer & Researcher",
+    corner: "br"
+  },
   {
     name: "Adan Haider",
     designation: "Math Research (Intern)",

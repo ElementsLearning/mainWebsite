@@ -33,7 +33,7 @@ export const WhatWeOffer = () => {
             <div className={`flex justify-start gap-2 p-2`}>
               <div className="w-24 sm:p-4 xs:w-32 sm:w-40 md:w-48 lg:w-32 xl:w-64">
                 {service.videoSrc ?
-                <VideoPlayer controls={false} muted playsInline src={service.videoSrc} className="w-full"/> 
+                <VideoPlayer controls={false} muted playsInline webkit-playsinline="true" src={service.videoSrc} className="w-full"/> 
                 : <img src={service.illustrationSrc} className="w-full h-fit" />}
               </div>
               <div className="flex flex-1 flex-col gap-4 items-start">
