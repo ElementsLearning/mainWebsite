@@ -182,7 +182,7 @@ export const LandingPageEvents: Event[] = [
     innerColor: "#A98CC2",
     src: "/drive/CEOCEFVisit/0.jpg",
     additional: {
-      date: "December 2024",
+      date: "December 2023",
       desc: ""
     },
     gallery: [
@@ -274,4 +274,16 @@ export const LandingPageEvents: Event[] = [
     ]            
   },
 
-].reverse()
+]
+
+LandingPageEvents.sort((a, b) => {
+  const dateA = new Date(a.additional?.date || "");
+  const dateB = new Date(b.additional?.date || "");
+
+  if (a.additional?.date === "October 2024" && b.additional?.date === "October 2024") {
+    if (a.name === "Science Fair") 
+      return -1; 
+  }
+  
+  return dateB.getTime() - dateA.getTime(); 
+});

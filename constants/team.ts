@@ -105,11 +105,6 @@ export const team: TeamMember[] = [
     corner: "br"
   },
   {
-    name: "Naveera Khan",
-    designation: "Science Researcher",
-    corner: "br"
-  },
-  {
     name: "Yasir Anwar",
     designation: "Admin Manager",
     corner: "br"
