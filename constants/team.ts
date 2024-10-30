@@ -26,13 +26,13 @@ export const team: TeamMember[] = [
     corner: "br"
   },
   {
-    name: "Hira Abbasi",
-    designation: "Dir HR & OD",
+    name: "Shafqat Faisal",
+    designation: "ECE & Parenting Specialist  ",
     corner: "br"
   },
   {
-    name: "Shafqat Faisal",
-    designation: "ECE & Parenting Specialist  ",
+    name: "Hira Abbasi",
+    designation: "Dir HR & OD",
     corner: "br"
   },
   {
