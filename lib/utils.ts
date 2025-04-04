@@ -77,3 +77,23 @@ export const createZip = async (blog: Blog, images: ZipImage[], blogName: string
 export const daysAgo = (date: Date): string => {
   return formatDistance(date, new Date(), { addSuffix: true })
 } 
+
+export type Image = File | null
+
+export const uploadImage = async (image: Image): Promise<string> => {
+  if (!image) return "-";
+
+  const formData = new FormData();
+  formData.append("image", image); // 'image' should match your backend's expected field name
+
+  const { link } = await (await fetch("/api/image/new", {
+    method: "POST",
+    body: formData,
+  })).json()
+
+  return link
+}
+
+export const sendMail = (to: string, subject: string, message: string) => {
+  
+}
