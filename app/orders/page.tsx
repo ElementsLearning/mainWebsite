@@ -52,7 +52,7 @@ export default function Orders() {
         <TableHeader>
           <TableRow>
             {headers.map(header => (
-              <TableHead>{header}</TableHead>
+              <TableHead key={header}>{header}</TableHead>
             ))}
           </TableRow>
         </TableHeader>
@@ -104,13 +104,7 @@ export default function Orders() {
                 <ScrollArea className="h-20">
                   <div className="flex flex-col gap-2">
                     {items.map(({name, quantity}) => (
-                      <div className="flex justify-between items-center pr-4">
-                        <p className="font-semibold">{name}</p>
-                        <p className="italic">{`x${quantity}`}</p>
-                      </div>
-                    ))}
-                    {items.map(({name, quantity}) => (
-                      <div className="flex justify-between items-center pr-4">
+                      <div key={name} className="flex justify-between items-center pr-4">
                         <p className="font-semibold">{name}</p>
                         <p className="italic">{`x${quantity}`}</p>
                       </div>
