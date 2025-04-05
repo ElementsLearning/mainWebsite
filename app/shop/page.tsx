@@ -88,48 +88,51 @@ export default function Shop() {
   const invalidForm = notFilled || phone.length !== 11 || email.length < 5 || email.indexOf("@") === -1 || email.indexOf(".") === -1
 
   return (
-    <div className="flex relative h-screen flex-col items-center ">
+    <div className="flex relative h-screen flex-col items-center">
       <div className="flex flex-col gap-4 px-4 py-6 sm:px-10 lg:py-10 lg:px-20 xl:py-16 xl:px-32">
         {shopItems.map((item, index) => (
           <ItemCard key={index} {...item} index={index} quantity={cart[item.name]} updateQuantity={(q) => updateQuantity(item.name, q)}/>
         ))}
       </div>
 
-      <div className="flex justify-between items-center sticky bottom-0 bg-white border-t-2 border-black w-full p-4">
-        <div className="flex gap-2">
-          <p className="text-2xl font-bold">Total:</p>
-          <p className="text-2xl italic">{totalAmount} Rs.</p>
-        </div>
+      <div className="sticky flex flex-col justify-end h-full bottom-0 w-full">
+        <div className="flex justify-between items-center p-4 border-t-2 border-black bg-white text-xl md:text-2xl">
 
-        <button disabled={totalAmount === 0} onClick={() => setState("BILL")} className="bg-[#404791] disabled:bg-gray-500 text-white font-bold text-2xl px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300">
-          Checkout
-        </button>
+          <div className="flex gap-2">
+            <p className="font-bold">Total:</p>
+            <p className="italic">{totalAmount} Rs.</p>
+          </div>
+
+          <button disabled={totalAmount === 0} onClick={() => setState("BILL")} className="bg-[#404791] disabled:bg-gray-500 text-white font-bold px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300">
+            Checkout
+          </button>
+        </div>
 
       </div>
 
       {state === "BILL" && (
         <div className="h-full fixed inset-0 bg-black/80 z-50 flex justify-center items-center p-4 sm:p-8" onClick={() => setState("")}>
-          <div onClick={(e) => e.stopPropagation()} className="w-full sm:w-4/5 lg:w-2/3 xl:w-1/2 bg-white rounded-[20px] sm:rounded-br-none rounded-br-none sm:rounded-[50px] flex flex-col p-6 gap-2 lg:p-12">
+          <div onClick={(e) => e.stopPropagation()} className="w-full sm:w-4/5 lg:w-2/3 xl:w-1/2 bg-white rounded-[20px] sm:rounded-br-none rounded-br-none sm:rounded-[50px] flex flex-col p-6 gap-1 sm:gap-2 lg:p-12">
             <p className="font-bold text-[#FBBA41] text-lg sm:text-2xl md:text-3xl lg:text-4xl">Checkout</p>
             <div className="h-px bg-black w-full" />
             <ScrollArea className="max-h-48">
-              <div className="flex flex-col gap-2">
+              <div className="flex flex-col gap-1 sm:gap-2">
                 {shopItems.map((item, index) => (
                   cart[item.name] > 0 && (
-                    <div key={index} className="flex justify-between items-center p-2 border-b">
-                      <p className="text-lg font-bold">{item.name}</p>
-                      <p className="text-lg">{cart[item.name]} x {item.price} Rs.</p>
+                    <div key={index} className="flex justify-between items-center p-2 border-b text-sm sm:text-base md:text-lg"> 
+                      <p className="font-bold">{item.name}</p>
+                      <p className="">{cart[item.name]} x {item.price} Rs.</p>
                     </div>
                   )
                 ))}
               </div>
             </ScrollArea>
             <div className="h-px bg-black w-full" />
-            <div className="flex justify-between">
-              <p className="text-2xl font-bold">Total:</p>
-              <p className="text-2xl italic">{totalAmount} Rs.</p>
+            <div className="flex justify-between text-lg sm:text-2xl">
+              <p className="font-bold">Total:</p>
+              <p className="italic">{totalAmount} Rs.</p>
             </div>
-            <button className="bg-[#404791] text-white font-bold text-2xl px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300" onClick={() => setState("FORM")}>
+            <button className="bg-[#404791] text-white text-lg sm:text-2xl font-bold px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300" onClick={() => setState("FORM")}>
               Proceed
             </button>
           </div>
@@ -139,14 +142,14 @@ export default function Shop() {
       {state === "FORM" && (
         <div className="h-full fixed inset-0 bg-black/80 z-50 flex justify-center items-center p-4 sm:p-8" onClick={() => setState("")}>
           <div onClick={(e) => e.stopPropagation()} className="w-full sm:w-4/5 lg:w-2/3 xl:w-1/2 bg-white rounded-[20px] sm:rounded-br-none rounded-br-none sm:rounded-[50px] flex flex-col p-6 gap-2 lg:p-12">
-            <p className="font-bold text-[#FBBA41] text-lg sm:text-2xl md:text-3xl lg:text-4xl">Checkout Form</p>
+            <p className="font-bold text-[#FBBA41] text-xl sm:text-2xl md:text-3xl lg:text-4xl">Checkout Form</p>
             <div className="flex flex-col gap-4">
               <FormInput label="Full Name" value={name} setValue={(s) => setCustomerInfo({...customerInfo, name: s})} />
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <FormInput label="Email" value={email} setValue={(s) => setCustomerInfo({...customerInfo, email: s})} />
                 <FormInput label="Phone Number" value={phone} setValue={(s) => setCustomerInfo({...customerInfo, phone: s})} />
               </div>
-              <div className="flex gap-2">
+              <div className="flex flex-col sm:flex-row gap-2">
                 <FormInput label="City" value={city} setValue={(s) => setCustomerInfo({...customerInfo, city: s})} />
                 <FormInput label="Post Code" value={postalCode} setValue={(s) => setCustomerInfo({...customerInfo, postalCode: s})} />
               </div>
