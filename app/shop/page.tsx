@@ -69,13 +69,13 @@ export default function Shop() {
         acc[item.name] = 0;
         return acc;
       }, {} as { [key: string]: number }));
-      await fetch("/api/mail/order", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ order, totalAmount }),
-      })
+      // await fetch("/api/mail/order", {
+      //   method: "POST",
+      //   headers: {
+      //     "Content-Type": "application/json",
+      //   },
+      //   body: JSON.stringify({ order, totalAmount }),
+      // })
       setCustomerInfo(defaultCustomer)
       setPaymentImage(null)
       setOrderNotes("")
