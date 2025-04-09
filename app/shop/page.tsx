@@ -27,6 +27,7 @@ export default function Shop() {
   const [loading, setLoading] = useState(false)
   const [infoOpen, setInfoOpen] = useState(false)
   const [termsOpen, setTermsOpen] = useState(false)
+  const [conditionsChecked, setConditionsChecked] = useState(false)
   const { toast } = useToast()
 
   const updateQuantity = (itemName: string, quantity: number) => {
@@ -194,7 +195,7 @@ export default function Shop() {
                 <Textarea rows={3} placeholder="Message Here (optional)" value={orderNotes} onChange={(e) => setOrderNotes(e.target.value)} className="border p-2 rounded-md text-sm" />
               </div>
               <div className="flex gap-2 items-center">
-                <Input className="size-4" type="checkbox" id="terms" />
+                <Input className="size-4" type="checkbox" id="terms" checked={conditionsChecked} onChange={(e) => setConditionsChecked(e.target.checked)} />
                 <label htmlFor="terms" className="text-sm sm:text-base flex-1 flex gap-2">
                   <HoverCard open={termsOpen} onOpenChange={setTermsOpen}>
                     I agree to the
@@ -207,7 +208,7 @@ export default function Shop() {
                   </HoverCard>
                 </label>
               </div>
-              <button disabled={loading || invalidForm} onClick={submitOrder} type="submit" className="bg-[#404791] disabled:bg-gray-500 text-white font-bold text-2xl px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300">
+              <button disabled={loading || invalidForm || !conditionsChecked} onClick={submitOrder} type="submit" className="bg-[#404791] disabled:bg-gray-500 text-white font-bold text-2xl px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300">
                 Submit
               </button>
             </div>
