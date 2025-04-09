@@ -196,11 +196,13 @@ export default function Shop() {
               </div>
               <div className="flex gap-2 items-center">
                 <Input className="size-4" type="checkbox" id="terms" checked={conditionsChecked} onChange={(e) => setConditionsChecked(e.target.checked)} />
-                <label htmlFor="terms" className="text-sm sm:text-base flex-1 flex gap-2">
+                <label htmlFor="terms" className="text-sm sm:text-base flex-1 flex flex-wrap gap-2">
                   <HoverCard open={termsOpen} onOpenChange={setTermsOpen}>
-                    I agree to the
-                    <HoverCardTrigger onClick={() => setTermsOpen(!termsOpen)} className="text-[#FBBA41] font-bold cursor-pointer"> Terms and Conditions</HoverCardTrigger>
-                    and confirm payment is complete.
+                    <p className="">
+                      I agree to the
+                      <span className="mr-2"><HoverCardTrigger onClick={() => setTermsOpen(!termsOpen)} className="text-[#FBBA41] font-bold cursor-pointer"> Terms and Conditions</HoverCardTrigger></span>
+                      and confirm payment is complete.
+                    </p>
                     <HoverCardContent className="flex flex-col w-80">
                       <p className="font-bold">Terms and Conditions</p>
                       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis recusandae doloribus illum impedit facere neque dolor fuga molestiae eligendi quae earum, veritatis ex ad. Reiciendis, unde porro? Culpa obcaecati quis dignissimos, eos atque quaerat! Placeat a cum, rem nam necessitatibus ratione incidunt quidem atque commodi odit ea rerum veniam quia.</p>
