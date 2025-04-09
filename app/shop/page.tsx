@@ -25,6 +25,8 @@ export default function Shop() {
   const [orderNotes, setOrderNotes] = useState<string>("")
   const [paymentImage, setPaymentImage] = useState<Image>(null)
   const [loading, setLoading] = useState(false)
+  const [infoOpen, setInfoOpen] = useState(false)
+  const [termsOpen, setTermsOpen] = useState(false)
   const { toast } = useToast()
 
   const updateQuantity = (itemName: string, quantity: number) => {
@@ -157,8 +159,8 @@ export default function Shop() {
               <div className="flex flex-col justify-between gap-2">
                 <div className="flex justify-between items-center">
                   <p className="uppercase tracking-widest text-black">Payment Proof</p>
-                  <HoverCard>
-                    <HoverCardTrigger>
+                  <HoverCard open={infoOpen} onOpenChange={setInfoOpen}>
+                    <HoverCardTrigger onClick={() => setInfoOpen(!infoOpen)} className="cursor-pointer">
                       <svg className="size-4" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4m0-4h.01"/></g></svg>
                     </HoverCardTrigger>
                     <HoverCardContent className="w-80 flex justify-center">
@@ -190,6 +192,20 @@ export default function Shop() {
               <div className="flex flex-col gap-2">
                 <p className="uppercase tracking-widest text-black">Additional Notes</p>
                 <Textarea rows={3} placeholder="Message Here (optional)" value={orderNotes} onChange={(e) => setOrderNotes(e.target.value)} className="border p-2 rounded-md text-sm" />
+              </div>
+              <div className="flex gap-2 items-center">
+                <Input className="size-4" type="checkbox" id="terms" />
+                <label htmlFor="terms" className="text-sm sm:text-base flex-1 flex gap-2">
+                  <HoverCard open={termsOpen} onOpenChange={setTermsOpen}>
+                    I agree to the
+                    <HoverCardTrigger onClick={() => setTermsOpen(!termsOpen)} className="text-[#FBBA41] font-bold cursor-pointer"> Terms and Conditions</HoverCardTrigger>
+                    and confirm payment is complete.
+                    <HoverCardContent className="flex flex-col w-80">
+                      <p className="font-bold">Terms and Conditions</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis recusandae doloribus illum impedit facere neque dolor fuga molestiae eligendi quae earum, veritatis ex ad. Reiciendis, unde porro? Culpa obcaecati quis dignissimos, eos atque quaerat! Placeat a cum, rem nam necessitatibus ratione incidunt quidem atque commodi odit ea rerum veniam quia.</p>
+                    </HoverCardContent>
+                  </HoverCard>
+                </label>
               </div>
               <button disabled={loading || invalidForm} onClick={submitOrder} type="submit" className="bg-[#404791] disabled:bg-gray-500 text-white font-bold text-2xl px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300">
                 Submit
