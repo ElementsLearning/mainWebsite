@@ -111,7 +111,7 @@ const OrdersTable = React.memo(function OrdersTable({
               <ScrollArea className="h-20">
                 <div className="flex flex-col gap-2">
                   {items.map(({name, quantity}) => (
-                    <div key={name} className="flex justify-between items-center pr-4">
+                    <div key={name} className="flex justify-between gap-2 items-center pr-4">
                       <p className="font-semibold">{name}</p>
                       <p className="italic">{`x${quantity}`}</p>
                     </div>
