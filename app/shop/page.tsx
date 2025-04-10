@@ -3,13 +3,13 @@
 import { CustomerType, OrderType } from "@/constants/Shop/shop";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Image, uploadImage } from "@/lib/utils";
+import { defaultCustomer, defaultFilledCustomer } from "@/constants/Shop/defaultCustomer";
 
 import { FormInput } from "./FormInput";
 import { Input } from "@/components/ui/input";
 import { ItemCard } from "@/components/shopComponents/ItemCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
-import { defaultCustomer } from "@/constants/Shop/defaultCustomer";
 import { shopItems } from "@/constants/Shop/shopItems";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
@@ -62,6 +62,8 @@ export default function Shop() {
       },
       body: JSON.stringify({ order }),
     })
+    const data = await res.json()
+    console.log(data)
     if (res.status === 200) {
       toast({
         title: "Order Placed",
@@ -145,7 +147,7 @@ export default function Shop() {
       {state === "FORM" && (
         <div className="h-full fixed inset-0 bg-black/80 z-50 flex justify-center items-center p-4 sm:p-8" onClick={() => setState("")}>
           <div onClick={(e) => e.stopPropagation()} className="w-full sm:w-4/5 lg:w-2/3 xl:w-1/2 bg-white rounded-[20px] sm:rounded-br-none rounded-br-none sm:rounded-[50px] flex flex-col p-6 gap-2 lg:p-12">
-            <p className="font-bold text-[#FBBA41] text-xl sm:text-2xl md:text-3xl lg:text-4xl">Checkout Form</p>
+            <p onClick={() => setCustomerInfo(defaultFilledCustomer)} className="font-bold text-[#FBBA41] text-xl sm:text-2xl md:text-3xl lg:text-4xl">Checkout Form</p>
             <div className="flex flex-col gap-4">
               <FormInput label="Full Name" value={name} setValue={(s) => setCustomerInfo({...customerInfo, name: s})} />
               <div className="flex flex-col sm:flex-row gap-2">
@@ -203,9 +205,8 @@ export default function Shop() {
                       <span className="mr-2"><HoverCardTrigger onClick={() => setTermsOpen(!termsOpen)} className="text-[#FBBA41] font-bold cursor-pointer"> Terms and Conditions</HoverCardTrigger></span>
                       and confirm payment is complete.
                     </p>
-                    <HoverCardContent className="flex flex-col w-80">
-                      <p className="font-bold">Terms and Conditions</p>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis recusandae doloribus illum impedit facere neque dolor fuga molestiae eligendi quae earum, veritatis ex ad. Reiciendis, unde porro? Culpa obcaecati quis dignissimos, eos atque quaerat! Placeat a cum, rem nam necessitatibus ratione incidunt quidem atque commodi odit ea rerum veniam quia.</p>
+                    <HoverCardContent className="flex flex-col w-96">
+                      <TermsAndConditions />
                     </HoverCardContent>
                   </HoverCard>
                 </label>
@@ -217,6 +218,34 @@ export default function Shop() {
           </div>
         </div>
       )}
+    </div>
+  )
+}
+
+const TermsAndConditions = () => {
+  return (
+    <div className="flex flex-col gap-2 text-xs sm:text-sm">
+      <p className="font-bold">By placing an order on our website, you agree to the following terms:</p>
+      <ol className="list-decimal list-inside space-y-2">
+        <li>
+          <strong>Prepayment Required</strong> - We only accept prepaid orders. Payment must be made to the provided bank details before order processing.
+        </li>
+        <li>
+          <strong>Payment Confirmation</strong> - You must upload a valid payment receipt. Orders without a receipt will not be processed.
+        </li>
+        <li>
+          <strong>Processing Time</strong> - Orders are processed within 5-7 working days after payment confirmation.
+        </li>
+        <li>
+          <strong>No Refunds or Cancellations</strong> - Once an order is placed and payment is made, it cannot be canceled or refunded.
+        </li>
+        <li>
+          <strong>Shipping & Delivery</strong> - Delivery times may vary depending on location. You will be notified once your order is shipped.
+        </li>
+        <li>
+          <strong>Contact for Support</strong> - If you have any issues, please contact our support team for assistance.
+        </li>
+      </ol>
     </div>
   )
 }

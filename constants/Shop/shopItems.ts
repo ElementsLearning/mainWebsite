@@ -15,7 +15,7 @@ export const shopItems: ShopItemType[] = [
     color: "#CFE8BE",
     innerColor: "#B1DA94",
     src: "/whatweofferpage/maths/fraction-board.png",
-    price: 100,
+    price: 1999,
   },
   {
     name: "Base-10 Blocks",
@@ -23,7 +23,7 @@ export const shopItems: ShopItemType[] = [
     color: "#CAB9DB",
     innerColor: "#A98CC2",
     src: "/whatweofferpage/maths/base-10-block.png",
-    price: 100,
+    price: 1999,
   },
   {
     name: "Tangram",
@@ -31,7 +31,7 @@ export const shopItems: ShopItemType[] = [
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
     src: "/whatweofferpage/maths/tangram.png",
-    price: 100,
+    price: 1999,
   },
   {
     name: "Geoboard",
@@ -39,7 +39,7 @@ export const shopItems: ShopItemType[] = [
     color: "#FEE7BD",
     innerColor: "#FED792",
     src: "/whatweofferpage/maths/geoboard.png",
-    price: 100,
+    price: 1599,
   },
   {
     name: "Circular Geoboard",
@@ -47,6 +47,6 @@ export const shopItems: ShopItemType[] = [
     color: "#F8A6D6",
     innerColor: "#F46CBE",
     src: "/whatweofferpage/maths/circular-geoboard.png",
-    price: 100,
+    price: 1599,
   },
 ]
