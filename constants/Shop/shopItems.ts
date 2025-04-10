@@ -7,6 +7,8 @@ export type ShopItemType = {
   innerColor: string
 }
 
+export const TAX_RATE = 0.18
+export const DELIVERY_RATE = 300
 
 export const shopItems: ShopItemType[] = [
   {

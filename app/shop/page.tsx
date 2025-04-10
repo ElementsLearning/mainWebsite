@@ -1,6 +1,7 @@
 "use client"
 
 import { CustomerType, OrderType } from "@/constants/Shop/shop";
+import { DELIVERY_RATE, TAX_RATE, shopItems } from "@/constants/Shop/shopItems";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import { Image, uploadImage } from "@/lib/utils";
 import { defaultCustomer, defaultFilledCustomer } from "@/constants/Shop/defaultCustomer";
@@ -10,7 +11,6 @@ import { Input } from "@/components/ui/input";
 import { ItemCard } from "@/components/shopComponents/ItemCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Textarea } from "@/components/ui/textarea";
-import { shopItems } from "@/constants/Shop/shopItems";
 import { useState } from "react";
 import { useToast } from "@/components/ui/use-toast";
 
@@ -55,7 +55,6 @@ export default function Shop() {
       notes: orderNotes,
       completed: false
     }
-    console.log({order})
     const res = await fetch("/api/orders/new", {
       method: "POST",
       headers: {
@@ -134,9 +133,17 @@ export default function Shop() {
               </div>
             </ScrollArea>
             <div className="h-px bg-black w-full" />
-            <div className="flex justify-between text-lg sm:text-2xl">
-              <p className="font-bold">Total:</p>
+            <div className="flex justify-between sm:text-xl">
+              <p className="">SubTotal:</p>
               <p className="italic">{totalAmount} Rs.</p>
+            </div>
+            <div className="flex justify-between sm:text-xl">
+              <p className="">Delivery Charges:</p>
+              <p className="italic">{DELIVERY_RATE} Rs.</p>
+            </div>
+            <div className="flex justify-between text-lg sm:text-2xl">
+              <p className="font-bold">Total (Tax Inclusive):</p>
+              <p className="italic">{(totalAmount * (1+TAX_RATE) + DELIVERY_RATE).toFixed(2)} Rs.</p>
             </div>
             <button className="bg-[#404791] text-white text-lg sm:text-2xl font-bold px-4 py-2 rounded-full hover:bg-[#6CC3E0] transition duration-300" onClick={() => setState("FORM")}>
               Proceed
