@@ -55,6 +55,7 @@ export default function Shop() {
       notes: orderNotes,
       completed: false
     }
+    console.log({order})
     const res = await fetch("/api/orders/new", {
       method: "POST",
       headers: {

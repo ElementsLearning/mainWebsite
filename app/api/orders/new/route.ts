@@ -12,12 +12,12 @@ export async function POST(request: NextRequest) {
   try {
     await connectMongo()
 
-    const newOrder = await Order.create({...order, approved: false})
+    const newOrder = await Order.create({...order})
     await newOrder.save()
 
     return NextResponse.json({ Order: newOrder })
   } catch (error) {
     console.log(error)
-    return NextResponse.json({ error: error})
+    return NextResponse.json({ error: error, order})
   }
 }
