@@ -33,7 +33,7 @@ export const journeySteps: JourneyStep[] = [
   {
     color: "#6C3A92",
     header: "2023-Present",
-    content: <p className="text-xs xs:text-sm md:text-xs lg:text-sm xl:text-base">Emerged as a NUST spinoff, poised to <strong>revolutionize K-12 education</strong> through research-based parctices and accessible resources.</p>,
+    content: <p className="text-xs xs:text-sm md:text-xs lg:text-sm xl:text-base">Emerged as a NUST spinoff, poised to <strong>revolutionize K-12 education</strong> through research-based practices and accessible resources.</p>,
     contentBelow: true
   }
 ]

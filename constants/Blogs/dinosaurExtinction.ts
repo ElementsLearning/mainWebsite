@@ -25,11 +25,11 @@ export const dinosaurExtinction: Blog = {
       },
       "style": "NUMBERS",
       "points": [
-        "Shkolvsky theorizes on extinction of Dinosaur by ahead of time, in 1956",
+        "Shklovsky theorizes on extinction of Dinosaur by ahead of time, in 1956",
         "A geologist and a physicist (Alvareze's) start exploring paleontologists' problem",
         "A nuclear Chemist (Asaro) comes to help testing",
         "Findings indicate towards sudden impact - No clue what an impact could be",
-        "Incidentally a comet falling on Jupiter is watched, and we learn that impact could be that much."
+        "Incidentally a comet falling on Jupiter is watched, and we learn that an impact could be that much."
       ],
       "indented": false
     },
@@ -62,7 +62,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "In 1956, Russian astronomer Joseph Shklovsky (1916-85) became the first scientist to consider the extinction was due to a single catastrophic event when he theorized that a supernova (the explosion of a dying star) showered the earth in radiation that could have killed the dinosaurs.\n",
+      "text": "In 1956, Russian astronomer Joseph Shklovsky (1916-85) became the first scientist to consider that the extinction was due to a single catastrophic event when he theorized that a supernova (the explosion of a dying star) showered the earth in radiation that could have killed the dinosaurs.\n",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -80,7 +80,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "This is a paragraphIn the early 1970s, Walter Alvarez was doing fieldwork in Italy in a comely defile known as the Bottaccione Gorge, near the Umbrian hill town of Gubbio, when he grew curious about a thin band of reddish clay that divided two ancient layers of limestone—one from the Cretaceous period, the other from the Tertiary. This is a point known to geology as the KT boundary and it marks the time, sixty-five million years ago, when the dinosaurs and roughly half the world's other species of animals abruptly vanished from the fossil record. K comes either from the Greek Kreta or German Kreide. Both conveniently mean “chalk,” which is also what Cretaceous means\nAlvarez wondered what it was about a thin lamina of clay, barely a quarter of an inch thick, that could account for such a dramatic moment in Earth's history.\nBut the thinness of the clay layer clearly suggested that in Umbria, if nowhere else, something rather more abrupt had happened. Unfortunately in the 1970s no tests existed for determining how long such a deposit might have taken to accumulate.\n",
+      "text": "This is a paragraph in the early 1970s, Walter Alvarez was doing fieldwork in Italy in a comely defile known as the Bottaccione Gorge, near the Umbrian hill town of Gubbio, when he grew curious about a thin band of reddish clay that divided two ancient layers of limestone—one from the Cretaceous period, the other from the Tertiary. This is a point known to geology as the KT boundary and it marks the time, sixty-five million years ago, when the dinosaurs and roughly half the world's other species of animals abruptly vanished from the fossil record. K comes either from the Greek Kreta or German Kreide. Both conveniently mean “chalk,” which is also what Cretaceous means\nAlvarez wondered what it was about a thin lamina of clay, barely a quarter of an inch thick, that could account for such a dramatic moment in Earth's history.\nBut the thinness of the clay layer clearly suggested that in Umbria, if nowhere else, something rather more abrupt had happened. Unfortunately, in the 1970s no tests existed for determining how long such a deposit might have taken to accumulate.\n",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -108,7 +108,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "Alvarez knew that a colleague of his at the Lawrence Berkeley Laboratory in California, Frank Asaro, had developed a technique for measuring very precisely the chemical composition of clays using a process called neutron activation analysis.\n\nAvarez requested Asaro to test their samples. Asaro recalled in an interview in 2002. “And it seemed an interesting challenge, so I agreed to try. Unfortunately, I had a lot of other work to do, so it was eight months before I could get to it.”\n",
+      "text": "Alvarez knew that a colleague of his at the Lawrence Berkeley Laboratory in California, Frank Asaro, had developed a technique for measuring very precisely the chemical composition of clays using a process called neutron activation analysis.\n\nAlvarez requested Asaro to test their samples. Asaro recalled in an interview in 2002. “And it seemed an interesting challenge, so I agreed to try. Unfortunately, I had a lot of other work to do, so it was eight months before I could get to it.”\n",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -145,7 +145,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "Tests on other samples—from Denmark, Spain, France, New Zealand, Antarctica—showed that the \niridium deposit was worldwide and greatly elevated everywhere, sometimes by as much as five hundred times normal levels.Clearly something big and abrupt, and probably cataclysmic, had produced this arresting spike.",
+      "text": "Tests on other samples—from Denmark, Spain, France, New Zealand, Antarctica—showed that the \niridium deposit was worldwide and greatly elevated everywhere, sometimes by as much as five hundred times normal levels. Clearly, something big and abrupt, and probably cataclysmic, had produced this arresting spike.",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -154,7 +154,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "HEADER",
-      "text": "Alvarez Concluded, but world did not believe yet\n",
+      "text": "Alvarez Concluded, but the world did not believe yet\n",
       "size": "BASE",
       "weight": "BOLD",
       "style": "NONE",
@@ -181,7 +181,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "The thin layer of iridium was deposited following the impact of a large meteor, comet or asteroid with the earth. Furthermore, this bolide impact (the meteor, comet or asteroid colliding with the earth's surface) could have caused the extinction of the dinosaurs.\n",
+      "text": "The thin layer of iridium was deposited following the impact of a large meteor, comet, or asteroid with the earth. Furthermore, this bolide impact (the meteor, comet, or asteroid colliding with the earth's surface) could have caused the extinction of the dinosaurs.\n",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",
@@ -208,7 +208,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "HEADER",
-      "text": "Yucatan, Mexico established as as impact site\n",
+      "text": "Yucatan, Mexico established as an impact site\n",
       "size": "BASE",
       "weight": "BOLD",
       "style": "NONE",
@@ -217,7 +217,7 @@ export const dinosaurExtinction: Blog = {
     },
     {
       "type": "PARAGRAPH",
-      "text": "By chance in 1990 one of the searchers, Alan Hildebrand of the University of Arizona, met a reporter from the Houston Chronicle who happened to know about a large, unexplained ring formation, 120 miles wide and 30 miles deep, under Mexico's Yucatán Peninsula at Chicxulub, near the city of Progreso, about 600 miles due south of New Orleans.\nThe formation had been found by Pemex, the Mexican oil company, in 1952—the year, coincidentally, that Gene Shoemaker first visited Meteor Crater in Arizona—but the company's geologists had concluded that it was volcanic, in line with the thinking of the day. Hildebrand traveled to the site and decided fairly swiftly that they had their crater.\nBy early 1991 it had been established to nearly everyone's satisfaction that Chicxulub was the impact site.\n",
+      "text": "By chance, in 1990 one of the searchers, Alan Hildebrand of the University of Arizona, met a reporter from the Houston Chronicle who happened to know about a large, unexplained ring formation, 120 miles wide and 30 miles deep, under Mexico's Yucatán Peninsula at Chicxulub, near the city of Progreso, about 600 miles due south of New Orleans.\nThe formation had been found by Pemex, the Mexican oil company, in 1952—the year, coincidentally, that Gene Shoemaker first visited Meteor Crater in Arizona—but the company's geologists had concluded that it was volcanic, in line with the thinking of the day. Hildebrand traveled to the site and decided fairly swiftly that they had their crater.\nBy early 1991, it had been established to nearly everyone's satisfaction that Chicxulub was the impact site.\n",
       "size": "BASE",
       "weight": "NORMAL",
       "style": "NONE",

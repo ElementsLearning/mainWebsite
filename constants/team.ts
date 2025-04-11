@@ -95,8 +95,8 @@ export const team: TeamMember[] = [
     corner: "br"
   },
   {
-    name: "Adan Haider",
-    designation: "Math Research (Intern)",
+    name: "Muhammad Adan Haider",
+    designation: "Math Trainer & Researcher",
     corner: "br"
   },
   {

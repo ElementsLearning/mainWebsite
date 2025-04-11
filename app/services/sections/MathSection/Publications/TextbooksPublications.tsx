@@ -1,11 +1,11 @@
 "use client"
+
 import { BulletList } from "@/components/custom/BulletList"
 import { CarouselSingle } from "@/components/custom/CarouselSingle"
 import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
-import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import Link from "next/link"
+import { SlidingDiv } from "@/components/custom/SlidingDiv"
 import { useState } from "react"
-
 
 export const TextbooksPublications = () => {
   const [opened, setOpened] = useState<"OVERVIEW" | "TEACHERS" | "STUDENTS">("OVERVIEW")
@@ -32,7 +32,7 @@ export const TextbooksPublications = () => {
         <BulletList contentClass="text-sm text-left md:text-base xl:text-lg"
         list={[
           {title: "Curriculum-Aligned Content"},
-          {title: "Engaging Interactive Excersises"},
+          {title: "Engaging Interactive Exercises"},
           {title: "Progressive Skill Development"},
         ]} />
       </div>

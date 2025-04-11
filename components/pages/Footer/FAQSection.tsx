@@ -1,6 +1,6 @@
 import { HexagonPlayButton } from "@/components/custom/HexagonPlayButton"
-import { useOnEscape } from "@/lib/hooks/useOnEscape"
 import { PlusIcon } from "lucide-react"
+import { useOnEscape } from "@/lib/hooks/useOnEscape"
 import { useState } from "react"
 
 type FAQ = {
@@ -15,7 +15,7 @@ const FAQs: FAQ[] = [
   },
   {
     question: "Are Elements Learning's products suitable for both teachers and parents?",
-    answer: "Yes, Elements Learning's products are suitable for both teachers and parents. Our math tools such as Tangram, Geoboard, Circular Geoboard, Tens Blocks, and Fraction Board, which are not only engaging for students but also come with manuals and guides that assist teachers in implementing effective teaching strategies and parents in facilitating meaningful learning activities at home. Whether used in the classroom or at home, our products are tailored to provide valuable support and resources for educators and parents alike, fostering collaboration and enhancing the learning journey for every learner. "
+    answer: "Yes, Elements Learning's products are suitable for both teachers and parents. Our math tools such as Tangram, Geoboard, Circular Geoboard, Base Ten Blocks, and Fraction Board, which are not only engaging for students but also come with manuals and guides that assist teachers in implementing effective teaching strategies and parents in facilitating meaningful learning activities at home. Whether used in the classroom or at home, our products are tailored to provide valuable support and resources for educators and parents alike, fostering collaboration and enhancing the learning journey for every learner. "
   },
   {
     question: "What educational services does EL offer?",

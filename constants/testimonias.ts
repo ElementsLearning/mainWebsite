@@ -6,7 +6,7 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     person: "Teacher Trainee - AJK",
-    quote: "As an experienced educator, I thought I had seen it all, but this training opened my eyes to new possibilities and approaches in teaching. The sessions were well-structured, practical, and tailored to the needs of educators. I particularly appreciated the focus on student-centered learing, differentiated instructions, and the integration of tooks/technology in teaching Maths."
+    quote: "As an experienced educator, I thought I had seen it all, but this training opened my eyes to new possibilities and approaches in teaching. The sessions were well-structured, practical, and tailored to the needs of educators. I particularly appreciated the focus on student-centered learning, differentiated instructions, and the integration of tools/technology in teaching Maths."
   },
   {
     person: "Teacher Trainee - Chiniot, Pakistan",

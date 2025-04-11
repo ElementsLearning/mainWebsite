@@ -1,8 +1,7 @@
+import { SlidingDiv } from "../../custom/SlidingDiv";
 import { VideoPlayer } from "@/components/custom/VideoPlayer";
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { SlidingDiv } from "../../custom/SlidingDiv";
-
 
 const StaggeredPillarHeader = () => {
   const containerVariants = {
@@ -79,7 +78,7 @@ export const Pillars = () => {
           <div className="flex flex-col gap-1 font-bold items-center size-16">
             <img src="/landingpage/teacherstraining.png" className="lg:scale-125" alt="" />
             <div className="flex flex-col items-center">
-              <p>Teachers</p>
+              <p>Teacher</p>
               <p>Training</p>
             </div>
           </div>
@@ -93,7 +92,7 @@ export const Pillars = () => {
             <img src="/landingpage/schoolleaderships.png" className="lg:scale-125" alt="" />
             <div className="flex flex-col items-center">
               <p>School</p>
-              <p>Leaderships</p>
+              <p>Leadership</p>
             </div>
           </div>
         </SlidingDiv>

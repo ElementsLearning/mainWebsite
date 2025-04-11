@@ -25,7 +25,7 @@ export const readingSteps: ReadingStep[] = [
   },
   {
     heading: "GK + VOCAB",
-    text: "Expanding general knowledge and vocabulary to build a well-rounded unerstanding of the world.",
+    text: "Expanding general knowledge and vocabulary to build a well-rounded understanding of the world.",
     color: "#04BA56",
     src: "/language/reading/3.png",
     scale: 70,
@@ -54,7 +54,7 @@ export const readingSteps: ReadingStep[] = [
   },
   {
     heading: "BE AN AUTHOR",
-    text: "Every child is an author in area of his or her area of interest. In EL we create many opportunities for children to express themselves in a variety of arts and ways.",
+    text: "Every child is an author in their area of interest. In EL we create many opportunities for children to express themselves in a variety of arts and ways.",
     color: "#F10229",
     src: "/language/reading/7.png",
     translateY: -20,
