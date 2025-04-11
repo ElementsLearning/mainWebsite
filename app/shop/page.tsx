@@ -184,15 +184,19 @@ export default function Shop() {
                         </div>
                         <div className="flex justify-between items-center">
                           <p className="font-bold">Account Name</p>
-                          <p>Elements Learning</p>
+                          <p>Elements Learning (Pvt) Limited</p>
                         </div>
                         <div className="flex justify-between items-center">
-                          <p className="font-bold">Account Number</p>
-                          <p>187763369</p>
+                          <p className="font-bold">Account IBAN</p>
+                          <p>PK53ALFH5627005001269166</p>
                         </div>
                         <div className="flex justify-between items-center">
                           <p className="font-bold">Bank</p>
-                          <p>Askari Bank</p>
+                          <p>Bank Alfalah Islamic</p>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <p className="font-bold">Branch Code</p>
+                          <p>5627</p>
                         </div>
                       </div>
                     </HoverCardContent>
