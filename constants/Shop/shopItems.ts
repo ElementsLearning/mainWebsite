@@ -5,6 +5,7 @@ export type ShopItemType = {
   price: number
   color: string
   innerColor: string
+  images: string[]
 }
 
 export const TAX_RATE = 0.18
@@ -18,6 +19,7 @@ export const shopItems: ShopItemType[] = [
     innerColor: "#B1DA94",
     src: "/whatweofferpage/maths/fraction-board.png",
     price: 1999,
+    images: ["/fraction/fraction0.png", "/fraction/fraction1.png", "/fraction/fraction2.png", "/fraction/fraction3.png", "/fraction/fraction4.png"]
   },
   {
     name: "Base-10 Blocks",
@@ -26,6 +28,7 @@ export const shopItems: ShopItemType[] = [
     innerColor: "#A98CC2",
     src: "/whatweofferpage/maths/base-10-block.png",
     price: 1999,
+    images: ["/baseten/baseten0.png", "/baseten/baseten1.png", "/baseten/baseten2.png", "/baseten/baseten3.png", "/baseten/baseten4.png", "/baseten/baseten5.png", "/baseten/baseten6.png"]
   },
   {
     name: "Tangram",
@@ -34,6 +37,7 @@ export const shopItems: ShopItemType[] = [
     innerColor: "#6DD1F5",
     src: "/whatweofferpage/maths/tangram.png",
     price: 1999,
+    images: ["/tangram/tangram0.png", "/tangram/tangram1.png", "/tangram/tangram2.png", "/tangram/tangram3.png", "/tangram/tangram4.png", "/tangram/tangram5.png"]
   },
   {
     name: "Geoboard",
@@ -42,6 +46,7 @@ export const shopItems: ShopItemType[] = [
     innerColor: "#FED792",
     src: "/whatweofferpage/maths/geoboard.png",
     price: 1599,
+    images: ["/geoboard/geoboard0.png", "/geoboard/geoboard1.png", "/geoboard/geoboard2.png", "/geoboard/geoboard3.png", "/geoboard/geoboard4.png", "/geoboard/geoboard5.png"]
   },
   {
     name: "Circular Geoboard",
@@ -50,5 +55,6 @@ export const shopItems: ShopItemType[] = [
     innerColor: "#F46CBE",
     src: "/whatweofferpage/maths/circular-geoboard.png",
     price: 1599,
+    images: ["/circular/circular0.png", "/circular/circular1.png", "/circular/circular2.png", "/circular/circular3.png", "/circular/circular4.png", "/circular/circular5.png", "/circular/circular6.png"]
   },
 ]

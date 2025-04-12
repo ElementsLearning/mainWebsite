@@ -1,5 +1,12 @@
+"use client"
+
+import { ChevronLeft, ChevronRight, ImagePlus } from "lucide-react"
+
+import { Button } from "../ui/button"
+import { ScrollArea } from "../ui/scroll-area"
 import { ShopItemType } from "@/constants/Shop/shopItems"
 import { SlidingDiv } from "../custom/SlidingDiv"
+import { useState } from "react"
 
 type ItemCardProps = ShopItemType & {
   index: number
@@ -7,12 +14,30 @@ type ItemCardProps = ShopItemType & {
   updateQuantity: (quantity: number) => void
 }
 
-export const ItemCard: React.FC<ItemCardProps> = ({description, name, price, quantity, src, updateQuantity, index, color, innerColor}) => {
+export const ItemCard: React.FC<ItemCardProps> = ({description, name, price, quantity, src, updateQuantity, index, color, innerColor, images}) => {
+
+  const [open, setOpen] = useState(false)
+  const [imageIndex, setImageIndex] = useState(0)
   
   return (
+    <>
+    {open && 
+    <div onClick={() => {setOpen(false); setImageIndex(0)}} className="fixed inset-0 bg-black/80 z-50 flex justify-center items-center">
+      <div onClick={(e) => e.stopPropagation()} className="flex items-center gap-1">
+        <Button disabled={imageIndex === 0} onClick={() => setImageIndex(Math.max(imageIndex - 1, 0))} size={"icon"} className="text-white" variant={'ghost'}>
+          <ChevronLeft className="size-4 sm:size-8" />
+        </Button>
+        <img src={`/shop/${images[imageIndex]}`} className={`${imageIndex === 0 ? "max-w-[85vw]" : "w-[85vw] sm:w-[90vw]"} max-h-[90vh] bg-black rounded-md p-2`} />
+        <Button disabled={imageIndex === images.length - 1} onClick={() => setImageIndex(Math.min(imageIndex + 1, images.length - 1))} size={"icon"} className="text-white" variant={'ghost'}>
+          <ChevronRight className="size-4 sm:size-8" />
+        </Button>
+      </div>
+    </div>
+    }
     <SlidingDiv direction={"bottom"} delay={index*0.25} className="relative flex group/manipulative items-center rounded-md overflow-hidden gap-2 md:gap-4 md:rounded-3xl md:rounded-bl-[96px] md:text-2xl md:rounded-tl-none" style={{backgroundColor: color}}>
-      <div className="relative size-16 xs:size-24 sm:size-32 md:size-40 lg:size-48 md:rounded-full md:rounded-tl-none overflow-hidden p-4 sm:p-8 md:p-10 lg:p-12" style={{backgroundColor: innerColor}}>
+      <div onClick={() => setOpen(true)} className="relative size-16 xs:size-24 sm:size-32 md:size-40 lg:size-48 md:rounded-full md:rounded-tl-none overflow-hidden p-4 sm:p-8 md:p-10 lg:p-12" style={{backgroundColor: innerColor}}>
         <img src={src} className="w-full"/>
+        <ImagePlus className="size-3 md:size-6 lg:size-8 absolute top-1 right-1 md:left-2 md:top-2 text-white" />
       </div>
       <p className="flex-1 text-[8px] xs:text-[9px] min-[450px]:text-[10px] leading-none sm:text-xs md:text-base xl:text-lg"><strong className="xs:text-[10px] min-[450px]:text-sm sm:text-base">{name}</strong><br />{description}</p>
       <div className="absolute hidden sm:block right-0 bottom-0" >
@@ -34,5 +59,6 @@ export const ItemCard: React.FC<ItemCardProps> = ({description, name, price, qua
         <button onClick={() => updateQuantity(Math.max(0, quantity - 1))} className="flex-1">-</button>
       </div>
     </SlidingDiv>    
+    </>
   )
 }

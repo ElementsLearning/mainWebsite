@@ -1,12 +1,13 @@
-import { PersonIcon } from '@radix-ui/react-icons'
 import React, { useEffect, useState } from 'react'
-import { Input } from '../ui/input'
-import { Textarea } from '../ui/textarea'
-import { Card } from '../ui/card'
-import { Button } from '../ui/button'
-import { Comment } from '@/constants/Blogs/blog'
-import { daysAgo } from '@/lib/utils'
 import { Trash, Trash2, Trash2Icon } from 'lucide-react'
+
+import { Button } from '../ui/button'
+import { Card } from '../ui/card'
+import { Comment } from '@/constants/Blogs/blog'
+import { Input } from '../ui/input'
+import { PersonIcon } from '@radix-ui/react-icons'
+import { Textarea } from '../ui/textarea'
+import { daysAgo } from '@/lib/utils'
 import { useToast } from '../ui/use-toast'
 
 type CommentSectionProps = {
