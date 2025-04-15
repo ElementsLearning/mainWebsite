@@ -273,6 +273,42 @@ export const LandingPageEvents: Event[] = [
       "/drive/ScienceFair/10.jpg",
     ]            
   },
+  {
+    name: "Visit of Mr. Hamid Mir to ICG F-6/2 Premium Math Lab",
+    color: "#A7E4F9",
+    innerColor: "#6DD1F5",
+    src: "/video/hamid_visit.mp4",
+    additional: {
+      date: "March 2025",
+      desc: ""
+    },
+    gallery: []
+  },
+  {
+    name: "AJK 10 District Book Orientation",
+    color: "#CFE8BE",
+    innerColor: "#B1DA94",
+    src: "/drive/AJK/1.jpg",
+    additional: {
+      date: "March 2025",
+      desc: ""
+    },
+    gallery: [
+      "/drive/AJK/1.jpg",
+      "/drive/AJK/2.jpg",
+      "/drive/AJK/3.jpg",
+      "/drive/AJK/4.jpg",
+      "/drive/AJK/5.jpg",
+      "/drive/AJK/6.jpg",
+      "/drive/AJK/7.jpg",
+      "/drive/AJK/8.jpg",
+      "/drive/AJK/9.jpg",
+      "/drive/AJK/10.jpg",
+      "/drive/AJK/11.jpg",
+      "/drive/AJK/12.jpg",
+      "/drive/AJK/13.jpg",
+    ]
+  }
 
 ]
 

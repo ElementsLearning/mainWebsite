@@ -6,7 +6,7 @@ export const VideoSection = () => {
     <>
     <SlidingDiv direction="left" px={50} className="w-full relative md:w-auto md:h-48 aspect-video bg-neutral-200 rounded-lg overflow-hidden">
       <video className={"size-full"} controls>
-        <source src={"/video/elemaths_shop.mp4"} type="video/mp4" />
+        <source src={"/video/marketing_video.mp4"} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
     </SlidingDiv>

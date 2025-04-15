@@ -3,7 +3,6 @@
 import { ChevronLeft, ChevronRight, ImagePlus } from "lucide-react"
 
 import { Button } from "../ui/button"
-import { ScrollArea } from "../ui/scroll-area"
 import { ShopItemType } from "@/constants/Shop/shopItems"
 import { SlidingDiv } from "../custom/SlidingDiv"
 import { useState } from "react"

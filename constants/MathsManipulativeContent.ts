@@ -26,7 +26,7 @@ export const manipulatives: Manipulative[] = [
   },
   {
     name: "Tangram",
-    text: "The Tangram, an ancient Chinese, puzzle Involves seven tans forming various shapes, it nurtures kids spatial awareness, geometry skills, and problem-solving, it also evolves to teach advanced concepts like ated comparison, fractions, and rates.",
+    text: "The Tangram, an ancient Chinese puzzle, involves seven tans forming various shapes, it nurtures kids spatial awareness, geometry skills, and problem-solving, it also evolves to teach advanced concepts like ated comparison, fractions, and rates.",
     color: "#A7E4F9",
     innerColor: "#6DD1F5",
     src: "/whatweofferpage/maths/tangram.png",

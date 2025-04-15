@@ -48,4 +48,16 @@ export const news: News[] = [
     date: "May, 2024",
     src: "/News&Updates/News/7.jpg",
   },
+  {
+    title: "Visit of Hamid Mir to Our Premium Math Lab at ICG F-6/2",
+    desc: "Esteemed Pakistani journalist Hamid Mir's visit to our recently established Premium Math Lab at Islamabad College for Girls (ICG) F-6/2 highlighted the impactful innovative education fostered by Elements Learning's CPA (Concrete, Pictorial, Abstract) Methodology. This engaging lab deviates from traditional routines, allowing students to effectively explore and internalize mathematical ideas through manipulatives. During his visit, ICG students confidently demonstrated their deep mathematical understanding. We thank Mr. Mir and Geo News for covering this significant event, and ICG's Principal Ms. Sabah Faisal and Headmistress Ms. Salma for their invaluable cooperation and support. Deep appreciation also to Special Secretary MOFEPT Mr. Mohyuddin Ahmad Wani, whose visionary leadership initiated this project, fostering a future of educational excellence.",
+    date: "March, 2025",
+    src: "/video/hamid_visit.mp4"
+  },
+  {
+    title: "The Elements Learning Team Orients AJK Teachers on New Math Curriculum",
+    desc: "The Elements Learning team recently concluded a comprehensive ten-district orientation program across Azad Jammu and Kashmir (AJK). The initiative involved dedicated one-day sessions in each district, focusing on the newly regulated Grade 1, 2, and 3 mathematics textbooks developed by Elements Learning. These sessions aimed to thoroughly orient AJK teachers on the structure and pedagogical approach of the new math curriculum, emphasizing the core Concrete-Pictorial-Abstract (CPA) methodology embedded within the books. The success of this extensive program was made possible by the enthusiastic participation of teachers from all ten districts. Appreciation is extended to Mr. Syed Tufail Hussain Bukhari, Chairman of the Textbook Board, Azad Jammu and Kashmir (AJK), and Ms. Fozia Sadiq, Director Education Extension, for their invaluable cooperation and support throughout this crucial implementation phase.",
+    date: "March, 2025",
+    src: "/News&Updates/News/8.jpg",
+  }
 ]

@@ -28,7 +28,12 @@ export const NewsCard: React.FC<News> = ({title, src, desc,  date,}) => {
         </div> */}
       </div>
       <div className="w-full md:w-48 lg:w-64 rounded-[30px] overflow-hidden md:aspect-auto aspect-video rounded-br-none bg-neutral-300">
-          <img src={src} alt="" />
+          {!src.includes(".mp4") && <img src={src} alt="" />}
+          {src.includes(".mp4") && 
+          <video className={"size-full"} controls>
+            <source src={src} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>}
       </div>
     </div>
   )
