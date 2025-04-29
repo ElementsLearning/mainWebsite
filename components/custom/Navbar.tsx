@@ -1,7 +1,8 @@
 "use client"
 
+import { useEffect, useState } from "react"
+
 import Link from "next/link"
-import { useState, useEffect } from "react"
 
 const tailwindClasses = ["top-0", "right-0", "bottom-0", "left-0"]
 
@@ -87,6 +88,7 @@ export const Navbar = () => {
             <NavOption text="Blogs" link="/blogs" />
             <NavOption text="News & Updates" link="/news" />
             <NavOption text="Contact Us" link="/contact" />
+            <NavOption text="Shop" link="/shop" />
           </div>
         </div>
       </nav>
@@ -110,7 +112,8 @@ export const Navbar = () => {
             <Link href="/services" className={`border-b-2 border-[#FBBA41]`}>What we Offer</Link>
             <Link href="/blogs" className={`border-b-2 border-[#FBBA41]`}>Blogs</Link>
             <Link href="/news" className={`border-b-2 border-[#FBBA41]`}>News & Updates</Link>
-            <Link href="/contact" className={`border-b-2 border-[#FBBA41]`}>Contact Us</Link>
+            <Link href="/news" className={`border-b-2 border-[#FBBA41]`}>News & Updates</Link>
+            <Link href="/shop" className={`border-b-2 border-[#FBBA41]`}>Shop</Link>
           </div>
         </div>
       </nav>
