@@ -180,6 +180,7 @@ export default function Orders() {
   })
 
   return (
+    <Authenticator>
     <div className="flex flex-col h-screen gap-2 p-4">
       <div className="flex flex-wrap gap-2 justify-center items-center">
         <div className="flex gap-2 items-center">
@@ -206,5 +207,6 @@ export default function Orders() {
       </div>
       <OrdersTable orders={orders} loading={loading} toggleStatus={toggleStatus} filters={filters} />
     </div>
+    </Authenticator>
   )
 }
