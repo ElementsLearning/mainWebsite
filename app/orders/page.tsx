@@ -1,5 +1,6 @@
 "use client"
 
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import React, { useEffect, useState } from "react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
@@ -20,11 +21,13 @@ const OrdersTable = React.memo(function OrdersTable({
   orders,
   loading,
   toggleStatus,
+  deleteOrder,
   filters
 }: {
   orders: OrderType[];
   loading: boolean;
   toggleStatus: (id: string) => void;
+  deleteOrder: (id: string) => void;
   filters: FilterType;
 }) {
   const headers = [
@@ -66,7 +69,26 @@ const OrdersTable = React.memo(function OrdersTable({
       <TableBody>
         {filteredOrders.map(({customerInfo: {name, email, phone, city, address, postalCode}, completed, items, notes, paymentURL, _id, createdAt}, index) => (
           <TableRow key={_id!.toString()}>
-            <TableCell>{index+1}</TableCell>
+            <TableCell className="group relative">
+              <p className="transition-opacity duration-200 group-hover:opacity-0">{index+1}</p>
+              <AlertDialog>
+                <AlertDialogTrigger className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-200 group-hover:opacity-100 z-10">
+                  <svg className="size-6 text-red-500" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"/></svg>
+                </AlertDialogTrigger>
+                <AlertDialogContent>
+                  <AlertDialogHeader>
+                    <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                    <AlertDialogDescription>
+                      This action cannot be undone. This will permanently delete the order.
+                    </AlertDialogDescription>
+                  </AlertDialogHeader>
+                  <AlertDialogFooter>
+                    <AlertDialogCancel>Cancel</AlertDialogCancel>
+                    <AlertDialogAction onClick={() => deleteOrder(_id!.toString())} className="bg-red-500 text-white hover:bg-red-600">Delete</AlertDialogAction>
+                  </AlertDialogFooter>
+                </AlertDialogContent>
+              </AlertDialog>
+            </TableCell>
             <TableCell className="w-min">
               <div className="flex flex-col gap-2">
                 <div onClick={() => toggleStatus(_id!.toString())} className={`rounded-md p-1 px-2 text-xs font-bold text-white flex justify-center w-20 ${loading ? "bg-neutral-500" : completed ? "bg-green-500" : "bg-red-600"}`}>
@@ -173,6 +195,20 @@ export default function Orders() {
     setLoading(false)
   }
 
+  const deleteOrder = async (id: string) => {
+    if (loading) return;
+    setLoading(true)
+    await fetch("/api/orders/delete", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ id }),
+    })
+    setOrders(orders => orders.filter(o => o._id !== id))
+    setLoading(false)
+  }
+
   const [searchTerm, setSearchTerm] = useState("")
   const [filters, setFilters] = useState<FilterType>({
     searchTerm: "",
@@ -205,7 +241,7 @@ export default function Orders() {
           </button>
         </div>
       </div>
-      <OrdersTable orders={orders} loading={loading} toggleStatus={toggleStatus} filters={filters} />
+      <OrdersTable orders={orders} loading={loading} toggleStatus={toggleStatus} deleteOrder={deleteOrder} filters={filters} />
     </div>
     </Authenticator>
   )
